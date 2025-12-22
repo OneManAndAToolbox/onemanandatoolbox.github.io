@@ -8,6 +8,10 @@
         *, *::before, *::after {
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 125px;
+        }
         html, body {
             max-width: 100%;
             overflow-x: hidden;
@@ -19,19 +23,24 @@
             padding: 0;
             background: #f4f4f4;
             color: #333;
-            /* Add padding to the top of the body to prevent content from being hidden by the fixed header */
-            padding-top: 130px;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding-top: 120px; /* Height of the header */
+            padding-top: 120px; /* Match scroll-padding-top */
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
+            height: 100%;
         }
         header {
             background: #2c3e50;
             color: #fff;
-            padding: 10px 0 8px;
+            padding: 8px 0 6px;
             text-align: center;
             border-bottom: #e74c3c 3px solid;
             /* Make the header fixed to the top */
@@ -39,12 +48,12 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            height: 110px;
+            min-height: 90px; /* Reduced from 110px */
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            gap: 6px;
+            justify-content: center;
+            gap: 15px;
         }
         header h1 {
             margin: 0;
@@ -59,31 +68,49 @@
         }
         nav ul {
             list-style: none;
-            display: flex;
-            gap: 12px;
-            margin: 0;
             padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 10px;
+            row-gap: 6px; /* Space between rows */
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 1rem;
-            padding: 6px 16px;
+            padding: 5px 10px;
+            font-size: 0.85rem;
+            min-width: 80px; /* Ensures all buttons are same width */
+            text-align: center;
             border: 1px solid rgba(255,255,255,0.6);
             border-radius: 999px;
             background: rgba(255,255,255,0.08);
             transition: background 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 28px; /* Fixed height for all buttons */
+            box-sizing: border-box;
         }
         nav a:hover {
             background: #e74c3c;
             transform: translateY(-2px);
         }
         section {
-            padding: 40px 20px;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin: 0;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+            min-height: calc(100vh - 120px); /* Full viewport minus header */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            top: -1px; /* Fix 1px gap issue in some browsers */
         }
         h2 {
             color: #2c3e50;
@@ -91,6 +118,7 @@
             margin-bottom: 30px;
         }
         .hero {
+            margin-top: 0; /* Remove top margin for first section */
             background: url('https://lh3.googleusercontent.com/pw/AP1GczOinMhYMCS8oiOS6yh6DvunvydviBF8iZYaJ7b1W3gf110JIOIvTxvkfqg6k5zJI4UK_BpViBwEp3M8a73gE38beka375PDyrB0IolLtfdDstevSPUDM2Ke3s-nhLWYsGW5xDzIeSgf0ks8Xwq2jm4fGA=w1439-h809-s-no-gm?authuser=0') no-repeat center center/cover;
             color: #fff;
             padding: 80px 20px;
@@ -153,6 +181,7 @@
             font-size: 2.5rem;
             color: #e74c3c;
             margin-bottom: 15px;
+            scroll-snap-align: start;
         }
         .service h3 {
             color: #34495e;
@@ -211,15 +240,25 @@
         /* Responsive adjustments */
         @media(max-width: 600px) {
             body {
-                padding-top: 140px;
+                padding-top: 100px; /* Reduced to match new header height */
+                scroll-padding-top: 100px;
+            }
+            section {
+                min-height: calc(100vh - 120px);
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                border-top: 1px solid #e0e0e0;
             }
             header {
-                height: auto;
-                padding: 10px 0 8px;
+                min-height: 90px;
+                padding: 6px 0 4px;
                 gap: 8px;
             }
             header h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                margin: 0 0 4px 0;
+                line-height: 1.2;
             }
             nav ul {
                 flex-wrap: wrap;
@@ -237,9 +276,11 @@
             section {
                 padding: 20px 10px;
                 margin-bottom: 15px;
+                height: calc(100vh - 140px);
             }
             .hero {
                 padding: 40px 10px;
+                background-position: left center;
             }
             .hero h2 {
                 font-size: 2rem;
@@ -252,7 +293,7 @@
                 gap: 10px;
             }
             .service {
-                padding: 15px 10px;
+                padding: 0;
             }
             #about img {
                 float: none;
@@ -263,8 +304,87 @@
             #area .map-container {
                 padding-top: 80%;
             }
-            footer {
-                padding: 15px;
+            #contact {
+                display: flex;
+                flex-direction: column;
+            }
+            #contact div {
+                margin-top: auto;
+            }
+            .testimonials-container {
+                position: relative;
+                height: 80px;
+                overflow: hidden;
+            }
+            .testimonials-slider {
+                display: flex;
+                position: relative;
+                width: calc(100% * 5);
+                animation: slide 20s infinite;
+            }
+            .testimonial {
+                width: calc(100% / 5);
+                text-align: center;
+                font-style: italic;
+            }
+            @keyframes slide {
+                0% { left: 0; }
+                20% { left: 0; }
+                25% { left: -20%; }
+                45% { left: -20%; }
+                50% { left: -40%; }
+                70% { left: -40%; }
+                75% { left: -60%; }
+                95% { left: -60%; }
+                100% { left: -80%; }
+            }
+            .gallery-nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                justify-items: center;
+                margin: 10px 0;
+            }
+            .gallery-btn {
+                margin: 0;
+                padding: 5px 10px;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                color: #fff;
+                background: #2c3e50;
+                text-decoration: none;
+                border-radius: 4px;
+            }
+            .gallery-btn:hover {
+                background: #34495e;
+            }
+            .gallery-item {
+                display: none;
+                width: 90%;
+                max-width: 300px;
+                height: 400px;
+                border: 1px solid #ccc;
+                margin: 20px auto;
+            }
+            input#plumbing-radio:checked ~ .gallery-nav ~ .gallery-item:nth-of-type(1),
+            input#decorating-radio:checked ~ .gallery-nav ~ .gallery-item:nth-of-type(2),
+            input#carpentry-radio:checked ~ .gallery-nav ~ .gallery-item:nth-of-type(3),
+            input#electrical-radio:checked ~ .gallery-nav ~ .gallery-item:nth-of-type(4) {
+                display: flex;
+                flex-direction: column;
+            }
+            .description {
+                flex: 1;
+                padding: 10px;
+            }
+            .gallery-item img {
+                flex: 1;
+                width: 100%;
+                height: auto;
+            }
+            .testimonials-container {
+                overflow-x: hidden;
             }
         }
     </style>
@@ -275,6 +395,8 @@
 <nav>
             <ul>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonies">Testimonies</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#area">Area</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -283,7 +405,7 @@
     </header>
 
     <div class="container">
-        <section id="hero" class="hero">
+        <section id="hero" class="hero" style="min-height: calc(100vh - 160px);">
             <div class="hero-content">
                 <h2>Your Friendly & Reliable Local Handyman</h2>
                 <p>For all the odd jobs and repairs around your home in parts of W5, W13, W7 & TW8.</p>
@@ -317,6 +439,47 @@
             </div>
         </section>
 
+        <section id="gallery">
+            <h2>Previous Work Gallery</h2>
+            <input type="radio" id="plumbing-radio" name="gallery" checked style="display: none;">
+            <input type="radio" id="decorating-radio" name="gallery" style="display: none;">
+            <input type="radio" id="carpentry-radio" name="gallery" style="display: none;">
+            <input type="radio" id="electrical-radio" name="gallery" style="display: none;">
+            <div class="gallery-nav">
+                <label for="plumbing-radio" class="gallery-btn">Plumbing</label>
+                <label for="decorating-radio" class="gallery-btn">Decorating</label>
+                <label for="carpentry-radio" class="gallery-btn">Carpentry</label>
+                <label for="electrical-radio" class="gallery-btn">Electrical</label>
+            </div>
+            <div class="gallery-item plumbing">
+                <div class="description">Expert plumbing services: repaired leaky pipes, installed new fixtures, and ensured water system efficiency.</div>
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=300&h=200&fit=crop" alt="Plumbing work">
+            </div>
+            <div class="gallery-item decorating">
+                <div class="description">Painted the living room walls and updated the flooring for a modern, refreshed look.</div>
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" alt="Decorating work">
+            </div>
+            <div class="gallery-item carpentry">
+                <div class="description">Built custom shelves and repaired wooden furniture for a sturdy and elegant finish.</div>
+                <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=300&h=200&fit=crop" alt="Carpentry work">
+            </div>
+            <div class="gallery-item electrical">
+                <div class="description">Installed new lighting fixtures and rewired outlets for safe and efficient electrical setup.</div>
+                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=300&h=200&fit=crop" alt="Electrical work">
+            </div>
+        </section>
+
+        <section id="testimonies">
+            <h2>Testimonies</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">"Great service! Highly recommend." - John Doe</div>
+                <div class="testimonial">"Excellent work, very professional." - Jane Smith</div>
+                <div class="testimonial">"Fast and reliable, would use again." - Mike Johnson</div>
+                <div class="testimonial">"Impressed with the quality." - Sarah Lee</div>
+                <div class="testimonial">"Top-notch handyman service." - David Kim</div>
+            </div>
+        </section>
+
         <section id="about">
             <h2>About Me</h2>
              <img src="https://lh3.googleusercontent.com/pw/AP1GczOUxkTl5OaztKAsR5gaK4MdiMErxXFdWzASk-XEm4zHWuWYHr43VH6fI745eUb1ICZ39Panh0vJrrMiE_DIArgK0dRiolWIgRFD7Eu1XwYcfYY10BRvuinStz2szMI_CqWrZ03RKFM37SVsHZLQlwu37g=w1220-h859-s-no-gm?authuser=0" alt="Friendly Handyman">
@@ -347,11 +510,8 @@
             <p>Have a job that needs doing? Contact me for a free quote!</p>
             <p><strong>Mobile:</strong> 07700 900000</p>
             <p><strong>Email:</strong> onemanandatoolbox@email.com</p>
+            <div style="text-align: center; padding: 10px; background: #2c3e50; color: #fff;"><p>&copy; 2025 One Man and a Toolbox</p></div>
         </section>
     </div>
-
-    <footer>
-        <p>&copy; 2025 One Man and a Toolbox</p>
-    </footer>
 </body>
 </html>
