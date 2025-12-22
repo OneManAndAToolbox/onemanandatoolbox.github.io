@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Man and a Toolbox - Handyman Services</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            /* Add padding to the top of the body to prevent content from being hidden by the fixed header */
+            padding-top: 130px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 10px 0 8px;
+            text-align: center;
+            border-bottom: #e74c3c 3px solid;
+            /* Make the header fixed to the top */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.3rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 6px 16px;
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        nav a:hover {
+            background: #e74c3c;
+            transform: translateY(-2px);
+        }
+        section {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero {
+            background: url('https://lh3.googleusercontent.com/pw/AP1GczOinMhYMCS8oiOS6yh6DvunvydviBF8iZYaJ7b1W3gf110JIOIvTxvkfqg6k5zJI4UK_BpViBwEp3M8a73gE38beka375PDyrB0IolLtfdDstevSPUDM2Ke3s-nhLWYsGW5xDzIeSgf0ks8Xwq2jm4fGA=w1439-h809-s-no-gm?authuser=0') no-repeat center center/cover;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            border-radius: 8px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h2 {
+            color: #fff;
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #c0392b;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .service {
+            background: #f9f9f9;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .service i {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        .service h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        #about img {
+            max-width: 150px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        #area .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 8px;
+        }
+        #area iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         #area .postcode-tags {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #area .postcode-tags span {
+            display: inline-block;
+            background: #34495e;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #contact p {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+        }
+        /* Font Awesome for Icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+        /* Responsive adjustments */
+        @media(max-width: 600px) {
+            body {
+                padding-top: 140px;
+            }
+            header {
+                height: auto;
+                padding: 10px 0 8px;
+                gap: 8px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px;
+            }
+            nav a {
+                font-size: 0.9rem;
+                padding: 5px 10px;
+            }
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            section {
+                padding: 20px 10px;
+                margin-bottom: 15px;
+            }
+            .hero {
+                padding: 40px 10px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .service {
+                padding: 15px 10px;
+            }
+            #about img {
+                float: none;
+                display: block;
+                margin: 0 auto 15px;
+                max-width: 120px;
+            }
+            #area .map-container {
+                padding-top: 80%;
+            }
+            footer {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-tools"></i> One Man and a Toolbox</h1>
+<nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#area">Area</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h2>Your Friendly & Reliable Local Handyman</h2>
+                <p>For all the odd jobs and repairs around your home in parts of W5, W13, W7 & TW8.</p>
+                <a href="#contact" class="cta-button">Get a Free Quote</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-wrench"></i>
+                    <h3>General Repairs</h3>
+                    <p>Leaky faucets, patch-ups, and more.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Furniture Assembly</h3>
+                    <p>Quick and correct assembly of flat-pack furniture.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-image"></i>
+                    <h3>Hanging & Mounting</h3>
+                    <p>Shelves, pictures, and mirrors hung perfectly.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-plug"></i>
+                    <h3>Minor Fixes</h3>
+                    <p>Small plumbing and electrical jobs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+             <img src="https://lh3.googleusercontent.com/pw/AP1GczOUxkTl5OaztKAsR5gaK4MdiMErxXFdWzASk-XEm4zHWuWYHr43VH6fI745eUb1ICZ39Panh0vJrrMiE_DIArgK0dRiolWIgRFD7Eu1XwYcfYY10BRvuinStz2szMI_CqWrZ03RKFM37SVsHZLQlwu37g=w1220-h859-s-no-gm?authuser=0" alt="Friendly Handyman">
+            <p style="text-align: left;">I'm your local, reliable handyman dedicated to providing high-quality work with a friendly and professional attitude. With a passion for fixing things and helping people, no job is too small. I pride myself on being tidy, punctual, and ensuring you're happy with the result.</p>
+        </section>
+
+        <section id="area">
+            <h2>Service Area</h2>
+            <div class="postcode-tags">
+                <span>W5</span>
+                <span>W13</span>
+                <span>W7</span>
+                <span>TW8</span>
+            </div>
+            <div class="map-container">
+                <!-- Embedded Google Map showing the general area of the postcodes -->
+                <iframe 
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1HcJj6yuP_cij_hniMuvJJmWnhKC3H3I&ehbc=2E312F&noprof=1"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Have a job that needs doing? Contact me for a free quote!</p>
+            <p><strong>Mobile:</strong> 07700 900000</p>
+            <p><strong>Email:</strong> onemanandatoolbox@email.com</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 One Man and a Toolbox</p>
+    </footer>
+</body>
+</html>
