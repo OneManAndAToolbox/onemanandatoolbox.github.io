@@ -657,7 +657,7 @@ export default function Home() {
                 </section>
 
                 <section id="testimonies">
-                    <h2>Testimonials</h2>
+                    <h2>Testimonials <span className="section-hint">Choose Category<br />of Work:</span></h2>
                     <div className="custom-select-container">
                         <div className="custom-select" data-select-type="testimonials" data-default-value="general" data-testimonial-target="#testimonials-list">
                             <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Filter testimonials by service category"></button>
@@ -754,7 +754,7 @@ export default function Home() {
 
                 <section id="about">
                     <h2>About Me</h2>
-                    <img src="/OneManAndAToolbox/images/IMG-20251227-WA0003.jpg" alt="Friendly Handyman" />
+                    <img src="/OneManAndAToolbox/images/OneManAndAToolBox.webp" alt="Friendly Handyman" />
                     <p style={{ textAlign: 'left' }}>I'm your local, reliable handyman dedicated to providing high-quality work with a friendly and professional attitude. With a passion for fixing things and helping people, no job is too small. I pride myself on being tidy, punctual, and ensuring you're happy with the result.</p>
                 </section>
 

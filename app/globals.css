@@ -156,6 +156,19 @@ h2 {
     margin: 0 0 10px;
 }
 
+.section-hint {
+    font-size: 0.4em;
+    font-style: italic;
+    font-weight: normal;
+    color: #666;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
 #testimonies .custom-select-container {
     margin: 0 0 8px;
 }
@@ -287,11 +300,18 @@ h2 {
     font-size: 0.95rem;
 }
 
+#about h2 {
+    margin-bottom: 15px;
+}
+
 #about img {
-    max-width: 150px;
+    max-width: 198px;
     border-radius: 50%;
     float: left;
     margin-right: 20px;
+    object-fit: cover;
+    object-position: 30% center;
+    aspect-ratio: 1;
 }
 
 #about p {
@@ -567,7 +587,7 @@ section {
         float: none;
         display: block;
         margin: 0 auto 15px;
-        max-width: 120px;
+        max-width: 158px;
     }
 
     #area .map-container {
@@ -1129,7 +1149,7 @@ padding-right: 40px;
 float: none;
 display: block;
 margin: 0 auto 20px;
-max-width: 180px;
+max-width: 238px;
 }
 
 .services-grid {
