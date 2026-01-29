@@ -370,6 +370,15 @@ img {
     letter-spacing: 1px;
 }
 
+/* Contact icon (WhatsApp logo) */
+.contact-icon {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+    border-radius: 4px;
+    margin-right: 2px;
+}
+
 /* Font Awesome for Icons */
 
 
@@ -1108,10 +1117,12 @@ max-height: calc(100dvh - 145px);
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
+padding-top: 20px;
 }
 
 #about {
-padding: 0 40px;
+padding-left: 40px;
+padding-right: 40px;
 }
 
 #about img {
@@ -1155,6 +1166,10 @@ max-height: 45vh;
 #contact div {
 margin-top: auto;
 }
+
+#area {
+padding-top: 20px;
+}
 }
 
 /* Laptop / Desktop Wide View (1024px and up) */
@@ -1181,7 +1196,13 @@ display: inline;
 
 /* Constrain testimonials dropdown width on laptop */
 #testimonies .custom-select {
-max-width: 450px;
+max-width: 360px;
+margin: 0 auto;
+}
+
+/* Constrain gallery dropdown width on laptop */
+#gallery .custom-select {
+max-width: 360px;
 margin: 0 auto;
 }
 }
