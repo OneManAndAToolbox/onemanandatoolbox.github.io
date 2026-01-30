@@ -34,7 +34,7 @@ const OrientationLock = () => {
         }
 
         /* Show only on tablets in portrait */
-        @media screen and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1024px) {
+        @media screen and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1279px) {
           .orientation-overlay.tablet-portrait {
             display: flex;
           }

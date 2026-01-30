@@ -1192,8 +1192,8 @@ padding-top: 20px;
 }
 }
 
-/* Laptop / Desktop Wide View (1024px and up) */
-@media (min-width: 1024px) {
+/* Laptop / Desktop Wide View (1280px and up) */
+@media (min-width: 1280px) {
 
 header,
 .container {
