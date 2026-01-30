@@ -1151,7 +1151,7 @@ overflow: hidden;
 }
 }
 
-/* Tablet Landscape View (768px - 1279px) */
+/* Tablet View (768px - 1279px) */
 @media (min-width: 768px) and (max-width: 1279px) {
 body {
 padding-top: 0;
@@ -1243,7 +1243,6 @@ padding-top: 20px;
 
 /* Laptop / Desktop Wide View (1280px and up) */
 @media (min-width: 1280px) {
-
 header,
 .container {
 width: 50%;
