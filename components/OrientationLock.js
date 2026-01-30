@@ -23,9 +23,19 @@ const OrientationLock = () => {
           padding: 20px;
         }
 
-        /* Show only on mobile/tablets in landscape */
+        /* Show only on mobile in landscape */
         @media screen and (orientation: landscape) and (max-device-width: 932px) {
-          .orientation-overlay {
+          .orientation-overlay.mobile-landscape {
+            display: flex;
+          }
+          :global(body) {
+            overflow: hidden;
+          }
+        }
+
+        /* Show only on tablets in portrait */
+        @media screen and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1024px) {
+          .orientation-overlay.tablet-portrait {
             display: flex;
           }
           :global(body) {
@@ -59,7 +69,7 @@ const OrientationLock = () => {
         }
       `}</style>
 
-      <div className="orientation-overlay">
+      <div className="orientation-overlay mobile-landscape">
         <div className="logo-container">
           <img
             src="/OneManAndAToolbox/images/toolboxlogo.png"
@@ -70,6 +80,20 @@ const OrientationLock = () => {
         <div className="text-container">
           <h2>Please Rotate Your Phone</h2>
           <p>This site works best in portrait mode.</p>
+        </div>
+      </div>
+
+      <div className="orientation-overlay tablet-portrait">
+        <div className="logo-container">
+          <img
+            src="/OneManAndAToolbox/images/toolboxlogo.png"
+            alt="One Man and a Toolbox"
+            className="logo-image"
+          />
+        </div>
+        <div className="text-container">
+          <h2>Please Rotate Your Tablet</h2>
+          <p>This site works best in landscape mode.</p>
         </div>
       </div>
     </>
