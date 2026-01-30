@@ -1,8 +1,27 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const OrientationLock = () => {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    };
+
+    checkTouchDevice();
+    
+    // Listen for changes (though pointer type rarely changes)
+    const mediaQuery = window.matchMedia("(pointer: coarse)");
+    mediaQuery.addEventListener('change', checkTouchDevice);
+    
+    return () => mediaQuery.removeEventListener('change', checkTouchDevice);
+  }, []);
+
+  // Only show orientation prompts on actual touch devices
+  if (!isTouchDevice) return null;
+
   return (
     <>
       <style jsx>{`
