@@ -38,7 +38,7 @@ const OrientationLock = () => {
         }
 
         .logo-image {
-          width: 120px;
+          width: 240px;
           height: auto;
         }
 
@@ -48,13 +48,13 @@ const OrientationLock = () => {
 
         .text-container h2 {
           margin: 0 0 8px 0;
-          font-size: 1.4rem;
+          font-size: 2.8rem;
           font-weight: 600;
         }
 
         .text-container p {
           margin: 0;
-          font-size: 1rem;
+          font-size: 2rem;
           opacity: 0.8;
         }
       `}</style>
