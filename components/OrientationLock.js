@@ -52,8 +52,8 @@ const OrientationLock = () => {
           }
         }
 
-        /* Show only on large tablets in portrait */
-        @media screen and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1279px) {
+        /* Show only on tablets in portrait (including 5:3 tablets like S6 Lite) */
+        @media screen and (orientation: portrait) and (min-device-width: 600px) and (max-device-width: 1279px) {
           .orientation-overlay.tablet-portrait {
             display: flex;
           }
