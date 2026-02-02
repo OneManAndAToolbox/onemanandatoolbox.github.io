@@ -565,6 +565,7 @@ export default function Home() {
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & Constructed a Waterproof Woodshed <span className="job-date">(Oct 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sept 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-4" role="option">Bespoke Carving Board <span className="job-date">(Dec 2013)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-3" role="option">Custom Built Chunky Stools <span className="job-date">(Nov 2013)</span></button></li>
                                     </ul>
                                 </div>
@@ -606,6 +607,19 @@ export default function Home() {
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_matching_stools.webp" alt="Custom Built Chunky Stools" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-4">
+                                    <div className="gallery-text">
+                                        <p>Designed and built a bespoke carving board to match an antique silver cloche. Constructed it from an old oak table top.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_carving_board(1).webp" alt="Bespoke Carving Board 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_carving_board(2).webp" alt="Bespoke Carving Board 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_carving_board(3).webp" alt="Bespoke Carving Board 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_carving_board(4).webp" alt="Bespoke Carving Board 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -663,7 +677,7 @@ export default function Home() {
                             <div className="job-panels-container">
                                 <div className="job-panel" data-job="landscaping-job-2">
                                     <div className="gallery-text">
-                                        <p>Designed, built, and installed an 8-foot-tall pergola and solid platform. The platform is waterproofed on top, covered with Shockpad, and finished with high-quality artificial grass for a durable, low-maintenance sunbathing area.</p>
+                                        <p>Designed and built an 8-foot pergola with a solid platform. Waterproofed on top with Shockpad and finished with artificial grass for a low-maintenance sunbathing area.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
