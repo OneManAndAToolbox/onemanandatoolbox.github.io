@@ -72,6 +72,22 @@ export default function Home() {
             });
         };
 
+        const forceCarouselReflow = () => {
+            // Use setTimeout to let DOM/images settle first
+            setTimeout(() => {
+                const carousels = document.querySelectorAll('.gallery-carousel');
+                carousels.forEach(carousel => {
+                    // Force layout calculation by reading offsetHeight
+                    void carousel.offsetHeight;
+                    // Trigger repaint by toggling a class
+                    carousel.classList.add('reflow-fix');
+                    requestAnimationFrame(() => {
+                        carousel.classList.remove('reflow-fix');
+                    });
+                });
+            }, 50); // 50ms delay to let content settle
+        };
+
         const closeAllSelects = (except = null) => {
             customSelects.forEach(select => {
                 if (select !== except) {
@@ -131,6 +147,9 @@ export default function Home() {
                         panel.classList.remove('active');
                     }
                 });
+
+                // Force reflow on the newly active panel's carousel
+                forceCarouselReflow();
             };
 
             const setSelection = (value) => {
@@ -218,6 +237,7 @@ export default function Home() {
         setCarouselBackgrounds();
         initCarouselArrows();
         initExpandHints();
+        forceCarouselReflow();
 
         const setActiveNav = (targetHash) => {
             navLinks.forEach(link => {
@@ -543,7 +563,7 @@ export default function Home() {
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Custom-Built Wardrobe <span className="job-date">(Apr 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Bespoke Alcove Shelving <span className="job-date">(Jan 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sept 2023)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -562,13 +582,14 @@ export default function Home() {
                                 </div>
                                 <div className="job-panel" data-job="carpentry-job-1">
                                     <div className="gallery-text">
-                                        <p>Designed and built custom floating shelves for a living room alcove, maximizing storage space with a clean, modern aesthetic.</p>
+                                        <p>Refurbished a garden table using decking planks to make a new surface.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/6679860/pexels-photo-6679860.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Bespoke Shelving 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/4491876/pexels-photo-4491876.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Bespoke Shelving 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/3965557/pexels-photo-3965557.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Bespoke Shelving 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(1).webp" alt="Outdoor Table Rebuild 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(2).webp" alt="Outdoor Table Rebuild 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(3).webp" alt="Outdoor Table Rebuild 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(4).webp" alt="Outdoor Table Rebuild 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
