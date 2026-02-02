@@ -448,7 +448,8 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="general-job-2">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="general-job-2" role="option">Exterior Refresh <span className="job-date">(Jan 2024)</span></button></li>
+                                        <li>
+                                    <button type="button" className="custom-select-option" data-value="general-job-2" role="option">Exterior Refresh <span className="job-date">(Jan 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-1" role="option">Multi-Room Makeover <span className="job-date">(Oct 2023)</span></button></li>
                                     </ul>
                                 </div>
@@ -486,7 +487,7 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="plumbing-job-2">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="plumbing-job-2" role="option">Kitchen Sink &amp; Disposal <span className="job-date">(Feb 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="plumbing-job-2" role="option">Kitchen Sink & Disposal <span className="job-date">(Feb 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="plumbing-job-1" role="option">Bathroom Fixture Upgrade <span className="job-date">(Dec 2023)</span></button></li>
                                     </ul>
                                 </div>
@@ -562,9 +563,9 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="carpentry-job-2">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & constructed a waterproof woodshed <span className="job-date">(Oct 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & Constructed a Waterproof Woodshed <span className="job-date">(Oct 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sept 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-3" role="option">Custom built chunky stools <span className="job-date">(Nov 2013)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-3" role="option">Custom Built Chunky Stools <span className="job-date">(Nov 2013)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
