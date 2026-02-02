@@ -563,6 +563,7 @@ export default function Home() {
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & constructed a waterproof woodshed <span className="job-date">(Oct 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-3" role="option">Custom built chunky stools <span className="job-date">(Nov 2013)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sept 2023)</span></button></li>
                                     </ul>
                                 </div>
@@ -594,6 +595,16 @@ export default function Home() {
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(2).webp" alt="Outdoor Table Rebuild 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(3).webp" alt="Outdoor Table Rebuild 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_outdoor_table_rebuild(4).webp" alt="Outdoor Table Rebuild 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-3">
+                                    <div className="gallery-text">
+                                        <p>Designed and built two matching stools out of reclaimed joists. Intended to be family heirlooms for two siblings.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_matching_stools.webp" alt="Custom Built Chunky Stools" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
