@@ -562,7 +562,7 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="carpentry-job-2">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed and constructed a waterproof woodshed <span className="job-date">(October 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & constructed a waterproof woodshed <span className="job-date">(Oct 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sept 2023)</span></button></li>
                                     </ul>
                                 </div>
