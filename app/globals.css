@@ -684,15 +684,20 @@ section {
     font-style: italic;
     font-size: 0.85em;
     color: inherit;
-    margin-left: 4px;
+    margin-left: 8px;
     white-space: nowrap;
+    min-width: 80px;
+    text-align: left;
+    flex-shrink: 0;
 }
 
 .custom-select-trigger .job-date {
     font-style: italic;
     font-size: 0.9em;
-    margin-left: 4px;
+    margin-left: 8px;
     white-space: nowrap;
+    min-width: 80px;
+    text-align: left;
     display: inline-block;
     color: inherit;
 }
@@ -922,11 +927,20 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Default: hide both, let JS decide */
+.hint-touch {
+    display: none;
+}
+
 .hint-click {
     display: none;
 }
 
-.hint-touch {
+.touch-device .hint-touch {
+    display: inline;
+}
+
+.no-touch-device .hint-click {
     display: inline;
 }
 
@@ -1235,6 +1249,22 @@ flex: 0 0 auto;
 
 /* Tablet + Short Height (e.g., 1000x600, 5:3 aspect ratio) */
 @media (min-width: 768px) and (max-width: 1279px) and (max-height: 700px) {
+/* Smaller about image for short screens */
+#about img {
+max-width: 190px;
+}
+
+/* Smaller text for short screens */
+.gallery-text p {
+font-size: 0.85rem;
+line-height: 1.15;
+}
+
+/* Tighter spacing */
+.job-panel.active {
+gap: 10px;
+}
+
 .gallery-carousel {
 width: calc((100dvh - 350px) * 1.778) !important;
 height: calc(100dvh - 350px) !important;
@@ -1257,6 +1287,12 @@ height: 100% !important;
 @media (min-width: 1280px) {
 body {
 padding-top: 0;
+}
+
+.container {
+width: 50%;
+max-width: 1200px;
+margin: 0 auto;
 }
 
 header {
@@ -1287,14 +1323,6 @@ padding-top: 20px;
 /* grid-template-columns: repeat(3, 1fr); Removed to keep 2 columns */
 padding: 0 40px;
 /* Set 40px padding for Laptop */
-}
-
-.hint-touch {
-display: none;
-}
-
-.hint-click {
-display: inline;
 }
 
 /* Constrain testimonials dropdown width on laptop */
@@ -1332,7 +1360,20 @@ justify-content: flex-start;
 }
 
 .gallery-carousel {
-    margin-top: auto;
+    width: calc((100dvh - 350px) * 1.778) !important;
+    height: calc(100dvh - 350px) !important;
+    margin: auto auto 0;
+    contain: layout size;
+}
+
+.carousel-slide {
+    height: 100% !important;
+    width: 100% !important;
+    aspect-ratio: unset !important;
+}
+
+.carousel-track {
+    height: 100% !important;
 }
 
 .gallery-text {
