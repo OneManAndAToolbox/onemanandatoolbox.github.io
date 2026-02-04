@@ -460,37 +460,23 @@ export default function Home() {
                     <div className="gallery-display">
                         <div className="gallery-panel general">
                             <div className="custom-select-container">
-                                <div className="custom-select" data-select-type="job" data-default-value="general-job-2">
+                                <div className="custom-select" data-select-type="job" data-default-value="general-job-1">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li>
-                                    <button type="button" className="custom-select-option" data-value="general-job-2" role="option">Exterior Refresh <span className="job-date">(Jan 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="general-job-1" role="option">Multi-Room Makeover <span className="job-date">(Oct 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-1" role="option">Frosting of Bathroom Windows <span className="job-date">(Mar 2025)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="job-panels-container">
-                                <div className="job-panel" data-job="general-job-2">
-                                    <div className="gallery-text">
-                                        <p>Pressure washed the exterior walls and patio, cleaned out all gutters, and repainted the front door for a fresh, clean look.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/209372/pexels-photo-209372.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Exterior Refresh 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Exterior Refresh 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Exterior Refresh 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="job-panel" data-job="general-job-1">
                                     <div className="gallery-text">
-                                        <p>A complete refresh for a two-bedroom apartment, including wall patching, repainting, fixing sticky doors, and replacing all faulty light switches.</p>
+                                        <p>Fitted stained glass frosting to upper bathroom windows.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Multi-Room Makeover 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Multi-Room Makeover 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/1571461/pexels-photo-1571461.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Multi-Room Makeover 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grp_window_frosting (1).webp" alt="Bathroom Window Frosting 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grp_window_frosting (2).webp" alt="Bathroom Window Frosting 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grp_window_frosting (3).webp" alt="Bathroom Window Frosting 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -504,7 +490,7 @@ export default function Home() {
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="plumbing-job-1" role="option">Installation of a Dual Flush System <span className="job-date">(Sep 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="plumbing-job-2" role="option">Washing Machine Waste Pipe Installation <span className="job-date">(Jul 2025)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="plumbing-job-3" role="option">Installed a New Toilet <span className="job-date">(July 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="plumbing-job-3" role="option">Installed a New Toilet <span className="job-date">(Jul 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="plumbing-job-4" role="option">Sink Refresh & Plumbing Overhaul <span className="job-date">(Mar 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="plumbing-job-5" role="option">Installation of a Dual Flush and Flexible Pipe Work <span className="job-date">(May 2018)</span></button></li>
                                     </ul>
@@ -593,36 +579,40 @@ export default function Home() {
 
                         <div className="gallery-panel decorating">
                             <div className="custom-select-container">
-                                <div className="custom-select" data-select-type="job" data-default-value="decorating-job-2">
+                                <div className="custom-select" data-select-type="job" data-default-value="decorating-job-3">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="decorating-job-2" role="option">Bedroom Wallpapering <span className="job-date">(Mar 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="decorating-job-1" role="option">Living Room Repaint <span className="job-date">(Nov 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="decorating-job-3" role="option">Damp Seal and Wall Painting <span className="job-date">(Oct 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="decorating-job-4" role="option">Partially Redecorated a Bathroom <span className="job-date">(Aug 2023)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="job-panels-container">
-                                <div className="job-panel" data-job="decorating-job-2">
+                                <div className="job-panel" data-job="decorating-job-3">
                                     <div className="gallery-text">
-                                        <p>Applied a detailed feature wallpaper to one wall of the master bedroom, ensuring a perfect pattern match and a smooth, seamless finish.</p>
+                                        <p>Damp sealed and repainted the walls up to a loft room after a roofing leak.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/6587845/pexels-photo-6587845.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Bedroom Wallpapering 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/6587846/pexels-photo-6587846.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Bedroom Wallpapering 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/6587851/pexels-photo-6587851.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Bedroom Wallpapering 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_staircase_walls.webp" alt="Damp Seal and Wall Painting" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="decorating-job-1">
+                                <div className="job-panel" data-job="decorating-job-4">
                                     <div className="gallery-text">
-                                        <p>Prepared and painted the living room walls and ceiling with a durable, high-quality matte finish for a modern and refreshed look.</p>
+                                        <p>Water damage from penetrating damp and a leaky roof caused significant damage to the paintwork. I filled, damp sealed and repainted the damaged areas to bring it back to looking like new.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Living Room Repaint 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/6489083/pexels-photo-6489083.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Living Room Repaint 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="https://images.pexels.com/photos/8135495/pexels-photo-8135495.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=533&amp;dpr=1" alt="Living Room Repaint 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (1).webp" alt="Bathroom Redecoration 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (2).webp" alt="Bathroom Redecoration 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (3).webp" alt="Bathroom Redecoration 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (4).webp" alt="Bathroom Redecoration 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (5).webp" alt="Bathroom Redecoration 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (6).webp" alt="Bathroom Redecoration 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (7).webp" alt="Bathroom Redecoration 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (8).webp" alt="Bathroom Redecoration 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/pd/pd_bathroom_paint (9).webp" alt="Bathroom Redecoration 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -639,7 +629,11 @@ export default function Home() {
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-8" role="option">Upcycling A Blanket Chest <span className="job-date">(Jul 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-6" role="option">Restoration of Teak Garden Furniture <span className="job-date">(Jul 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & Constructed a Waterproof Woodshed <span className="job-date">(Oct 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sept 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sep 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-10" role="option">Built a Desk <span className="job-date">(Apr 2020)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-9" role="option">Built a Birdbox <span className="job-date">(May 2020)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-11" role="option">Built Two Coffee Tables <span className="job-date">(Apr 2018)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-12" role="option">Rustic Alcove Shelves <span className="job-date">(Jul 2015)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-4" role="option">Bespoke Carving Board <span className="job-date">(Dec 2013)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-3" role="option">Custom Built Chunky Stools <span className="job-date">(Nov 2013)</span></button></li>
                                     </ul>
@@ -711,13 +705,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(1).webp" alt="Woodshed Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(2).webp" alt="Woodshed Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(3).webp" alt="Woodshed Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(4).webp" alt="Woodshed Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(5).webp" alt="Woodshed Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(6).webp" alt="Woodshed Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/gmp_woodshed(7).webp" alt="Woodshed Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(1).webp" alt="Woodshed Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(2).webp" alt="Woodshed Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(3).webp" alt="Woodshed Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(4).webp" alt="Woodshed Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(5).webp" alt="Woodshed Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(6).webp" alt="Woodshed Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_woodshed(7).webp" alt="Woodshed Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -758,6 +752,62 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="job-panel" data-job="carpentry-job-10">
+                                    <div className="gallery-text">
+                                        <p>Converted a disused chest of drawers into a stylish modern desk.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (1).webp" alt="Desk Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (2).webp" alt="Desk Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (3).webp" alt="Desk Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (4).webp" alt="Desk Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (5).webp" alt="Desk Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (6).webp" alt="Desk Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (7).webp" alt="Desk Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (8).webp" alt="Desk Construction 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (9).webp" alt="Desk Construction 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (10).webp" alt="Desk Construction 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (11).webp" alt="Desk Construction 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (12).webp" alt="Desk Construction 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (13).webp" alt="Desk Construction 13" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_desk (14).webp" alt="Desk Construction 14" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-9">
+                                    <div className="gallery-text">
+                                        <p>Upcycled wood offcuts to build a rustic birdbox.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_birdbox (1).webp" alt="Birdbox Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_birdbox (2).webp" alt="Birdbox Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-11">
+                                    <div className="gallery-text">
+                                        <p>Upcycled the leaves and legs from a dining table into two stylish coffee tables.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_stools (1).webp" alt="Coffee Tables Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_stools (2).webp" alt="Coffee Tables Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-12">
+                                    <div className="gallery-text">
+                                        <p>Rustic chunky alcove shelves built by carving and staining a modern piece of pine.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_rustic_shelves (1).webp" alt="Rustic Alcove Shelves 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/cw/cw_rustic_shelves (2).webp" alt="Rustic Alcove Shelves 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -766,7 +816,17 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="electrical-job-1">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-7" role="option">Repair of an Electric Sander <span className="job-date">(Oct 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-3" role="option">Installation of a New Electrical Socket <span className="job-date">(May 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-4" role="option">Installed Down Lighting in a Shed <span className="job-date">(Mar 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-8" role="option">Smart Underfloor Heating Thermostat <span className="job-date">(Dec 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="electrical-job-1" role="option">Upgraded Downlights to LEDs and Installed Dimmer Switches <span className="job-date">(Nov 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-5" role="option">Installed a New Ceiling Light <span className="job-date">(Mar 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-9" role="option">Outdoor Socket Installation <span className="job-date">(Aug 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-10" role="option">Installed Smart Heating Controls <span className="job-date">(Jan 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-6" role="option">Upgraded Kitchen and Hallway Downlights to LEDs <span className="job-date">(Aug 2021)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-11" role="option">Installation of Dimmer Switch <span className="job-date">(Feb 2021)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-2" role="option">Dangerous Socket Removal and Blanking Plate Installation <span className="job-date">(Mar 2019)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -778,6 +838,125 @@ export default function Home() {
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_lounge_ceiling_lights.webp" alt="LED Downlight Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-2">
+                                    <div className="gallery-text">
+                                        <p>Removed a very rusty and dangerous electrical socket, made safe and installed a blanking plate including filling and redecorating around it.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (1).webp" alt="Dangerous Socket Removal 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (2).webp" alt="Dangerous Socket Removal 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (3).webp" alt="Dangerous Socket Removal 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (4).webp" alt="Dangerous Socket Removal 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (5).webp" alt="Dangerous Socket Removal 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (6).webp" alt="Dangerous Socket Removal 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (7).webp" alt="Dangerous Socket Removal 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_blanking_plate (8).webp" alt="Dangerous Socket Removal 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-3">
+                                    <div className="gallery-text">
+                                        <p>Removed a smashed electrical socket and safely replaced it with a new one.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_socket_installation.webp" alt="Electrical Socket Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-4">
+                                    <div className="gallery-text">
+                                        <p>Removed an inadequate single pendant lamp and replaced with 6 Halogen Downlights.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (1).webp" alt="Shed Downlights Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (2).webp" alt="Shed Downlights Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (3).webp" alt="Shed Downlights Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (4).webp" alt="Shed Downlights Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (5).webp" alt="Shed Downlights Installation 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (6).webp" alt="Shed Downlights Installation 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_shed_downlights (7).webp" alt="Shed Downlights Installation 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-5">
+                                    <div className="gallery-text">
+                                        <p>Removed an old ceiling light and installed a new one.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_ceiling_light.webp" alt="Ceiling Light Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-6">
+                                    <div className="gallery-text">
+                                        <p>Removed transformers, and old bezels. Installed new energy efficient down lights with new bezels.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_downlight_upgrades (1).webp" alt="Downlight Upgrades 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_downlight_upgrades (2).webp" alt="Downlight Upgrades 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_downlight_upgrades (3).webp" alt="Downlight Upgrades 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_downlight_upgrades (4).webp" alt="Downlight Upgrades 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-7">
+                                    <div className="gallery-text">
+                                        <p>Repaired an electric sander that was faulty.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_sander_rewire.webp" alt="Electric Sander Repair" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-8">
+                                    <div className="gallery-text">
+                                        <p>Removed a malfunctioning under floor heating thermostat and installed a modern smart one.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_smart_underfloor.webp" alt="Smart Underfloor Heating Thermostat" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-9">
+                                    <div className="gallery-text">
+                                        <p>Installed a waterproof junction box and a smart waterproof double socket for outdoor lighting.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_outdoor_socket (1).webp" alt="Outdoor Socket Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_outdoor_socket (2).webp" alt="Outdoor Socket Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_outdoor_socket (3).webp" alt="Outdoor Socket Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-10">
+                                    <div className="gallery-text">
+                                        <p>Installed a TADO Wireless Smart Thermostat Starter Kit.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_smart_heating_controls.webp" alt="Smart Heating Controls Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-11">
+                                    <div className="gallery-text">
+                                        <p>Removed a traditional on off switch and replaced it with an LED compatible dimmer. Earthed it for safety.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_bedroom_dimmer (1).webp" alt="Dimmer Switch Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/e/e_bedroom_dimmer (2).webp" alt="Dimmer Switch Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -959,7 +1138,7 @@ export default function Home() {
             <div id="lightbox" className="lightbox" aria-hidden="true">
                 <div className="lightbox-content">
                     <img src={null} alt="" className="lightbox-image" />
-                    <span className="contract-hint"><i className="fas fa-compress-arrows-alt"></i> <span className="hint-touch">Touch</span><span className="hint-click">Click</span> to Contract</span>
+                    <span className="contract-hint"><i className="fas fa-compress-arrows-alt"></i> <span className="hint-touch">Touch</span><span className="hint-click">Click</span> to Close</span>
                 </div>
             </div>
         </>

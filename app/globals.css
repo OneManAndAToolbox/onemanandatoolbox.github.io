@@ -647,6 +647,99 @@ section {
     z-index: 5;
     max-height: 260px;
     overflow-y: auto;
+    scrollbar-width: thick;
+    scrollbar-color: #333 #f1f1f1;
+}
+
+/* Webkit scrollbar styling for Chrome, Safari, Edge */
+.custom-select-options::-webkit-scrollbar {
+    width: 14px;
+}
+
+.custom-select-options::-webkit-scrollbar-track-piece {
+    background: #f1f1f1;
+    border-radius: 12px;
+    margin: 2px;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 12px;
+    border: 3px solid #f1f1f1;
+    min-height: 20px;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb:vertical {
+    border-radius: 12px;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 12px;
+}
+
+/* Mobile and tablet specific scrollbar styling */
+@media (max-width: 768px) {
+    .custom-select-options::-webkit-scrollbar {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    .custom-select-options::-webkit-scrollbar-track-piece {
+        background: #f1f1f1 !important;
+        border-radius: 12px;
+        margin: 2px;
+    }
+    
+    .custom-select-options::-webkit-scrollbar-thumb {
+        background: #333 !important;
+        border-radius: 12px !important;
+        border: 3px solid #f1f1f1 !important;
+        min-height: 20px !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    
+    .custom-select-options::-webkit-scrollbar-corner {
+        background: #f1f1f1 !important;
+    }
+}
+
+/* Touch device specific styling */
+.touch-device .custom-select-options::-webkit-scrollbar {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.touch-device .custom-select-options::-webkit-scrollbar-track-piece {
+    background: #f1f1f1 !important;
+    border-radius: 12px;
+    margin: 2px;
+}
+
+.touch-device .custom-select-options::-webkit-scrollbar-thumb {
+    background: #333 !important;
+    border-radius: 12px !important;
+    border: 3px solid #f1f1f1 !important;
+    min-height: 20px !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+.touch-device .custom-select-options::-webkit-scrollbar-corner {
+    background: #f1f1f1 !important;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb:active {
+    background: #222;
+}
+
+/* Force scrollbar to be visible in Webkit browsers */
+.custom-select-options {
+    scrollbar-gutter: stable;
 }
 
 .custom-select.open .custom-select-options {
