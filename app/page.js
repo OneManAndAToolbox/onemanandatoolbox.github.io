@@ -968,6 +968,7 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="landscaping-job-2">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-4" role="option">Large Rockery and Waterfeature <span className="job-date">(Oct 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-2" role="option">Pergola Sunbathing Platform <span className="job-date">(Nov 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-1" role="option">Concrete Base & Bike Anchor <span className="job-date">(Oct 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-3" role="option">Fence Repairs <span className="job-date">(Jul 2024)</span></button></li>
@@ -975,6 +976,16 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="job-panels-container">
+                                <div className="job-panel" data-job="landscaping-job-4">
+                                    <div className="gallery-text">
+                                        <p>Built a rockery and installed a waterfall, including all of the pipework.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (1).webp" alt="Large Rockery and Waterfeature 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="job-panel" data-job="landscaping-job-3">
                                     <div className="gallery-text">
                                         <p>Removed rotten posts and installed new ones including waterproof membrane. Wedged non rotten posts back up to vertical.</p>
