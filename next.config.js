@@ -6,8 +6,8 @@ const nextConfig = {
         unoptimized: true
     },
     // Remove assetPrefix and basePath for GitHub Pages
-    // assetPrefix: '/OneManAndAToolbox',
-    // basePath: '/OneManAndAToolbox'
+    assetPrefix: '/OneManAndAToolbox',
+    basePath: '/OneManAndAToolbox'
 }
 
 module.exports = nextConfig
