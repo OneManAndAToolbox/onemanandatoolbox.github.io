@@ -464,6 +464,7 @@ export default function Home() {
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="general-job-1" role="option">Frosting of Bathroom Windows <span className="job-date">(Mar 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-2" role="option">Hanging a Very Heavy Mirror <span className="job-date">(Nov 2024)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -477,6 +478,17 @@ export default function Home() {
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grp_window_frosting (1).webp" alt="Bathroom Window Frosting 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grp_window_frosting (2).webp" alt="Bathroom Window Frosting 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grp_window_frosting (3).webp" alt="Bathroom Window Frosting 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-2">
+                                    <div className="gallery-text">
+                                        <p>Hanging a mirror where anything other than perfect symmetry to the left right and above and below would look terrible. As Austin Powers once said, I needed a "laser".</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grm_mirror_hanging (1).webp" alt="Hanging a Very Heavy Mirror 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/grm/grm_mirror_hanging (2).webp" alt="Hanging a Very Heavy Mirror 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -968,10 +980,15 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="landscaping-job-2">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-4" role="option">Large Rockery and Waterfeature <span className="job-date">(Oct 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-2" role="option">Pergola Sunbathing Platform <span className="job-date">(Nov 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-1" role="option">Concrete Base & Bike Anchor <span className="job-date">(Oct 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-8" role="option">Patch Repair Using Artificial Grass <span className="job-date">(Mar 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-4" role="option">Large Rockery and Waterfeature <span className="job-date">(Oct 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-7" role="option">Repaired and Restored a Garden Storage Unit <span className="job-date">(May 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-3" role="option">Fence Repairs <span className="job-date">(Jul 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-5" role="option">General Garden Maintenance <span className="job-date">(Jul 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-6" role="option">Returfing a Section of Lawn <span className="job-date">(Jul 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-9" role="option">Garden Office <span className="job-date">(May 2022)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -983,6 +1000,44 @@ export default function Home() {
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (1).webp" alt="Large Rockery and Waterfeature 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (2).webp" alt="Large Rockery and Waterfeature 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (3).webp" alt="Large Rockery and Waterfeature 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (4).webp" alt="Large Rockery and Waterfeature 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (5).webp" alt="Large Rockery and Waterfeature 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (6).webp" alt="Large Rockery and Waterfeature 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (7).webp" alt="Large Rockery and Waterfeature 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (8).webp" alt="Large Rockery and Waterfeature 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (9).webp" alt="Large Rockery and Waterfeature 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (10).webp" alt="Large Rockery and Waterfeature 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (11).webp" alt="Large Rockery and Waterfeature 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_rockery_waterfall (12).webp" alt="Large Rockery and Waterfeature 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-8">
+                                    <div className="gallery-text">
+                                        <p>Cut out and removed an "I WILL NOT GROW!!!" area of real grass and replaced with an artificial turf patch.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_artifical_turf (1).webp" alt="Patch Repair Using Artificial Grass 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_artifical_turf (2).webp" alt="Patch Repair Using Artificial Grass 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-7">
+                                    <div className="gallery-text">
+                                        <p>Deconstructed A tired storage unit, repaired rotten boards, preserved wood and reconstructed unit.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (1).webp" alt="Repaired and Restored a Garden Storage Unit 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (2).webp" alt="Repaired and Restored a Garden Storage Unit 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (3).webp" alt="Repaired and Restored a Garden Storage Unit 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (4).webp" alt="Repaired and Restored a Garden Storage Unit 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (5).webp" alt="Repaired and Restored a Garden Storage Unit 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (6).webp" alt="Repaired and Restored a Garden Storage Unit 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_storage shed (7).webp" alt="Repaired and Restored a Garden Storage Unit 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1037,6 +1092,47 @@ export default function Home() {
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_bike_lock_anchor_(3).webp" alt="Concrete Base & Bike Anchor 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_bike_lock_anchor_(4).webp" alt="Concrete Base & Bike Anchor 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_bike_lock_anchor_(5).webp" alt="Concrete Base & Bike Anchor 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-5">
+                                    <div className="gallery-text">
+                                        <p>Pruning and training creepers as well as refreshing glass of a lean to conservatory.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_outhouse_vines(1).webp" alt="General garden maintenance 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_outhouse_vines(2).webp" alt="General garden maintenance 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_outhouse_vines(3).webp" alt="General garden maintenance 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_outhouse_vines(4).webp" alt="General garden maintenance 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-6">
+                                    <div className="gallery-text">
+                                        <p>Removal Old weed strewn turf and neat installation of new turf.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_turf (1).webp" alt="Returfing a Section of Lawn 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_turf (2).webp" alt="Returfing a Section of Lawn 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_turf (3).webp" alt="Returfing a Section of Lawn 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-9">
+                                    <div className="gallery-text">
+                                        <p>Co-constructed a study base foundation and then built a garden office on top. From a kit rather than from scratch!</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_office_(1).webp" alt="Garden Office 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_office_(2).webp" alt="Garden Office 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_office_(3).webp" alt="Garden Office 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_office_(4).webp" alt="Garden Office 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_office_(5).webp" alt="Garden Office 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_office_(6).webp" alt="Garden Office 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src="/OneManAndAToolbox/images/gmp/gmp_garden_offices_(7).webp" alt="Garden Office 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
