@@ -5,7 +5,6 @@ const nextConfig = {
     images: {
         unoptimized: true
     },
-    // Remove assetPrefix and basePath for GitHub Pages
     assetPrefix: '/OneManAndAToolbox',
     basePath: '/OneManAndAToolbox'
 }
