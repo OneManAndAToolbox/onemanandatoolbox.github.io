@@ -1037,6 +1037,10 @@ section {
     display: inline;
 }
 
+.touch-device .contract-hint {
+    display: none;
+}
+
 .expand-hint i,
 .contract-hint i {
     font-size: 0.9em;
@@ -1130,40 +1134,64 @@ input#landscaping-radio:checked~.gallery-display .gallery-panel.landscaping {
 
 .lightbox-content {
     position: relative;
-    max-width: 95%;
-    max-height: 95%;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-.lightbox-image {
+.lightbox-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox-image-container {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox-image-container img {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 100%;
     object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
 }
 
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 3rem;
-    line-height: 1;
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(30, 30, 30, 0.6);
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    z-index: 2001;
-    padding: 10px;
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 2002;
 }
 
-.lightbox-close:hover {
-    color: #e74c3c;
-    transform: scale(1.1);
+.lightbox-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
 }
+
+
 
 /* Add zoom cursor only to expandable images */
 .carousel-slide img.is-expandable {
@@ -1481,4 +1509,51 @@ flex: 0 0 auto;
 right: 10px;
 bottom: 10px;
 }
+}
+
+/* Lightbox arrow and counter styles */
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 2002;
+}
+
+.lightbox-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-arrow.arrow-prev {
+    left: 20px;
+}
+
+.lightbox-arrow.arrow-next {
+    right: 20px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    z-index: 2002;
 }
