@@ -1,3 +1,3 @@
-:HL["/_next/static/chunks/35c38be128f00eb0.css","style"]
+:HL["/OneManAndAToolbox/_next/static/chunks/cbd496dc933e6616.css","style"]
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css","style"]
-0:{"buildId":"PKElVH9gmO7jVgekuHc3p","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"EvwRJgts95-avP5IpcBUX","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
