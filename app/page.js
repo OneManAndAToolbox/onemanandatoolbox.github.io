@@ -226,37 +226,9 @@ export default function Home() {
             setSelection(initialValue);
         };
 
-        const initExpandHints = () => {
-            const slides = document.querySelectorAll('.carousel-slide');
-            slides.forEach(slide => {
-                const img = slide.querySelector('img');
-                const hint = slide.querySelector('.expand-hint');
-                if (!img || !hint) return;
-
-                const checkAspectRatio = () => {
-                    const ratio = img.naturalWidth / img.naturalHeight;
-                    // ratio > 1.2 covers most landscape formats (3:2, 16:9)
-                    if (ratio < 1.2) {
-                        hint.style.display = 'flex';
-                        img.classList.add('is-expandable');
-                    } else {
-                        hint.style.display = 'none';
-                        img.classList.remove('is-expandable');
-                    }
-                };
-
-                if (img.complete) {
-                    checkAspectRatio();
-                } else {
-                    img.addEventListener('load', checkAspectRatio);
-                }
-            });
-        };
-
         customSelects.forEach(initCustomSelect);
         setCarouselBackgrounds();
         initCarouselArrows();
-        initExpandHints();
         forceCarouselReflow();
 
         const setActiveNav = (targetHash) => {
@@ -396,7 +368,7 @@ export default function Home() {
 
         // Attach click listener to document for delegation to images
         const handleImageClick = (e) => {
-            const clickedImg = e.target.closest('.carousel-slide img.is-expandable');
+            const clickedImg = e.target.closest('.carousel-slide img');
             if (clickedImg) {
                 const carouselTrack = clickedImg.closest('.carousel-track');
                 if (carouselTrack) {
@@ -562,7 +534,7 @@ export default function Home() {
                 </section>
 
                 <section id="gallery">
-                    <h2>Previous Work Gallery</h2>
+                    <h2>Previous Work Gallery <span className="title-hint"><i className="fas fa-search-plus"></i> (Touch to Expand)</span></h2>
                     <input type="radio" id="general-radio" name="gallery" defaultChecked style={{ display: 'none' }} />
                     <input type="radio" id="plumbing-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="decorating-radio" name="gallery" style={{ display: 'none' }} />
@@ -623,14 +595,14 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(1).webp`} alt="Day Bed Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(2).webp`} alt="Day Bed Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(3).webp`} alt="Day Bed Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(4).webp`} alt="Day Bed Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(5).webp`} alt="Day Bed Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(6).webp`} alt="Day Bed Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(7).webp`} alt="Day Bed Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(8).webp`} alt="Day Bed Construction 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(1).webp`} alt="Day Bed Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(2).webp`} alt="Day Bed Construction 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(3).webp`} alt="Day Bed Construction 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(4).webp`} alt="Day Bed Construction 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(5).webp`} alt="Day Bed Construction 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(6).webp`} alt="Day Bed Construction 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(7).webp`} alt="Day Bed Construction 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(8).webp`} alt="Day Bed Construction 8" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -640,9 +612,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_window_frosting(1).webp`} alt="Bathroom Window Frosting 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_window_frosting(2).webp`} alt="Bathroom Window Frosting 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_window_frosting(3).webp`} alt="Bathroom Window Frosting 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_window_frosting(1).webp`} alt="Bathroom Window Frosting 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_window_frosting(2).webp`} alt="Bathroom Window Frosting 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_window_frosting(3).webp`} alt="Bathroom Window Frosting 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -652,15 +624,15 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(1).webp`} alt="Ottoman Bed 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(2).webp`} alt="Ottoman Bed 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(3).webp`} alt="Ottoman Bed 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(4).webp`} alt="Ottoman Bed 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(5).webp`} alt="Ottoman Bed 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(6).webp`} alt="Ottoman Bed 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(7).webp`} alt="Ottoman Bed 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(8).webp`} alt="Ottoman Bed 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(9).webp`} alt="Ottoman Bed 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(1).webp`} alt="Ottoman Bed 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(2).webp`} alt="Ottoman Bed 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(3).webp`} alt="Ottoman Bed 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(4).webp`} alt="Ottoman Bed 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(5).webp`} alt="Ottoman Bed 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(6).webp`} alt="Ottoman Bed 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(7).webp`} alt="Ottoman Bed 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(8).webp`} alt="Ottoman Bed 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(9).webp`} alt="Ottoman Bed 9" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -670,7 +642,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wardrobe_flatpack(1).webp`} alt="Flat Pack Wardrobe Reconstruction" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wardrobe_flatpack(1).webp`} alt="Flat Pack Wardrobe Reconstruction" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -680,8 +652,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_mirror_hanging(1).webp`} alt="Hanging a Very Heavy Mirror 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_mirror_hanging(2).webp`} alt="Hanging a Very Heavy Mirror 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_mirror_hanging(1).webp`} alt="Hanging a Very Heavy Mirror 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_mirror_hanging(2).webp`} alt="Hanging a Very Heavy Mirror 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -691,7 +663,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_bbq.webp`} alt="Barbecue Assembly" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_bbq.webp`} alt="Barbecue Assembly" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -701,10 +673,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(1).webp`} alt="Surfboard Ding Repair 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(2).webp`} alt="Surfboard Ding Repair 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(3).webp`} alt="Surfboard Ding Repair 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(4).webp`} alt="Surfboard Ding Repair 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(1).webp`} alt="Surfboard Ding Repair 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(2).webp`} alt="Surfboard Ding Repair 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(3).webp`} alt="Surfboard Ding Repair 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(4).webp`} alt="Surfboard Ding Repair 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -714,12 +686,12 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(1).webp`} alt="Laid Vinyl Flooring 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(2).webp`} alt="Laid Vinyl Flooring 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(3).webp`} alt="Laid Vinyl Flooring 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(4).webp`} alt="Laid Vinyl Flooring 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(5).webp`} alt="Laid Vinyl Flooring 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(6).webp`} alt="Laid Vinyl Flooring 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(1).webp`} alt="Laid Vinyl Flooring 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(2).webp`} alt="Laid Vinyl Flooring 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(3).webp`} alt="Laid Vinyl Flooring 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(4).webp`} alt="Laid Vinyl Flooring 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(5).webp`} alt="Laid Vinyl Flooring 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(6).webp`} alt="Laid Vinyl Flooring 6" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -729,8 +701,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_blinds(1).webp`} alt="Blind Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_blinds(2).webp`} alt="Blind Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_blinds(1).webp`} alt="Blind Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_blinds(2).webp`} alt="Blind Installation 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -740,10 +712,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(1).webp`} alt="Letterbox Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(2).webp`} alt="Letterbox Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(3).webp`} alt="Letterbox Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(4).webp`} alt="Letterbox Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(1).webp`} alt="Letterbox Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(2).webp`} alt="Letterbox Installation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(3).webp`} alt="Letterbox Installation 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(4).webp`} alt="Letterbox Installation 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -753,7 +725,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wardrobe.webp`} alt="Flat Pack Wardrobe" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wardrobe.webp`} alt="Flat Pack Wardrobe" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -763,8 +735,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery(1).webp`} alt="Footstool Reupholstery 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery(2).webp`} alt="Footstool Reupholstery 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery(1).webp`} alt="Footstool Reupholstery 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery(2).webp`} alt="Footstool Reupholstery 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -791,10 +763,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(1).webp`} alt="Dual Flush Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(2).webp`} alt="Dual Flush Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(3).webp`} alt="Dual Flush Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(4).webp`} alt="Dual Flush Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(1).webp`} alt="Dual Flush Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(2).webp`} alt="Dual Flush Installation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(3).webp`} alt="Dual Flush Installation 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(4).webp`} alt="Dual Flush Installation 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -804,16 +776,16 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(1).webp`} alt="Washing Machine Waste Repair 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(2).webp`} alt="Washing Machine Waste Repair 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(3).webp`} alt="Washing Machine Waste Repair 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(4).webp`} alt="Washing Machine Waste Repair 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(5).webp`} alt="Washing Machine Waste Repair 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(6).webp`} alt="Washing Machine Waste Repair 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(7).webp`} alt="Washing Machine Waste Repair 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(8).webp`} alt="Washing Machine Waste Repair 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(9).webp`} alt="Washing Machine Waste Repair 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(10).webp`} alt="Washing Machine Waste Repair 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(1).webp`} alt="Washing Machine Waste Repair 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(2).webp`} alt="Washing Machine Waste Repair 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(3).webp`} alt="Washing Machine Waste Repair 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(4).webp`} alt="Washing Machine Waste Repair 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(5).webp`} alt="Washing Machine Waste Repair 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(6).webp`} alt="Washing Machine Waste Repair 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(7).webp`} alt="Washing Machine Waste Repair 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(8).webp`} alt="Washing Machine Waste Repair 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(9).webp`} alt="Washing Machine Waste Repair 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_washing_machine_waste(10).webp`} alt="Washing Machine Waste Repair 10" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -823,10 +795,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(1).webp`} alt="Toilet Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(2).webp`} alt="Toilet Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(3).webp`} alt="Toilet Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(4).webp`} alt="Toilet Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(1).webp`} alt="Toilet Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(2).webp`} alt="Toilet Installation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(3).webp`} alt="Toilet Installation 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_toilet_installation(4).webp`} alt="Toilet Installation 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -836,16 +808,16 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(1).webp`} alt="Sink Refresh 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(1.5).webp`} alt="Sink Refresh 1.5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(2).webp`} alt="Sink Refresh 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(3).webp`} alt="Sink Refresh 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(4).webp`} alt="Sink Refresh 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(5).webp`} alt="Sink Refresh 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(6).webp`} alt="Sink Refresh 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(7).webp`} alt="Sink Refresh 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(8).webp`} alt="Sink Refresh 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(9).webp`} alt="Sink Refresh 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(1).webp`} alt="Sink Refresh 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(1.5).webp`} alt="Sink Refresh 1.5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(2).webp`} alt="Sink Refresh 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(3).webp`} alt="Sink Refresh 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(4).webp`} alt="Sink Refresh 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(5).webp`} alt="Sink Refresh 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(6).webp`} alt="Sink Refresh 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(7).webp`} alt="Sink Refresh 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(8).webp`} alt="Sink Refresh 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_bathroom_sink(9).webp`} alt="Sink Refresh 9" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -855,10 +827,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(1).webp`} alt="Dual Flush Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(2).webp`} alt="Dual Flush Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(3).webp`} alt="Dual Flush Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(4).webp`} alt="Dual Flush Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(1).webp`} alt="Dual Flush Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(2).webp`} alt="Dual Flush Installation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(3).webp`} alt="Dual Flush Installation 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/p/p_dual_flush(4).webp`} alt="Dual Flush Installation 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -884,7 +856,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_staircase_walls.webp`} alt="Damp Seal and Wall Painting" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_staircase_walls.webp`} alt="Damp Seal and Wall Painting" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -894,15 +866,15 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(1).webp`} alt="Bathroom Redecoration 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(2).webp`} alt="Bathroom Redecoration 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(3).webp`} alt="Bathroom Redecoration 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(4).webp`} alt="Bathroom Redecoration 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(5).webp`} alt="Bathroom Redecoration 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(6).webp`} alt="Bathroom Redecoration 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(7).webp`} alt="Bathroom Redecoration 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(8).webp`} alt="Bathroom Redecoration 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(9).webp`} alt="Bathroom Redecoration 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(1).webp`} alt="Bathroom Redecoration 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(2).webp`} alt="Bathroom Redecoration 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(3).webp`} alt="Bathroom Redecoration 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(4).webp`} alt="Bathroom Redecoration 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(5).webp`} alt="Bathroom Redecoration 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(6).webp`} alt="Bathroom Redecoration 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(7).webp`} alt="Bathroom Redecoration 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(8).webp`} alt="Bathroom Redecoration 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_bathroom_paint(9).webp`} alt="Bathroom Redecoration 9" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -912,13 +884,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(1).webp`} alt="Redecorated a Cubicle Toilet 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(2).webp`} alt="Redecorated a Cubicle Toilet 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(3).webp`} alt="Redecorated a Cubicle Toilet 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(4).webp`} alt="Redecorated a Cubicle Toilet 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(5).webp`} alt="Redecorated a Cubicle Toilet 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(6).webp`} alt="Redecorated a Cubicle Toilet 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(7).webp`} alt="Redecorated a Cubicle Toilet 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(1).webp`} alt="Redecorated a Cubicle Toilet 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(2).webp`} alt="Redecorated a Cubicle Toilet 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(3).webp`} alt="Redecorated a Cubicle Toilet 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(4).webp`} alt="Redecorated a Cubicle Toilet 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(5).webp`} alt="Redecorated a Cubicle Toilet 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(6).webp`} alt="Redecorated a Cubicle Toilet 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_toilet_redecoration(7).webp`} alt="Redecorated a Cubicle Toilet 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -928,7 +900,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_windowsills.webp`} alt="Exterior Window Sills" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_windowsills.webp`} alt="Exterior Window Sills" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -974,10 +946,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(1).webp`} alt="Robot Vacuum Ramp 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(2).webp`} alt="Robot Vacuum Ramp 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(3).webp`} alt="Robot Vacuum Ramp 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(4).webp`} alt="Robot Vacuum Ramp 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(1).webp`} alt="Robot Vacuum Ramp 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(2).webp`} alt="Robot Vacuum Ramp 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(3).webp`} alt="Robot Vacuum Ramp 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_robovac_ramp(4).webp`} alt="Robot Vacuum Ramp 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -987,13 +959,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(1).webp`} alt="Herb Planters 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(2).webp`} alt="Herb Planters 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(3).webp`} alt="Herb Planters 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(4).webp`} alt="Herb Planters 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(5).webp`} alt="Herb Planters 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(6).webp`} alt="Herb Planters 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(7).webp`} alt="Herb Planters 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(1).webp`} alt="Herb Planters 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(2).webp`} alt="Herb Planters 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(3).webp`} alt="Herb Planters 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(4).webp`} alt="Herb Planters 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(5).webp`} alt="Herb Planters 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(6).webp`} alt="Herb Planters 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_herb_planters(7).webp`} alt="Herb Planters 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1003,14 +975,14 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(1).webp`} alt="Upcycling Blanket Chest 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(2).webp`} alt="Upcycling Blanket Chest 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(3).webp`} alt="Upcycling Blanket Chest 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(4).webp`} alt="Upcycling Blanket Chest 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(5).webp`} alt="Upcycling Blanket Chest 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(6).webp`} alt="Upcycling Blanket Chest 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(7).webp`} alt="Upcycling Blanket Chest 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(8).webp`} alt="Upcycling Blanket Chest 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(1).webp`} alt="Upcycling Blanket Chest 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(2).webp`} alt="Upcycling Blanket Chest 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(3).webp`} alt="Upcycling Blanket Chest 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(4).webp`} alt="Upcycling Blanket Chest 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(5).webp`} alt="Upcycling Blanket Chest 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(6).webp`} alt="Upcycling Blanket Chest 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(7).webp`} alt="Upcycling Blanket Chest 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_upcycling_chest(8).webp`} alt="Upcycling Blanket Chest 8" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1020,10 +992,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(1).webp`} alt="Teak Furniture Restoration 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(2).webp`} alt="Teak Furniture Restoration 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(3).webp`} alt="Teak Furniture Restoration 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(4).webp`} alt="Teak Furniture Restoration 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(1).webp`} alt="Teak Furniture Restoration 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(2).webp`} alt="Teak Furniture Restoration 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(3).webp`} alt="Teak Furniture Restoration 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_teak_furniture_restoral(4).webp`} alt="Teak Furniture Restoration 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1033,7 +1005,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_door_planing.webp`} alt="Door Planing" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_door_planing.webp`} alt="Door Planing" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1043,13 +1015,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(1).webp`} alt="Woodshed Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(2).webp`} alt="Woodshed Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(3).webp`} alt="Woodshed Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(4).webp`} alt="Woodshed Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(5).webp`} alt="Woodshed Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(6).webp`} alt="Woodshed Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(7).webp`} alt="Woodshed Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(1).webp`} alt="Woodshed Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(2).webp`} alt="Woodshed Construction 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(3).webp`} alt="Woodshed Construction 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(4).webp`} alt="Woodshed Construction 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(5).webp`} alt="Woodshed Construction 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(6).webp`} alt="Woodshed Construction 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_woodshed(7).webp`} alt="Woodshed Construction 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1059,10 +1031,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(1).webp`} alt="Outdoor Table Rebuild 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(2).webp`} alt="Outdoor Table Rebuild 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(3).webp`} alt="Outdoor Table Rebuild 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(4).webp`} alt="Outdoor Table Rebuild 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(1).webp`} alt="Outdoor Table Rebuild 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(2).webp`} alt="Outdoor Table Rebuild 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(3).webp`} alt="Outdoor Table Rebuild 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(4).webp`} alt="Outdoor Table Rebuild 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1072,10 +1044,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(1).webp`} alt="Backdoor Lock and Bolt 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(2).webp`} alt="Backdoor Lock and Bolt 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(3).webp`} alt="Backdoor Lock and Bolt 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(4).webp`} alt="Backdoor Lock and Bolt 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(1).webp`} alt="Backdoor Lock and Bolt 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(2).webp`} alt="Backdoor Lock and Bolt 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(3).webp`} alt="Backdoor Lock and Bolt 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(4).webp`} alt="Backdoor Lock and Bolt 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1085,7 +1057,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_midsleeper.webp`} alt="Midsleeper Bed" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_midsleeper.webp`} alt="Midsleeper Bed" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1095,8 +1067,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_lego_table(1).webp`} alt="Lego Table 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_lego_table(2).webp`} alt="Lego Table 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_lego_table(1).webp`} alt="Lego Table 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_lego_table(2).webp`} alt="Lego Table 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1106,8 +1078,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(1).webp`} alt="Birdbox Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(2).webp`} alt="Birdbox Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(1).webp`} alt="Birdbox Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(2).webp`} alt="Birdbox Construction 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1117,20 +1089,20 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(1).webp`} alt="Desk Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(2).webp`} alt="Desk Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(3).webp`} alt="Desk Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(4).webp`} alt="Desk Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(5).webp`} alt="Desk Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(6).webp`} alt="Desk Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(7).webp`} alt="Desk Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(8).webp`} alt="Desk Construction 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(9).webp`} alt="Desk Construction 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(10).webp`} alt="Desk Construction 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(11).webp`} alt="Desk Construction 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(12).webp`} alt="Desk Construction 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(13).webp`} alt="Desk Construction 13" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(14).webp`} alt="Desk Construction 14" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(1).webp`} alt="Desk Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(2).webp`} alt="Desk Construction 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(3).webp`} alt="Desk Construction 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(4).webp`} alt="Desk Construction 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(5).webp`} alt="Desk Construction 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(6).webp`} alt="Desk Construction 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(7).webp`} alt="Desk Construction 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(8).webp`} alt="Desk Construction 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(9).webp`} alt="Desk Construction 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(10).webp`} alt="Desk Construction 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(11).webp`} alt="Desk Construction 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(12).webp`} alt="Desk Construction 12" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(13).webp`} alt="Desk Construction 13" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(14).webp`} alt="Desk Construction 14" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1140,8 +1112,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(1).webp`} alt="Coffee Tables Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(2).webp`} alt="Coffee Tables Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(1).webp`} alt="Coffee Tables Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(2).webp`} alt="Coffee Tables Construction 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1151,10 +1123,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(1).webp`} alt="Dining Chairs 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(2).webp`} alt="Dining Chairs 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(3).webp`} alt="Dining Chairs 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(4).webp`} alt="Dining Chairs 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(1).webp`} alt="Dining Chairs 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(2).webp`} alt="Dining Chairs 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(3).webp`} alt="Dining Chairs 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(4).webp`} alt="Dining Chairs 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1164,8 +1136,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toddler_cot(1).webp`} alt="Toddler Cot 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toddler_cot(2).webp`} alt="Toddler Cot 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toddler_cot(1).webp`} alt="Toddler Cot 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toddler_cot(2).webp`} alt="Toddler Cot 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1175,7 +1147,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_garden_bench.webp`} alt="Garden Bench" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_garden_bench.webp`} alt="Garden Bench" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1185,7 +1157,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ikea_shelving.webp`} alt="IKEA Kallax Shelving Unit" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ikea_shelving.webp`} alt="IKEA Kallax Shelving Unit" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1195,8 +1167,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(1).webp`} alt="Rustic Alcove Shelves 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(2).webp`} alt="Rustic Alcove Shelves 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(1).webp`} alt="Rustic Alcove Shelves 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(2).webp`} alt="Rustic Alcove Shelves 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1206,7 +1178,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_catflap.webp`} alt="Cat Flap" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_catflap.webp`} alt="Cat Flap" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1216,9 +1188,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(1).webp`} alt="Front Door Lock & Furniture 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(2).webp`} alt="Front Door Lock & Furniture 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(3).webp`} alt="Front Door Lock & Furniture 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(1).webp`} alt="Front Door Lock & Furniture 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(2).webp`} alt="Front Door Lock & Furniture 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(3).webp`} alt="Front Door Lock & Furniture 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1228,8 +1200,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wine_rack(1).webp`} alt="Wine Rack 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wine_rack(2).webp`} alt="Wine Rack 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wine_rack(1).webp`} alt="Wine Rack 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wine_rack(2).webp`} alt="Wine Rack 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1239,7 +1211,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_cot.webp`} alt="Baby Cot" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_cot.webp`} alt="Baby Cot" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1249,11 +1221,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1.5).webp`} alt="Bespoke Carving Board 1.5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(2).webp`} alt="Bespoke Carving Board 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(3).webp`} alt="Bespoke Carving Board 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(4).webp`} alt="Bespoke Carving Board 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1.5).webp`} alt="Bespoke Carving Board 1.5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(2).webp`} alt="Bespoke Carving Board 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(3).webp`} alt="Bespoke Carving Board 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(4).webp`} alt="Bespoke Carving Board 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1263,7 +1235,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_matching_stools.webp`} alt="Custom Built Chunky Stools" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_matching_stools.webp`} alt="Custom Built Chunky Stools" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1273,11 +1245,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1.5).webp`} alt="Bespoke Carving Board 1.5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(2).webp`} alt="Bespoke Carving Board 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(3).webp`} alt="Bespoke Carving Board 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(4).webp`} alt="Bespoke Carving Board 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1.5).webp`} alt="Bespoke Carving Board 1.5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(2).webp`} alt="Bespoke Carving Board 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(3).webp`} alt="Bespoke Carving Board 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(4).webp`} alt="Bespoke Carving Board 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1287,20 +1259,20 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(1).webp`} alt="Desk Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(2).webp`} alt="Desk Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(3).webp`} alt="Desk Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(4).webp`} alt="Desk Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(5).webp`} alt="Desk Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(6).webp`} alt="Desk Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(7).webp`} alt="Desk Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(8).webp`} alt="Desk Construction 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(9).webp`} alt="Desk Construction 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(10).webp`} alt="Desk Construction 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(11).webp`} alt="Desk Construction 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(12).webp`} alt="Desk Construction 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(13).webp`} alt="Desk Construction 13" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(14).webp`} alt="Desk Construction 14" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(1).webp`} alt="Desk Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(2).webp`} alt="Desk Construction 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(3).webp`} alt="Desk Construction 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(4).webp`} alt="Desk Construction 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(5).webp`} alt="Desk Construction 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(6).webp`} alt="Desk Construction 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(7).webp`} alt="Desk Construction 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(8).webp`} alt="Desk Construction 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(9).webp`} alt="Desk Construction 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(10).webp`} alt="Desk Construction 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(11).webp`} alt="Desk Construction 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(12).webp`} alt="Desk Construction 12" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(13).webp`} alt="Desk Construction 13" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(14).webp`} alt="Desk Construction 14" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1310,8 +1282,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(1).webp`} alt="Birdbox Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(2).webp`} alt="Birdbox Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(1).webp`} alt="Birdbox Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(2).webp`} alt="Birdbox Construction 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1321,8 +1293,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(1).webp`} alt="Coffee Tables Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(2).webp`} alt="Coffee Tables Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(1).webp`} alt="Coffee Tables Construction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(2).webp`} alt="Coffee Tables Construction 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1332,8 +1304,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(1).webp`} alt="Rustic Alcove Shelves 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(2).webp`} alt="Rustic Alcove Shelves 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(1).webp`} alt="Rustic Alcove Shelves 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(2).webp`} alt="Rustic Alcove Shelves 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1367,7 +1339,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_lounge_ceiling_lights.webp`} alt="LED Downlight Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_lounge_ceiling_lights.webp`} alt="LED Downlight Installation" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1377,14 +1349,14 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(1).webp`} alt="Dangerous Socket Removal 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(2).webp`} alt="Dangerous Socket Removal 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(3).webp`} alt="Dangerous Socket Removal 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(4).webp`} alt="Dangerous Socket Removal 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(5).webp`} alt="Dangerous Socket Removal 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(6).webp`} alt="Dangerous Socket Removal 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(7).webp`} alt="Dangerous Socket Removal 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(8).webp`} alt="Dangerous Socket Removal 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(1).webp`} alt="Dangerous Socket Removal 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(2).webp`} alt="Dangerous Socket Removal 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(3).webp`} alt="Dangerous Socket Removal 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(4).webp`} alt="Dangerous Socket Removal 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(5).webp`} alt="Dangerous Socket Removal 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(6).webp`} alt="Dangerous Socket Removal 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(7).webp`} alt="Dangerous Socket Removal 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(8).webp`} alt="Dangerous Socket Removal 8" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1394,7 +1366,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_socket_installation.webp`} alt="Electrical Socket Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_socket_installation.webp`} alt="Electrical Socket Installation" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1404,13 +1376,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(1).webp`} alt="Shed Downlights Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(2).webp`} alt="Shed Downlights Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(3).webp`} alt="Shed Downlights Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(4).webp`} alt="Shed Downlights Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(5).webp`} alt="Shed Downlights Installation 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(6).webp`} alt="Shed Downlights Installation 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(7).webp`} alt="Shed Downlights Installation 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(1).webp`} alt="Shed Downlights Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(2).webp`} alt="Shed Downlights Installation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(3).webp`} alt="Shed Downlights Installation 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(4).webp`} alt="Shed Downlights Installation 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(5).webp`} alt="Shed Downlights Installation 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(6).webp`} alt="Shed Downlights Installation 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_shed_downlights(7).webp`} alt="Shed Downlights Installation 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1420,7 +1392,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_ceiling_light.webp`} alt="Ceiling Light Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_ceiling_light.webp`} alt="Ceiling Light Installation" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1430,10 +1402,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(1).webp`} alt="Downlight Upgrades 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(2).webp`} alt="Downlight Upgrades 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(3).webp`} alt="Downlight Upgrades 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(4).webp`} alt="Downlight Upgrades 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(1).webp`} alt="Downlight Upgrades 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(2).webp`} alt="Downlight Upgrades 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(3).webp`} alt="Downlight Upgrades 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_downlight_upgrades(4).webp`} alt="Downlight Upgrades 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1443,7 +1415,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_sander_rewire.webp`} alt="Electric Sander Repair" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_sander_rewire.webp`} alt="Electric Sander Repair" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1453,7 +1425,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_smart_underfloor.webp`} alt="Smart Underfloor Heating Thermostat" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_smart_underfloor.webp`} alt="Smart Underfloor Heating Thermostat" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1463,9 +1435,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_outdoor_socket(1).webp`} alt="Outdoor Socket Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_outdoor_socket(2).webp`} alt="Outdoor Socket Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_outdoor_socket(3).webp`} alt="Outdoor Socket Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_outdoor_socket(1).webp`} alt="Outdoor Socket Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_outdoor_socket(2).webp`} alt="Outdoor Socket Installation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_outdoor_socket(3).webp`} alt="Outdoor Socket Installation 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1475,7 +1447,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_smart_heating_controls.webp`} alt="Smart Heating Controls Installation" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_smart_heating_controls.webp`} alt="Smart Heating Controls Installation" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1485,8 +1457,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(1).webp`} alt="Dimmer Switch Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(2).webp`} alt="Dimmer Switch Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(1).webp`} alt="Dimmer Switch Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(2).webp`} alt="Dimmer Switch Installation 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1535,18 +1507,18 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(1).webp`} alt="Large Rockery and Waterfeature 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(2).webp`} alt="Large Rockery and Waterfeature 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(3).webp`} alt="Large Rockery and Waterfeature 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(4).webp`} alt="Large Rockery and Waterfeature 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(5).webp`} alt="Large Rockery and Waterfeature 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(6).webp`} alt="Large Rockery and Waterfeature 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(7).webp`} alt="Large Rockery and Waterfeature 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(8).webp`} alt="Large Rockery and Waterfeature 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(9).webp`} alt="Large Rockery and Waterfeature 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(10).webp`} alt="Large Rockery and Waterfeature 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(11).webp`} alt="Large Rockery and Waterfeature 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(12).webp`} alt="Large Rockery and Waterfeature 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(1).webp`} alt="Large Rockery and Waterfeature 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(2).webp`} alt="Large Rockery and Waterfeature 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(3).webp`} alt="Large Rockery and Waterfeature 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(4).webp`} alt="Large Rockery and Waterfeature 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(5).webp`} alt="Large Rockery and Waterfeature 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(6).webp`} alt="Large Rockery and Waterfeature 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(7).webp`} alt="Large Rockery and Waterfeature 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(8).webp`} alt="Large Rockery and Waterfeature 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(9).webp`} alt="Large Rockery and Waterfeature 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(10).webp`} alt="Large Rockery and Waterfeature 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(11).webp`} alt="Large Rockery and Waterfeature 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(12).webp`} alt="Large Rockery and Waterfeature 12" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1556,8 +1528,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(1).webp`} alt="Patch Repair Using Artificial Grass 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(2).webp`} alt="Patch Repair Using Artificial Grass 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(1).webp`} alt="Patch Repair Using Artificial Grass 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(2).webp`} alt="Patch Repair Using Artificial Grass 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1567,10 +1539,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(1).webp`} alt="Weed Membrane and Slate Chippings 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(2).webp`} alt="Weed Membrane and Slate Chippings 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(3).webp`} alt="Weed Membrane and Slate Chippings 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(4).webp`} alt="Weed Membrane and Slate Chippings 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(1).webp`} alt="Weed Membrane and Slate Chippings 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(2).webp`} alt="Weed Membrane and Slate Chippings 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(3).webp`} alt="Weed Membrane and Slate Chippings 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(4).webp`} alt="Weed Membrane and Slate Chippings 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1580,13 +1552,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(1).webp`} alt="Repaired and Restored a Garden Storage Unit 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(2).webp`} alt="Repaired and Restored a Garden Storage Unit 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(3).webp`} alt="Repaired and Restored a Garden Storage Unit 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(4).webp`} alt="Repaired and Restored a Garden Storage Unit 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(5).webp`} alt="Repaired and Restored a Garden Storage Unit 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(6).webp`} alt="Repaired and Restored a Garden Storage Unit 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(7).webp`} alt="Repaired and Restored a Garden Storage Unit 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(1).webp`} alt="Repaired and Restored a Garden Storage Unit 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(2).webp`} alt="Repaired and Restored a Garden Storage Unit 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(3).webp`} alt="Repaired and Restored a Garden Storage Unit 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(4).webp`} alt="Repaired and Restored a Garden Storage Unit 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(5).webp`} alt="Repaired and Restored a Garden Storage Unit 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(6).webp`} alt="Repaired and Restored a Garden Storage Unit 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_storage_shed(7).webp`} alt="Repaired and Restored a Garden Storage Unit 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1596,13 +1568,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(1).webp`} alt="Re-flashing and Felting Brick Shed Roof 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(2).webp`} alt="Re-flashing and Felting Brick Shed Roof 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(3).webp`} alt="Re-flashing and Felting Brick Shed Roof 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(4).webp`} alt="Re-flashing and Felting Brick Shed Roof 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(5).webp`} alt="Re-flashing and Felting Brick Shed Roof 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(6).webp`} alt="Re-flashing and Felting Brick Shed Roof 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(7).webp`} alt="Re-flashing and Felting Brick Shed Roof 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(1).webp`} alt="Re-flashing and Felting Brick Shed Roof 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(2).webp`} alt="Re-flashing and Felting Brick Shed Roof 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(3).webp`} alt="Re-flashing and Felting Brick Shed Roof 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(4).webp`} alt="Re-flashing and Felting Brick Shed Roof 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(5).webp`} alt="Re-flashing and Felting Brick Shed Roof 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(6).webp`} alt="Re-flashing and Felting Brick Shed Roof 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brick_shed_roof(7).webp`} alt="Re-flashing and Felting Brick Shed Roof 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1612,11 +1584,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(1).webp`} alt="Bike Shed Reroof 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(2).webp`} alt="Bike Shed Reroof 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(3).webp`} alt="Bike Shed Reroof 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(4).webp`} alt="Bike Shed Reroof 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(5).webp`} alt="Bike Shed Reroof 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(1).webp`} alt="Bike Shed Reroof 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(2).webp`} alt="Bike Shed Reroof 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(3).webp`} alt="Bike Shed Reroof 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(4).webp`} alt="Bike Shed Reroof 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_reroof(5).webp`} alt="Bike Shed Reroof 5" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1626,11 +1598,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(0.5).webp`} alt="Bike Shed and Trellis 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(1).webp`} alt="Bike Shed and Trellis 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(2).webp`} alt="Bike Shed and Trellis 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(3).webp`} alt="Bike Shed and Trellis 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(4).webp`} alt="Bike Shed and Trellis 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(0.5).webp`} alt="Bike Shed and Trellis 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(1).webp`} alt="Bike Shed and Trellis 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(2).webp`} alt="Bike Shed and Trellis 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(3).webp`} alt="Bike Shed and Trellis 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_shed_trellis(4).webp`} alt="Bike Shed and Trellis 5" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1640,10 +1612,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(1).webp`} alt="Patch Repairs on Decking 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(2).webp`} alt="Patch Repairs on Decking 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(3).webp`} alt="Patch Repairs on Decking 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(4).webp`} alt="Patch Repairs on Decking 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(1).webp`} alt="Patch Repairs on Decking 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(2).webp`} alt="Patch Repairs on Decking 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(3).webp`} alt="Patch Repairs on Decking 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_patch_repairs(4).webp`} alt="Patch Repairs on Decking 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1653,17 +1625,17 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(1).webp`} alt="Garden Pond 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(2).webp`} alt="Garden Pond 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(3).webp`} alt="Garden Pond 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(4).webp`} alt="Garden Pond 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(5).webp`} alt="Garden Pond 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(6).webp`} alt="Garden Pond 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(7).webp`} alt="Garden Pond 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(8).webp`} alt="Garden Pond 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(9).webp`} alt="Garden Pond 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(10).webp`} alt="Garden Pond 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(11).webp`} alt="Garden Pond 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(1).webp`} alt="Garden Pond 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(2).webp`} alt="Garden Pond 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(3).webp`} alt="Garden Pond 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(4).webp`} alt="Garden Pond 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(5).webp`} alt="Garden Pond 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(6).webp`} alt="Garden Pond 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(7).webp`} alt="Garden Pond 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(8).webp`} alt="Garden Pond 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(9).webp`} alt="Garden Pond 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(10).webp`} alt="Garden Pond 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pond(11).webp`} alt="Garden Pond 11" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1673,10 +1645,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(1).webp`} alt="Fence Repairs 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(2).webp`} alt="Fence Repairs 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(3).webp`} alt="Fence Repairs 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(4).webp`} alt="Fence Repairs 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(1).webp`} alt="Fence Repairs 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(2).webp`} alt="Fence Repairs 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(3).webp`} alt="Fence Repairs 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(4).webp`} alt="Fence Repairs 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1686,23 +1658,23 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(1).webp`} alt="Pergola Sunbathing Platform 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(2).webp`} alt="Pergola Sunbathing Platform 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(3).webp`} alt="Pergola Sunbathing Platform 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(4).webp`} alt="Pergola Sunbathing Platform 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(5).webp`} alt="Pergola Sunbathing Platform 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(6).webp`} alt="Pergola Sunbathing Platform 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(7).webp`} alt="Pergola Sunbathing Platform 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(8).webp`} alt="Pergola Sunbathing Platform 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(9).webp`} alt="Pergola Sunbathing Platform 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(10).webp`} alt="Pergola Sunbathing Platform 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(11).webp`} alt="Pergola Sunbathing Platform 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(12).webp`} alt="Pergola Sunbathing Platform 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(13).webp`} alt="Pergola Sunbathing Platform 13" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(14).webp`} alt="Pergola Sunbathing Platform 14" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(15).webp`} alt="Pergola Sunbathing Platform 15" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(16).webp`} alt="Pergola Sunbathing Platform 16" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(17).webp`} alt="Pergola Sunbathing Platform 17" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(1).webp`} alt="Pergola Sunbathing Platform 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(2).webp`} alt="Pergola Sunbathing Platform 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(3).webp`} alt="Pergola Sunbathing Platform 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(4).webp`} alt="Pergola Sunbathing Platform 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(5).webp`} alt="Pergola Sunbathing Platform 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(6).webp`} alt="Pergola Sunbathing Platform 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(7).webp`} alt="Pergola Sunbathing Platform 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(8).webp`} alt="Pergola Sunbathing Platform 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(9).webp`} alt="Pergola Sunbathing Platform 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(10).webp`} alt="Pergola Sunbathing Platform 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(11).webp`} alt="Pergola Sunbathing Platform 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(12).webp`} alt="Pergola Sunbathing Platform 12" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(13).webp`} alt="Pergola Sunbathing Platform 13" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(14).webp`} alt="Pergola Sunbathing Platform 14" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(15).webp`} alt="Pergola Sunbathing Platform 15" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(16).webp`} alt="Pergola Sunbathing Platform 16" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(17).webp`} alt="Pergola Sunbathing Platform 17" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1712,9 +1684,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(1).webp`} alt="Cleaning and Oiling Decking 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(2).webp`} alt="Cleaning and Oiling Decking 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(3).webp`} alt="Cleaning and Oiling Decking 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(1).webp`} alt="Cleaning and Oiling Decking 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(2).webp`} alt="Cleaning and Oiling Decking 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(3).webp`} alt="Cleaning and Oiling Decking 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1724,10 +1696,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(1).webp`} alt="Wooden Planter Fascia 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(2).webp`} alt="Wooden Planter Fascia 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(3).webp`} alt="Wooden Planter Fascia 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(4).webp`} alt="Wooden Planter Fascia 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(1).webp`} alt="Wooden Planter Fascia 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(2).webp`} alt="Wooden Planter Fascia 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(3).webp`} alt="Wooden Planter Fascia 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(4).webp`} alt="Wooden Planter Fascia 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1737,12 +1709,12 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(1).webp`} alt="Concrete Base & Bike Anchor 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2).webp`} alt="Concrete Base & Bike Anchor 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2.5).webp`} alt="Concrete Base & Bike Anchor 2.5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(3).webp`} alt="Concrete Base & Bike Anchor 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(4).webp`} alt="Concrete Base & Bike Anchor 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(5).webp`} alt="Concrete Base & Bike Anchor 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(1).webp`} alt="Concrete Base & Bike Anchor 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2).webp`} alt="Concrete Base & Bike Anchor 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2.5).webp`} alt="Concrete Base & Bike Anchor 2.5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(3).webp`} alt="Concrete Base & Bike Anchor 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(4).webp`} alt="Concrete Base & Bike Anchor 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(5).webp`} alt="Concrete Base & Bike Anchor 5" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1752,10 +1724,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(1).webp`} alt="General garden maintenance 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(2).webp`} alt="General garden maintenance 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(3).webp`} alt="General garden maintenance 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(4).webp`} alt="General garden maintenance 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(1).webp`} alt="General garden maintenance 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(2).webp`} alt="General garden maintenance 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(3).webp`} alt="General garden maintenance 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outhouse_vines(4).webp`} alt="General garden maintenance 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1765,9 +1737,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_turf(1).webp`} alt="Returfing a Section of Lawn 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_turf(2).webp`} alt="Returfing a Section of Lawn 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_turf(3).webp`} alt="Returfing a Section of Lawn 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_turf(1).webp`} alt="Returfing a Section of Lawn 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_turf(2).webp`} alt="Returfing a Section of Lawn 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_turf(3).webp`} alt="Returfing a Section of Lawn 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1777,13 +1749,13 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(1).webp`} alt="Garden Office 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(2).webp`} alt="Garden Office 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(3).webp`} alt="Garden Office 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(4).webp`} alt="Garden Office 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(5).webp`} alt="Garden Office 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(6).webp`} alt="Garden Office 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(7).webp`} alt="Garden Office 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(1).webp`} alt="Garden Office 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(2).webp`} alt="Garden Office 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(3).webp`} alt="Garden Office 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(4).webp`} alt="Garden Office 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(5).webp`} alt="Garden Office 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(6).webp`} alt="Garden Office 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_office(7).webp`} alt="Garden Office 7" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1793,8 +1765,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outdoor_furnture(1).webp`} alt="Outdoor Furniture Building 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outdoor_furnture(2).webp`} alt="Outdoor Furniture Building 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outdoor_furnture(1).webp`} alt="Outdoor Furniture Building 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_outdoor_furnture(2).webp`} alt="Outdoor Furniture Building 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1804,11 +1776,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(1).webp`} alt="Installation of Garden Trellis 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(2).webp`} alt="Installation of Garden Trellis 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(3).webp`} alt="Installation of Garden Trellis 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(4).webp`} alt="Installation of Garden Trellis 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(5).webp`} alt="Installation of Garden Trellis 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(1).webp`} alt="Installation of Garden Trellis 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(2).webp`} alt="Installation of Garden Trellis 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(3).webp`} alt="Installation of Garden Trellis 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(4).webp`} alt="Installation of Garden Trellis 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_trellis(5).webp`} alt="Installation of Garden Trellis 5" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1818,11 +1790,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(1).webp`} alt="Installation of Decking Step 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(2).webp`} alt="Installation of Decking Step 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(3).webp`} alt="Installation of Decking Step 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(4).webp`} alt="Installation of Decking Step 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(5).webp`} alt="Installation of Decking Step 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(1).webp`} alt="Installation of Decking Step 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(2).webp`} alt="Installation of Decking Step 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(3).webp`} alt="Installation of Decking Step 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(4).webp`} alt="Installation of Decking Step 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_step(5).webp`} alt="Installation of Decking Step 5" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1832,9 +1804,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_general_garden_clearance(1).webp`} alt="General Garden Clearance 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_general_garden_clearance(2).webp`} alt="General Garden Clearance 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_general_garden_clearance(3).webp`} alt="General Garden Clearance 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_general_garden_clearance(1).webp`} alt="General Garden Clearance 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_general_garden_clearance(2).webp`} alt="General Garden Clearance 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_general_garden_clearance(3).webp`} alt="General Garden Clearance 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1844,16 +1816,16 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(1).webp`} alt="Installation of a Decking Path 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(2).webp`} alt="Installation of a Decking Path 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(3).webp`} alt="Installation of a Decking Path 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(4).webp`} alt="Installation of a Decking Path 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(5).webp`} alt="Installation of a Decking Path 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(6).webp`} alt="Installation of a Decking Path 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(7).webp`} alt="Installation of a Decking Path 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(8).webp`} alt="Installation of a Decking Path 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(9).webp`} alt="Installation of a Decking Path 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(10).webp`} alt="Installation of a Decking Path 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(1).webp`} alt="Installation of a Decking Path 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(2).webp`} alt="Installation of a Decking Path 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(3).webp`} alt="Installation of a Decking Path 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(4).webp`} alt="Installation of a Decking Path 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(5).webp`} alt="Installation of a Decking Path 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(6).webp`} alt="Installation of a Decking Path 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(7).webp`} alt="Installation of a Decking Path 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(8).webp`} alt="Installation of a Decking Path 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(9).webp`} alt="Installation of a Decking Path 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_garden_decking_path(10).webp`} alt="Installation of a Decking Path 10" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1863,10 +1835,10 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(1).webp`} alt="Fencepost Repairs 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(2).webp`} alt="Fencepost Repairs 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(3).webp`} alt="Fencepost Repairs 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(4).webp`} alt="Fencepost Repairs 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(1).webp`} alt="Fencepost Repairs 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(2).webp`} alt="Fencepost Repairs 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(3).webp`} alt="Fencepost Repairs 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencepost_repairs(4).webp`} alt="Fencepost Repairs 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1876,11 +1848,11 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(1).webp`} alt="Dismantling of Brick Wall 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(2).webp`} alt="Dismantling of Brick Wall 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(3).webp`} alt="Dismantling of Brick Wall 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(4).webp`} alt="Dismantling of Brick Wall 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(5).webp`} alt="Dismantling of Brick Wall 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(1).webp`} alt="Dismantling of Brick Wall 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(2).webp`} alt="Dismantling of Brick Wall 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(3).webp`} alt="Dismantling of Brick Wall 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(4).webp`} alt="Dismantling of Brick Wall 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_brickwall_removal(5).webp`} alt="Dismantling of Brick Wall 5" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1890,7 +1862,7 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_grave_maintenance.webp`} alt="Grave Maintenance 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_grave_maintenance.webp`} alt="Grave Maintenance 1" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1900,8 +1872,8 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_shed_paint(1).webp`} alt="Garden Shed Upgrade to Beach Hut Style 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_shed_paint(2).webp`} alt="Garden Shed Upgrade to Beach Hut Style 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_shed_paint(1).webp`} alt="Garden Shed Upgrade to Beach Hut Style 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_shed_paint(2).webp`} alt="Garden Shed Upgrade to Beach Hut Style 2" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1911,9 +1883,9 @@ export default function Home() {
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_full_garden_job(1).webp`} alt="Full Garden Renovation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_full_garden_job(1.5).webp`} alt="Full Garden Renovation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_full_garden_job(2).webp`} alt="Full Garden Renovation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_full_garden_job(1).webp`} alt="Full Garden Renovation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_full_garden_job(1.5).webp`} alt="Full Garden Renovation 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_full_garden_job(2).webp`} alt="Full Garden Renovation 3" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -2053,7 +2025,6 @@ export default function Home() {
 
             <div id="lightbox" className="lightbox" aria-hidden="true">
                 <div className="lightbox-content"></div>
-                <span className="contract-hint"><i className="fas fa-compress-arrows-alt"></i> <span className="hint-touch">Touch</span><span className="hint-click">Click</span> to Close</span>
                 <button type="button" className="lightbox-arrow arrow-prev" aria-label="Previous image">‹</button>
                 <button type="button" className="lightbox-arrow arrow-next" aria-label="Next image">›</button>
                 <div className="lightbox-counter"></div>
