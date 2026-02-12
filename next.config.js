@@ -5,8 +5,7 @@ const nextConfig = {
     images: {
         unoptimized: true
     },
-    assetPrefix: '/OneManAndAToolbox',
-    basePath: '/OneManAndAToolbox'
+    // REMOVE basePath and assetPrefix for a .github.io repo
 }
 
 module.exports = nextConfig
