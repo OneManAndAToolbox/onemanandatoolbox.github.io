@@ -2,6 +2,9 @@
 
 import { useEffect } from 'react';
 
+// Base path for GitHub Pages deployment
+const basePath = '';
+
 
 export default function Home() {
     useEffect(() => {
