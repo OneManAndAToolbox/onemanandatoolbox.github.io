@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 // Base path for GitHub Pages deployment
-const basePath = '';
+const basePath = '/OneManAndAToolbox';
 
 
 export default function Home() {
