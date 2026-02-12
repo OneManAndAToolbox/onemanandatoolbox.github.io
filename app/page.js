@@ -601,14 +601,39 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="general-job-1">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-7" role="option">Day Bed Construction <span className="job-date">(Sep 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-1" role="option">Frosting of Bathroom Windows <span className="job-date">(Mar 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-9" role="option">Ottoman Bed <span className="job-date">(Nov 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-8" role="option">Flat Pack Wardrobe Reconstruction <span className="job-date">(Nov 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-2" role="option">Hanging a Very Heavy Mirror <span className="job-date">(Nov 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-12" role="option">Barbecue Assembly <span className="job-date">(Dec 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-11" role="option">Surfboard Ding Repair <span className="job-date">(May 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-4" role="option">Laid Vinyl Flooring <span className="job-date">(Jan 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-5" role="option">Blind Installation <span className="job-date">(Mar 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-10" role="option">Letterbox Installation <span className="job-date">(Mar 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-6" role="option">Flat Pack Wardrobe <span className="job-date">(Mar 2021)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-3" role="option">Footstool Reupholstery <span className="job-date">(Jul 2014)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="job-panels-container">
+                                <div className="job-panel" data-job="general-job-7">
+                                    <div className="gallery-text">
+                                        <p>I'd love to claim that I designed it, but I just put it together!</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(1).webp`} alt="Day Bed Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(2).webp`} alt="Day Bed Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(3).webp`} alt="Day Bed Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(4).webp`} alt="Day Bed Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(5).webp`} alt="Day Bed Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(6).webp`} alt="Day Bed Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(7).webp`} alt="Day Bed Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_daybed(8).webp`} alt="Day Bed Construction 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="job-panel" data-job="general-job-1">
                                     <div className="gallery-text">
                                         <p>Fitted stained glass frosting to upper bathroom windows.</p>
@@ -621,6 +646,34 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="job-panel" data-job="general-job-9">
+                                    <div className="gallery-text">
+                                        <p>I'd love to claim that I designed it, but I just put it together!</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(1).webp`} alt="Ottoman Bed 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(2).webp`} alt="Ottoman Bed 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(3).webp`} alt="Ottoman Bed 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(4).webp`} alt="Ottoman Bed 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(5).webp`} alt="Ottoman Bed 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(6).webp`} alt="Ottoman Bed 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(7).webp`} alt="Ottoman Bed 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(8).webp`} alt="Ottoman Bed 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ottoman(9).webp`} alt="Ottoman Bed 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-8">
+                                    <div className="gallery-text">
+                                        <p>Rebuilt a flat pack wardrobe in a tight space after a house move.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wardrobe_flatpack(1).webp`} alt="Flat Pack Wardrobe Reconstruction" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="job-panel" data-job="general-job-2">
                                     <div className="gallery-text">
                                         <p>Hanging a mirror where anything other than perfect symmetry to the left right and above and below would look terrible. As Austin Powers once said, I needed a "laser".</p>
@@ -629,6 +682,29 @@ export default function Home() {
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/grm/grm_mirror_hanging(1).webp`} alt="Hanging a Very Heavy Mirror 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/grm/grm_mirror_hanging(2).webp`} alt="Hanging a Very Heavy Mirror 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-12">
+                                    <div className="gallery-text">
+                                        <p>Put a large 4 burner barbecue together.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_bbq.webp`} alt="Barbecue Assembly" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-11">
+                                    <div className="gallery-text">
+                                        <p>Removed damage resin. Replaced with fresh resin to seal the board. Sanded to shape. Repainted.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(1).webp`} alt="Surfboard Ding Repair 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(2).webp`} alt="Surfboard Ding Repair 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(3).webp`} alt="Surfboard Ding Repair 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_surfboard(4).webp`} alt="Surfboard Ding Repair 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -644,6 +720,40 @@ export default function Home() {
                                             <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(4).webp`} alt="Laid Vinyl Flooring 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(5).webp`} alt="Laid Vinyl Flooring 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toilet_flooring(6).webp`} alt="Laid Vinyl Flooring 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-5">
+                                    <div className="gallery-text">
+                                        <p>Installed blackout roller blinds in 2 bedrooms.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_blinds(1).webp`} alt="Blind Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_blinds(2).webp`} alt="Blind Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-10">
+                                    <div className="gallery-text">
+                                        <p>Removed an old corroded letterbox. Installed a new one. Also installed an internal letterbox cover. Repainted area around it.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(1).webp`} alt="Letterbox Installation 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(2).webp`} alt="Letterbox Installation 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(3).webp`} alt="Letterbox Installation 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_letterbox(4).webp`} alt="Letterbox Installation 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="general-job-6">
+                                    <div className="gallery-text">
+                                        <p>Built a single mirror wardrobe.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wardrobe.webp`} alt="Flat Pack Wardrobe" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -763,6 +873,7 @@ export default function Home() {
                                         <li><button type="button" className="custom-select-option" data-value="decorating-job-3" role="option">Damp Seal and Wall Painting <span className="job-date">(Oct 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="decorating-job-4" role="option">Partially Redecorated a Bathroom <span className="job-date">(Aug 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="decorating-job-5" role="option">Redecorated a Cubicle Toilet <span className="job-date">(Mar 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="decorating-job-12" role="option">Exterior Window Sills <span className="job-date">(Jul 2019)</span></button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -811,6 +922,16 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="job-panel" data-job="decorating-job-12">
+                                    <div className="gallery-text">
+                                        <p>Sanded down, filled cracks and repainted.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/pd/pd_windowsills.webp`} alt="Exterior Window Sills" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -821,14 +942,26 @@ export default function Home() {
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-5" role="option">Construction of a Robot Vacuum Cleaner Ramp <span className="job-date">(Jan 2026)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-7" role="option">Construction of Herb Planters <span className="job-date">(Aug 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-8" role="option">Upcycling A Blanket Chest <span className="job-date">(Jul 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-24" role="option">Upcycling A Blanket Chest <span className="job-date">(Jul 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-6" role="option">Restoration of Teak Garden Furniture <span className="job-date">(Jul 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-8" role="option">Door Planing <span className="job-date">(Nov 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-2" role="option">Designed & Constructed a Waterproof Woodshed <span className="job-date">(Oct 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-1" role="option">Renovation of Outdoor Coffee Table <span className="job-date">(Sep 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-10" role="option">Built a Desk <span className="job-date">(Apr 2020)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-23" role="option">Backdoor Lock and Bolt <span className="job-date">(Feb 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-22" role="option">Midsleeper Bed <span className="job-date">(Nov 2020)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-21" role="option">Lego Table <span className="job-date">(Jul 2020)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-9" role="option">Built a Birdbox <span className="job-date">(May 2020)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-10" role="option">Built a Desk <span className="job-date">(Apr 2020)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-11" role="option">Built Two Coffee Tables <span className="job-date">(Apr 2018)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-20" role="option">Dining Chairs <span className="job-date">(Jan 2018)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-19" role="option">Toddler Cot <span className="job-date">(Oct 2016)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-18" role="option">Garden Bench <span className="job-date">(Sep 2016)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-16" role="option">IKEA Kallax Shelving Unit <span className="job-date">(Jul 2015)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-12" role="option">Rustic Alcove Shelves <span className="job-date">(Jul 2015)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-15" role="option">Cat Flap <span className="job-date">(Mar 2015)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-13" role="option">Front Door Lock & Furniture <span className="job-date">(Jan 2015)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-14" role="option">Wine Rack <span className="job-date">(Aug 2014)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="carpentry-job-17" role="option">Baby Cot <span className="job-date">(Apr 2014)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-4" role="option">Bespoke Carving Board <span className="job-date">(Dec 2013)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="carpentry-job-3" role="option">Custom Built Chunky Stools <span className="job-date">(Nov 2013)</span></button></li>
                                     </ul>
@@ -864,7 +997,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="carpentry-job-8">
+                                <div className="job-panel" data-job="carpentry-job-24">
                                     <div className="gallery-text">
                                         <p>Lined and waterproofed (using shed felt) an old blanket chest to be used as outdoor storage for cushions.</p>
                                     </div>
@@ -894,6 +1027,16 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="job-panel" data-job="carpentry-job-8">
+                                    <div className="gallery-text">
+                                        <p>Unjamming Doors using an Electric Plane to shave off a smooth finish.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_door_planing.webp`} alt="Door Planing" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="job-panel" data-job="carpentry-job-2">
                                     <div className="gallery-text">
                                         <p>Designed and constructed a waterproof woodshed out of upcycled materials. Hinged front doors from an old kitchen cabinet and a felt roof.</p>
@@ -920,6 +1063,197 @@ export default function Home() {
                                             <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(2).webp`} alt="Outdoor Table Rebuild 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(3).webp`} alt="Outdoor Table Rebuild 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/cw/cw_outdoor_table_rebuild(4).webp`} alt="Outdoor Table Rebuild 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-23">
+                                    <div className="gallery-text">
+                                        <p>Installed a new secure mortice lock on a garden door. Also installed a high bolt.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(1).webp`} alt="Backdoor Lock and Bolt 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(2).webp`} alt="Backdoor Lock and Bolt 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(3).webp`} alt="Backdoor Lock and Bolt 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_backdoor_lock(4).webp`} alt="Backdoor Lock and Bolt 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-22">
+                                    <div className="gallery-text">
+                                        <p>Assembled a midsleeper bed.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_midsleeper.webp`} alt="Midsleeper Bed" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-21">
+                                    <div className="gallery-text">
+                                        <p>Designed and built a LEGO table including a sliding drawer underneath, hanging pots, and a building surface.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_lego_table(1).webp`} alt="Lego Table 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_lego_table(2).webp`} alt="Lego Table 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-9">
+                                    <div className="gallery-text">
+                                        <p>Upcycled wood offcuts to build a rustic birdbox.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(1).webp`} alt="Birdbox Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(2).webp`} alt="Birdbox Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-10">
+                                    <div className="gallery-text">
+                                        <p>Converted a disused chest of drawers into a stylish modern desk.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(1).webp`} alt="Desk Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(2).webp`} alt="Desk Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(3).webp`} alt="Desk Construction 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(4).webp`} alt="Desk Construction 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(5).webp`} alt="Desk Construction 5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(6).webp`} alt="Desk Construction 6" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(7).webp`} alt="Desk Construction 7" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(8).webp`} alt="Desk Construction 8" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(9).webp`} alt="Desk Construction 9" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(10).webp`} alt="Desk Construction 10" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(11).webp`} alt="Desk Construction 11" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(12).webp`} alt="Desk Construction 12" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(13).webp`} alt="Desk Construction 13" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(14).webp`} alt="Desk Construction 14" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-11">
+                                    <div className="gallery-text">
+                                        <p>Upcycled the leaves and legs from a dining table into two stylish coffee tables.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(1).webp`} alt="Coffee Tables Construction 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(2).webp`} alt="Coffee Tables Construction 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-20">
+                                    <div className="gallery-text">
+                                        <p>Removed old upholstery. Sourced custom cut high density foam. Reupholstered seats.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(1).webp`} alt="Dining Chairs 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(2).webp`} alt="Dining Chairs 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(3).webp`} alt="Dining Chairs 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_reupholstery_dining_chairs(4).webp`} alt="Dining Chairs 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-19">
+                                    <div className="gallery-text">
+                                        <p>Assembled a toddler cot.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toddler_cot(1).webp`} alt="Toddler Cot 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_toddler_cot(2).webp`} alt="Toddler Cot 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-18">
+                                    <div className="gallery-text">
+                                        <p>Refurbished and repainted a garden bench.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_garden_bench.webp`} alt="Garden Bench" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-16">
+                                    <div className="gallery-text">
+                                        <p>Assembled shelving unit.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_ikea_shelving.webp`} alt="IKEA Kallax Shelving Unit" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-12">
+                                    <div className="gallery-text">
+                                        <p>Rustic chunky alcove shelves built by carving and staining a modern piece of pine.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(1).webp`} alt="Rustic Alcove Shelves 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(2).webp`} alt="Rustic Alcove Shelves 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-15">
+                                    <div className="gallery-text">
+                                        <p>Installed a micro chip activated cat flap in a garden door.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_catflap.webp`} alt="Cat Flap" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-13">
+                                    <div className="gallery-text">
+                                        <p>Changed a broken front door lock and added in a chain and a door handle.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(1).webp`} alt="Front Door Lock & Furniture 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(2).webp`} alt="Front Door Lock & Furniture 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_front_door_lock(3).webp`} alt="Front Door Lock & Furniture 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-14">
+                                    <div className="gallery-text">
+                                        <p>Assembled wine rack. Installed on wall.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wine_rack(1).webp`} alt="Wine Rack 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_wine_rack(2).webp`} alt="Wine Rack 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-17">
+                                    <div className="gallery-text">
+                                        <p>Refurbished and reassembled baby cot.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/grm/grm_cot.webp`} alt="Baby Cot" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="carpentry-job-4">
+                                    <div className="gallery-text">
+                                        <p>Designed and built a bespoke carving board to match an antique silver cloche. Constructed it from an old oak table top.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1.5).webp`} alt="Bespoke Carving Board 1.5" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(2).webp`} alt="Bespoke Carving Board 2" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(3).webp`} alt="Bespoke Carving Board 3" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(4).webp`} alt="Bespoke Carving Board 4" /> <span className="expand-hint"><i className="fas fa-search-plus"></i><span className="hint-text"><span className="hint-touch">Touch</span><span className="hint-click">Click</span><br />Picture to<br />Expand</span></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1011,16 +1345,17 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="electrical-job-1">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-11" role="option">Landing Ceiling Light <span className="job-date">(Mar 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="electrical-job-7" role="option">Repair of an Electric Sander <span className="job-date">(Oct 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="electrical-job-3" role="option">Installation of a New Electrical Socket <span className="job-date">(May 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-4" role="option">Installed Down Lighting in a Shed <span className="job-date">(Mar 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-12" role="option">Installed Down Lighting in a Shed <span className="job-date">(Mar 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="electrical-job-8" role="option">Smart Underfloor Heating Thermostat <span className="job-date">(Dec 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-1" role="option">Upgraded Downlights to LEDs and Installed Dimmer Switches <span className="job-date">(Nov 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-5" role="option">Installed a New Ceiling Light <span className="job-date">(Mar 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-9" role="option">Outdoor Socket Installation <span className="job-date">(Aug 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-1" role="option">Lounge Ceiling Lights <span className="job-date">(Nov 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-6" role="option">Downlight Upgrades <span className="job-date">(Oct 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-5" role="option">Ceiling Light Project <span className="job-date">(Mar 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-4" role="option">Outdoor Socket Installation <span className="job-date">(Aug 2022)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="electrical-job-10" role="option">Installed Smart Heating Controls <span className="job-date">(Jan 2022)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-6" role="option">Upgraded Kitchen and Hallway Downlights to LEDs <span className="job-date">(Aug 2021)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-11" role="option">Installation of Dimmer Switch <span className="job-date">(Feb 2021)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="electrical-job-13" role="option">Installation of Dimmer Switch <span className="job-date">(Feb 2021)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="electrical-job-2" role="option">Dangerous Socket Removal and Blanking Plate Installation <span className="job-date">(Mar 2019)</span></button></li>
                                     </ul>
                                 </div>

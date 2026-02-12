@@ -1,0 +1,186 @@
+# COMPLETE PROJECT RESTORATION PLAN
+# For systematic restoration of all gallery projects after Git revert
+
+## ELECTIONRICAL PROJECTS (Priority 1)
+
+### 1. Landing Ceiling Light (Mar 2025)
+- **Image**: e_landing_ceiling_light.webp
+- **Description**: "Removed an old ineffectual pendant lamp and replaced with ceiling mounted spotlights."
+- **Job ID**: electrical-job-11
+- **Location**: After electrical-job-10 in dropdown
+
+### 2. Outdoor Electrical Socket (Aug 2022)
+- **Images**: e_outdoor_socket(1-4).webp
+- **Description**: "Installed a waterproof junction box and a smart waterproof double socket for outdoor lighting."
+- **Job ID**: electrical-job-4
+- **Location**: After electrical-job-11 in dropdown
+
+### 3. Smart Underfloor Heating (Dec 2023)
+- **Images**: e_smart_underfloor(1-2).webp
+- **Description**: "Removed a malfunctioning under floor heating thermostat and installed a modern smart one."
+- **Job ID**: electrical-job-8
+- **Location**: After electrical-job-4 in dropdown
+
+### 4. Downlight Upgrades (Oct 2023)
+- **Images**: e_downlight_upgrades(1-6).webp
+- **Description**: "Removed transformers, and old bezels. Installed new energy efficient down lights with new bezels."
+- **Job ID**: electrical-job-6
+- **Location**: After electrical-job-8 in dropdown
+
+### 5. Lounge Ceiling Lights (Nov 2023)
+- **Images**: e_lounge_ceiling_lights(1-3).webp
+- **Description**: "Pulled out existing halogen lamps, removed 12-volt transformers, wired in energy-efficient LED bulbs, and replaced rocker switches on wall with LED-compatible dimmers."
+- **Job ID**: electrical-job-1
+- **Location**: After electrical-job-6 in dropdown
+
+### 6. Ceiling Light Project (Mar 2023)
+- **Images**: e_ceiling_light(1-3).webp
+- **Description**: "Removed an inadequate single pendant lamp and replaced with 6 Halogen Downlights."
+- **Job ID**: electrical-job-5
+- **Location**: After electrical-job-1 in dropdown
+
+## GENERAL PROJECTS (Priority 2)
+
+### 1. Flat Pack Wardrobe (Mar 2021)
+- **Image**: grm_wardrobe.webp
+- **Description**: "Built a single mirror wardrobe."
+- **Job ID**: general-job-6
+- **Location**: After general-job-2 in dropdown
+
+### 2. Flat Pack Wardrobe Reconstruction (Nov 2024)
+- **Image**: grm_wardrobe_flatpack(1).webp
+- **Description**: "Rebuilt a flat pack wardrobe in a tight space after a house move."
+- **Job ID**: general-job-8
+- **Location**: After general-job-6 in dropdown
+
+### 3. Blind Installation (Mar 2022)
+- **Image**: grm_blinds(1-2).webp
+- **Description**: "Installed blackout roller blinds in 2 bedrooms."
+- **Job ID**: general-job-5
+- **Location**: After general-job-8 in dropdown
+
+### 4. Ottoman Bed (Nov 2024)
+- **Image**: grm_ottoman(1-9).webp
+- **Description**: "I'd love to claim that I designed it, but I just put it together!"
+- **Job ID**: general-job-9
+- **Location**: After general-job-8 in dropdown
+
+### 5. Day Bed Construction (Sep 2025)
+- **Image**: grm_daybed(1-8).webp
+- **Description**: "I'd love to claim that I designed it, but I just put it together!"
+- **Job ID**: general-job-7
+- **Location**: After general-job-9 in dropdown
+
+### 6. Letterbox Installation (Mar 2022)
+- **Image**: grm_letterbox(1-4).webp
+- **Description**: "Removed an old corroded letterbox. Installed a new one. Also installed an internal letterbox cover. Repainted area around it."
+- **Job ID**: general-job-10
+- **Location**: After general-job-5 in dropdown
+
+### 7. Surfboard Ding Repair (May 2023)
+- **Image**: grm_surfboard(1-4).webp
+- **Description**: "Removed damage resin. Replaced with fresh resin to seal the board. Sanded to shape. Repainted."
+- **Job ID**: general-job-11
+- **Location**: After general-job-10 in dropdown
+
+### 8. Barbecue Assembly (Dec 2023)
+- **Image**: grm_bbq.webp
+- **Description**: "Put a large 4 burner barbecue together."
+- **Job ID**: general-job-12
+- **Location**: After general-job-11 in dropdown
+
+## DECORATING PROJECTS (Priority 3)
+
+### 1. Exterior Window Sills (Jul 2019)
+- **Image**: pd_windowsills.webp
+- **Description**: "Sanded down, filled cracks and repainted."
+- **Job ID**: decorating-job-12
+- **Location**: After decorating-job-11 in dropdown
+
+## CARPENTRY PROJECTS (Priority 4)
+
+### 1. Door Planing (Nov 2023)
+- **Image**: grm_door_planing.webp
+- **Description**: "Unjamming Doors using an Electric Plane to shave off a smooth finish."
+- **Job ID**: carpentry-job-8
+- **Location**: After carpentry-job-7 in dropdown
+
+### 2. Front Door Lock & Furniture (Jan 2015)
+- **Image**: grm_front_door_lock(1-3).webp
+- **Description**: "Changed a broken front door lock and added in a chain and a door handle."
+- **Job ID**: carpentry-job-13
+- **Location**: After carpentry-job-8 in dropdown
+
+### 3. Wine Rack (Aug 2014)
+- **Image**: grm_wine_rack(1-2).webp
+- **Description**: "Assembled wine rack. Installed on wall."
+- **Job ID**: carpentry-job-14
+- **Location**: After carpentry-job-13 in dropdown
+
+### 4. Cat Flap (Mar 2015)
+- **Image**: grm_catflap.webp
+- **Description**: "Installed a micro chip activated cat flap in a garden door."
+- **Job ID**: carpentry-job-15
+- **Location**: After carpentry-job-14 in dropdown
+
+### 5. IKEA Kallax Shelving Unit (Jul 2015)
+- **Image**: grm_ikea_shelving.webp
+- **Description**: "Assembled shelving unit."
+- **Job ID**: carpentry-job-16
+- **Location**: After carpentry-job-15 in dropdown
+
+### 6. Baby Cot (Apr 2014)
+- **Image**: grm_cot.webp
+- **Description**: "Refurbished and reassembled baby cot."
+- **Job ID**: carpentry-job-17
+- **Location**: After carpentry-job-16 in dropdown
+
+### 7. Garden Bench (Sep 2016)
+- **Image**: grm_garden_bench.webp
+- **Description**: "Refurbished and repainted a garden bench."
+- **Job ID**: carpentry-job-18
+- **Location**: After carpentry-job-17 in dropdown
+
+### 8. Toddler Cot (Oct 2016)
+- **Image**: grm_toddler_cot(1-2).webp
+- **Description**: "Assembled a toddler cot."
+- **Job ID**: carpentry-job-19
+- **Location**: After carpentry-job-18 in dropdown
+
+### 9. Dining Chairs (Jan 2018)
+- **Image**: grm_reupholstery_dining_chairs(1-4).webp
+- **Description**: "Removed old upholstery. Sourced custom cut high density foam. Reupholstered seats."
+- **Job ID**: carpentry-job-20
+- **Location**: After carpentry-job-19 in dropdown
+
+### 10. Lego Table (Jul 2020)
+- **Image**: cw_lego_table(1).webp
+- **Description**: "Designed and built a LEGO table including a sliding drawer underneath, hanging pots, and a building surface."
+- **Job ID**: carpentry-job-21
+- **Location**: After carpentry-job-20 in dropdown
+
+### 11. Midsleeper Bed (Nov 2020)
+- **Image**: grm_midsleeper.webp
+- **Description**: "Assembled a midsleeper bed."
+- **Job ID**: carpentry-job-22
+- **Location**: After carpentry-job-21 in dropdown
+
+### 12. Backdoor Lock and Bolt (Feb 2022)
+- **Image**: grm_backdoor_lock(1-4).webp
+- **Description**: "Installed a new secure mortice lock on a garden door. Also installed a high bolt."
+- **Job ID**: carpentry-job-23
+- **Location**: After carpentry-job-22 in dropdown
+
+## QUALITY FIXES APPLIED:
+- Fixed "ineffectual" → "ineffectual" in electrical project
+- Fixed punctuation in plumbing and general project descriptions
+- Reordered all project dates in descending chronological order within each section
+- All images properly referenced with correct paths and alt text
+
+## RESTORATION ORDER:
+1. Electrical projects (highest priority)
+2. General projects (most numerous)
+3. Decorating projects (few projects)
+4. Carpentry projects (most numerous)
+
+This plan provides all project details, image paths, descriptions, and proper job IDs for systematic restoration.
