@@ -303,7 +303,7 @@ export default function Home() {
             
             currentLightboxIndex = index;
             const offset = -index * 100;
-            lightboxTrack.style.transform = `translateX(${offset}%)`;
+            lightboxTrack.style.transform = `translateX(${offset}vw)`;
 
             lightboxCounter.textContent = `${index + 1} / ${currentLightboxImages.length}`;
 
@@ -314,6 +314,7 @@ export default function Home() {
 
         const openLightbox = (images, startIndex) => {
             currentLightboxImages = images;
+            currentLightboxIndex = startIndex;
             
             // Create and append the track
             lightboxTrack = document.createElement('div');
@@ -335,17 +336,19 @@ export default function Home() {
             }
             lightboxContent.appendChild(lightboxTrack);
 
+            // Set initial position immediately before opening
+            const offset = -startIndex * 100;
+            lightboxTrack.style.transform = `translateX(${offset}vw)`;
+            lightboxCounter.textContent = `${startIndex + 1} / ${currentLightboxImages.length}`;
+            prevBtn.style.display = startIndex === 0 ? 'none' : 'block';
+            nextBtn.style.display = startIndex === currentLightboxImages.length - 1 ? 'none' : 'block';
+
             lightbox.classList.add('open');
             lightbox.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
             
             positionLightboxArrows();
             window.addEventListener('resize', positionLightboxArrows);
-
-            // Use a slight delay to allow the DOM to update before transitioning
-            setTimeout(() => {
-                showLightboxImage(startIndex);
-            }, 50);
         };
 
         const closeLightbox = () => {
@@ -438,6 +441,7 @@ export default function Home() {
 
         const handleTouchStart = (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            touchEndX = touchStartX; // Reset to match start
         };
 
         const handleTouchMove = (e) => {
@@ -534,15 +538,15 @@ export default function Home() {
                 </section>
 
                 <section id="gallery">
-                    <h2>Previous Work Gallery <span className="title-hint"><i className="fas fa-search-plus"></i> (Touch to Expand)</span></h2>
-                    <input type="radio" id="general-radio" name="gallery" defaultChecked style={{ display: 'none' }} />
+                    <h2>Gallery <span className="title-hint">[👆/🖱️ to <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'middle', width: '1em', height: '1em' }}><i className="fas fa-search" style={{ position: 'absolute', top: 0, left: 0, fontSize: '1em' }}></i><span style={{ position: 'absolute', top: '32%', left: '41%', transform: 'translate(-50%, -50%)', fontSize: '0.45em', fontWeight: '900' }}>±</span></span>]</span></h2>
+                    <input type="radio" id="general-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="plumbing-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="decorating-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="carpentry-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="electrical-radio" name="gallery" style={{ display: 'none' }} />
-                    <input type="radio" id="landscaping-radio" name="gallery" style={{ display: 'none' }} />
+                    <input type="radio" id="landscaping-radio" name="gallery" defaultChecked style={{ display: 'none' }} />
                     <div className="custom-select-container">
-                        <div className="custom-select" data-select-type="gallery" data-default-value="general">
+                        <div className="custom-select" data-select-type="gallery" data-default-value="landscaping">
                             <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project type"></button>
                             <ul className="custom-select-options" role="listbox">
                                 <li>
@@ -1239,77 +1243,9 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="carpentry-job-4">
-                                    <div className="gallery-text">
-                                        <p>Designed and built a bespoke carving board to match an antique silver cloche. Constructed it from an old oak table top.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(1.5).webp`} alt="Bespoke Carving Board 1.5" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(2).webp`} alt="Bespoke Carving Board 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(3).webp`} alt="Bespoke Carving Board 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_carving_board(4).webp`} alt="Bespoke Carving Board 4" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="carpentry-job-10">
-                                    <div className="gallery-text">
-                                        <p>Converted a disused chest of drawers into a stylish modern desk.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(1).webp`} alt="Desk Construction 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(2).webp`} alt="Desk Construction 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(3).webp`} alt="Desk Construction 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(4).webp`} alt="Desk Construction 4" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(5).webp`} alt="Desk Construction 5" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(6).webp`} alt="Desk Construction 6" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(7).webp`} alt="Desk Construction 7" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(8).webp`} alt="Desk Construction 8" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(9).webp`} alt="Desk Construction 9" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(10).webp`} alt="Desk Construction 10" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(11).webp`} alt="Desk Construction 11" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(12).webp`} alt="Desk Construction 12" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(13).webp`} alt="Desk Construction 13" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_desk(14).webp`} alt="Desk Construction 14" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="carpentry-job-9">
-                                    <div className="gallery-text">
-                                        <p>Upcycled wood offcuts to build a rustic birdbox.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(1).webp`} alt="Birdbox Construction 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_birdbox(2).webp`} alt="Birdbox Construction 2" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="carpentry-job-11">
-                                    <div className="gallery-text">
-                                        <p>Upcycled the leaves and legs from a dining table into two stylish coffee tables.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(1).webp`} alt="Coffee Tables Construction 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_stools(2).webp`} alt="Coffee Tables Construction 2" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="carpentry-job-12">
-                                    <div className="gallery-text">
-                                        <p>Rustic chunky alcove shelves built by carving and staining a modern piece of pine.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(1).webp`} alt="Rustic Alcove Shelves 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/cw/cw_rustic_shelves(2).webp`} alt="Rustic Alcove Shelves 2" /></div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
+
+
                         </div>
 
                         <div className="gallery-panel electrical">
@@ -1333,30 +1269,24 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="job-panels-container">
-                                <div className="job-panel" data-job="electrical-job-1">
+                                <div className="job-panel" data-job="electrical-job-11">
                                     <div className="gallery-text">
-                                        <p>Pulled out existing halogen lamps, removed 12-volt transformers, wired in energy-efficient LED bulbs, and replaced rocker switches on the wall with LED-compatible dimmers.</p>
+                                        <p>Removed a traditional on off switch and replaced it with an LED compatible dimmer. Earthed it for safety.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_lounge_ceiling_lights.webp`} alt="LED Downlight Installation" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(1).webp`} alt="Dimmer Switch Installation 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(2).webp`} alt="Dimmer Switch Installation 2" /></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="electrical-job-2">
+                                <div className="job-panel" data-job="electrical-job-7">
                                     <div className="gallery-text">
-                                        <p>Removed a very rusty and dangerous electrical socket, made safe and installed a blanking plate including filling and redecorating around it.</p>
+                                        <p>Repaired an electric sander that was faulty.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(1).webp`} alt="Dangerous Socket Removal 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(2).webp`} alt="Dangerous Socket Removal 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(3).webp`} alt="Dangerous Socket Removal 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(4).webp`} alt="Dangerous Socket Removal 4" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(5).webp`} alt="Dangerous Socket Removal 5" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(6).webp`} alt="Dangerous Socket Removal 6" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(7).webp`} alt="Dangerous Socket Removal 7" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(8).webp`} alt="Dangerous Socket Removal 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_sander_rewire.webp`} alt="Electric Sander Repair" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1370,7 +1300,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="electrical-job-4">
+                                <div className="job-panel" data-job="electrical-job-12">
                                     <div className="gallery-text">
                                         <p>Removed an inadequate single pendant lamp and replaced with 6 Halogen Downlights.</p>
                                     </div>
@@ -1386,13 +1316,23 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="electrical-job-5">
+                                <div className="job-panel" data-job="electrical-job-8">
                                     <div className="gallery-text">
-                                        <p>Removed an old ceiling light and installed a new one.</p>
+                                        <p>Removed a malfunctioning under floor heating thermostat and installed a modern smart one.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_ceiling_light.webp`} alt="Ceiling Light Installation" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_smart_underfloor.webp`} alt="Smart Underfloor Heating Thermostat" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-1">
+                                    <div className="gallery-text">
+                                        <p>Pulled out existing halogen lamps, removed 12-volt transformers, wired in energy-efficient LED bulbs, and replaced rocker switches on the wall with LED-compatible dimmers.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_lounge_ceiling_lights.webp`} alt="LED Downlight Installation" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1409,27 +1349,17 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="electrical-job-7">
+                                <div className="job-panel" data-job="electrical-job-5">
                                     <div className="gallery-text">
-                                        <p>Repaired an electric sander that was faulty.</p>
+                                        <p>Removed an old ceiling light and installed a new one.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_sander_rewire.webp`} alt="Electric Sander Repair" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_ceiling_light.webp`} alt="Ceiling Light Installation" /></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="electrical-job-8">
-                                    <div className="gallery-text">
-                                        <p>Removed a malfunctioning under floor heating thermostat and installed a modern smart one.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_smart_underfloor.webp`} alt="Smart Underfloor Heating Thermostat" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="electrical-job-9">
+                                <div className="job-panel" data-job="electrical-job-4">
                                     <div className="gallery-text">
                                         <p>Installed a waterproof junction box and a smart waterproof double socket for outdoor lighting.</p>
                                     </div>
@@ -1451,7 +1381,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="electrical-job-11">
+                                <div className="job-panel" data-job="electrical-job-13">
                                     <div className="gallery-text">
                                         <p>Removed a traditional on off switch and replaced it with an LED compatible dimmer. Earthed it for safety.</p>
                                     </div>
@@ -1459,6 +1389,23 @@ export default function Home() {
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(1).webp`} alt="Dimmer Switch Installation 1" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/e/e_bedroom_dimmer(2).webp`} alt="Dimmer Switch Installation 2" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="electrical-job-2">
+                                    <div className="gallery-text">
+                                        <p>Removed a very rusty and dangerous electrical socket, made safe and installed a blanking plate including filling and redecorating around it.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(1).webp`} alt="Dangerous Socket Removal 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(2).webp`} alt="Dangerous Socket Removal 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(3).webp`} alt="Dangerous Socket Removal 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(4).webp`} alt="Dangerous Socket Removal 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(5).webp`} alt="Dangerous Socket Removal 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(6).webp`} alt="Dangerous Socket Removal 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(7).webp`} alt="Dangerous Socket Removal 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/e/e_blanking_plate(8).webp`} alt="Dangerous Socket Removal 8" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1471,29 +1418,29 @@ export default function Home() {
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-2" role="option">Pergola Sunbathing Platform <span className="job-date">(Nov 2025)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-10" role="option">Cleaning and Oiling Decking <span className="job-date">(Mar 2025)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-11" role="option">Wooden Planter Fascia <span className="job-date">(Feb 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-1" role="option">Concrete Base & Bike Anchor <span className="job-date">(Oct 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-10" role="option">Cleaning and Oiling Decking <span className="job-date">(Mar 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-8" role="option">Patch Repair Using Artificial Grass <span className="job-date">(Mar 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-11" role="option">Wooden Planter Fascia <span className="job-date">(Feb 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-4" role="option">Large Rockery and Waterfeature <span className="job-date">(Oct 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-13" role="option">Weed Membrane and Slate Chippings <span className="job-date">(Oct 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-7" role="option">Repaired and Restored a Garden Storage Unit <span className="job-date">(May 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-23" role="option">Re-flashing and Felting Brick Shed Roof <span className="job-date">(Oct 2022)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-24" role="option">Bike Shed Reroof <span className="job-date">(Oct 2022)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-25" role="option">Bike Shed and Trellis <span className="job-date">(Jun 2015)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-18" role="option">Patch Repairs on Decking <span className="job-date">(Apr 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-14" role="option">Garden Pond <span className="job-date">(Apr 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-3" role="option">Fence Repairs <span className="job-date">(Jul 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-5" role="option">General Garden Maintenance <span className="job-date">(Jul 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-6" role="option">Returfing a Section of Lawn <span className="job-date">(Jul 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-7" role="option">Repaired and Restored a Garden Storage Unit <span className="job-date">(May 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-18" role="option">Patch Repairs on Decking <span className="job-date">(Apr 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-14" role="option">Garden Pond <span className="job-date">(Apr 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-19" role="option">Installation of Decking Step <span className="job-date">(Sep 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-15" role="option">Installation of a Decking Path <span className="job-date">(Jun 2023)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-23" role="option">Re-flashing and Felting Brick Shed Roof <span className="job-date">(Oct 2022)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-24" role="option">Bike Shed Reroof <span className="job-date">(Oct 2022)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-9" role="option">Garden Office <span className="job-date">(May 2022)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-26" role="option">Outdoor Furniture Building <span className="job-date">(Apr 2022)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-27" role="option">Installation of Garden Trellis <span className="job-date">(Mar 2022)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-19" role="option">Installation of Decking Step <span className="job-date">(Sep 2023)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-20" role="option">General Garden Clearance <span className="job-date">(Aug 2021)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-15" role="option">Installation of a Decking Path <span className="job-date">(Jun 2023)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-16" role="option">Fencepost Repairs <span className="job-date">(Feb 2016)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-17" role="option">Dismantling of Brick Wall <span className="job-date">(Feb 2020)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-16" role="option">Fencepost Repairs <span className="job-date">(Feb 2016)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="landscaping-job-25" role="option">Bike Shed and Trellis <span className="job-date">(Jun 2015)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-12" role="option">Grave Maintenance <span className="job-date">(Oct 2014)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-21" role="option">Garden Shed Upgrade to Beach Hut Style <span className="job-date">(May 2012)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="landscaping-job-22" role="option">Full Garden Renovation <span className="job-date">(Dec 2009)</span></button></li>
@@ -1501,6 +1448,83 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="job-panels-container">
+                                <div className="job-panel active" data-job="landscaping-job-2">
+                                    <div className="gallery-text">
+                                        <p>Designed, built, and installed an 8-foot-tall pergola and solid platform. The platform is waterproofed on top, covered with Shockpad, and finished with high-quality artificial grass for a durable, low-maintenance sunbathing area.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(1).webp`} alt="Pergola Sunbathing Platform 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(2).webp`} alt="Pergola Sunbathing Platform 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(3).webp`} alt="Pergola Sunbathing Platform 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(4).webp`} alt="Pergola Sunbathing Platform 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(5).webp`} alt="Pergola Sunbathing Platform 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(6).webp`} alt="Pergola Sunbathing Platform 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(7).webp`} alt="Pergola Sunbathing Platform 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(8).webp`} alt="Pergola Sunbathing Platform 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(9).webp`} alt="Pergola Sunbathing Platform 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(10).webp`} alt="Pergola Sunbathing Platform 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(11).webp`} alt="Pergola Sunbathing Platform 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(12).webp`} alt="Pergola Sunbathing Platform 12" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(13).webp`} alt="Pergola Sunbathing Platform 13" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(14).webp`} alt="Pergola Sunbathing Platform 14" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(15).webp`} alt="Pergola Sunbathing Platform 15" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(16).webp`} alt="Pergola Sunbathing Platform 16" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(17).webp`} alt="Pergola Sunbathing Platform 17" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-1">
+                                    <div className="gallery-text">
+                                        <p>Cut into the floor of an existing wooden bike shed, excavated earth underneath, filled with 20KG of concrete, drilled out and then installed a ground anchor.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(1).webp`} alt="Concrete Base & Bike Anchor 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2).webp`} alt="Concrete Base & Bike Anchor 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2.5).webp`} alt="Concrete Base & Bike Anchor 2.5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(3).webp`} alt="Concrete Base & Bike Anchor 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(4).webp`} alt="Concrete Base & Bike Anchor 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(5).webp`} alt="Concrete Base & Bike Anchor 5" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-10">
+                                    <div className="gallery-text">
+                                        <p>Jet washed decking area. Refreshed and extended deck life with two coats of decking oil. This one always takes longer than you think it was going to!</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(1).webp`} alt="Cleaning and Oiling Decking 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(2).webp`} alt="Cleaning and Oiling Decking 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(3).webp`} alt="Cleaning and Oiling Decking 3" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-8">
+                                    <div className="gallery-text">
+                                        <p>Cut out and removed an "I WILL NOT GROW!!!" area of real grass and replaced with an artificial turf patch.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(1).webp`} alt="Patch Repair Using Artificial Grass 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(2).webp`} alt="Patch Repair Using Artificial Grass 2" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-11">
+                                    <div className="gallery-text">
+                                        <p>Constructed a bespoke wooden planter fascia to cover an ugly plastic planter. Built mainly from fencing feather edge strips.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(1).webp`} alt="Wooden Planter Fascia 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(2).webp`} alt="Wooden Planter Fascia 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(3).webp`} alt="Wooden Planter Fascia 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(4).webp`} alt="Wooden Planter Fascia 4" /></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="job-panel" data-job="landscaping-job-4">
                                     <div className="gallery-text">
                                         <p>Built a rockery and installed a waterfall, including all of the pipework.</p>
@@ -1522,27 +1546,58 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="landscaping-job-8">
+                                <div className="job-panel" data-job="landscaping-job-13">
                                     <div className="gallery-text">
-                                        <p>Cut out and removed an "I WILL NOT GROW!!!" area of real grass and replaced with an artificial turf patch.</p>
+                                        <p>Built a rockery and installed a waterfall, including all of the pipework.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(1).webp`} alt="Patch Repair Using Artificial Grass 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_artifical_turf(2).webp`} alt="Patch Repair Using Artificial Grass 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(1).webp`} alt="Large Rockery and Waterfeature 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(2).webp`} alt="Large Rockery and Waterfeature 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(3).webp`} alt="Large Rockery and Waterfeature 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(4).webp`} alt="Large Rockery and Waterfeature 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(5).webp`} alt="Large Rockery and Waterfeature 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(6).webp`} alt="Large Rockery and Waterfeature 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(7).webp`} alt="Large Rockery and Waterfeature 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(8).webp`} alt="Large Rockery and Waterfeature 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(9).webp`} alt="Large Rockery and Waterfeature 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(10).webp`} alt="Large Rockery and Waterfeature 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(11).webp`} alt="Large Rockery and Waterfeature 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(12).webp`} alt="Large Rockery and Waterfeature 12" /></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="landscaping-job-13">
+                                <div className="job-panel" data-job="landscaping-job-4">
                                     <div className="gallery-text">
-                                        <p>Removed weeds from a front garden, laid a weed proof membrane and then slate chippings.</p>
+                                        <p>Built a rockery and installed a waterfall, including all of the pipework.</p>
                                     </div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(1).webp`} alt="Weed Membrane and Slate Chippings 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(2).webp`} alt="Weed Membrane and Slate Chippings 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(3).webp`} alt="Weed Membrane and Slate Chippings 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_slate_chippings(4).webp`} alt="Weed Membrane and Slate Chippings 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(1).webp`} alt="Large Rockery and Waterfeature 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(2).webp`} alt="Large Rockery and Waterfeature 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(3).webp`} alt="Large Rockery and Waterfeature 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(4).webp`} alt="Large Rockery and Waterfeature 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(5).webp`} alt="Large Rockery and Waterfeature 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(6).webp`} alt="Large Rockery and Waterfeature 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(7).webp`} alt="Large Rockery and Waterfeature 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(8).webp`} alt="Large Rockery and Waterfeature 8" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(9).webp`} alt="Large Rockery and Waterfeature 9" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(10).webp`} alt="Large Rockery and Waterfeature 10" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(11).webp`} alt="Large Rockery and Waterfeature 11" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_rockery_waterfall(12).webp`} alt="Large Rockery and Waterfeature 12" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="landscaping-job-3">
+                                    <div className="gallery-text">
+                                        <p>Removed rotten posts and installed new ones including waterproof membrane. Wedged non rotten posts back up to vertical.</p>
+                                    </div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(1).webp`} alt="Fence Repairs 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(2).webp`} alt="Fence Repairs 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(3).webp`} alt="Fence Repairs 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(4).webp`} alt="Fence Repairs 4" /></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1639,7 +1694,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="landscaping-job-3">
+                                <div className="job-panel" data-job="landscaping-job-4">
                                     <div className="gallery-text">
                                         <p>Removed rotten posts and installed new ones including waterproof membrane. Wedged non rotten posts back up to vertical.</p>
                                     </div>
@@ -1649,72 +1704,6 @@ export default function Home() {
                                             <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(2).webp`} alt="Fence Repairs 2" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(3).webp`} alt="Fence Repairs 3" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_fencing(4).webp`} alt="Fence Repairs 4" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="landscaping-job-2">
-                                    <div className="gallery-text">
-                                        <p>Designed, built, and installed an 8-foot-tall pergola and solid platform. The platform is waterproofed on top, covered with Shockpad, and finished with high-quality artificial grass for a durable, low-maintenance sunbathing area.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(1).webp`} alt="Pergola Sunbathing Platform 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(2).webp`} alt="Pergola Sunbathing Platform 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(3).webp`} alt="Pergola Sunbathing Platform 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(4).webp`} alt="Pergola Sunbathing Platform 4" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(5).webp`} alt="Pergola Sunbathing Platform 5" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(6).webp`} alt="Pergola Sunbathing Platform 6" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(7).webp`} alt="Pergola Sunbathing Platform 7" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(8).webp`} alt="Pergola Sunbathing Platform 8" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(9).webp`} alt="Pergola Sunbathing Platform 9" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(10).webp`} alt="Pergola Sunbathing Platform 10" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(11).webp`} alt="Pergola Sunbathing Platform 11" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(12).webp`} alt="Pergola Sunbathing Platform 12" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(13).webp`} alt="Pergola Sunbathing Platform 13" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(14).webp`} alt="Pergola Sunbathing Platform 14" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(15).webp`} alt="Pergola Sunbathing Platform 15" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(16).webp`} alt="Pergola Sunbathing Platform 16" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_pergola(17).webp`} alt="Pergola Sunbathing Platform 17" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="landscaping-job-10">
-                                    <div className="gallery-text">
-                                        <p>Jet washed decking area. Refreshed and extended deck life with two coats of decking oil. This one always takes longer than you think it was going to!</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(1).webp`} alt="Cleaning and Oiling Decking 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(2).webp`} alt="Cleaning and Oiling Decking 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_decking_oil(3).webp`} alt="Cleaning and Oiling Decking 3" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="landscaping-job-11">
-                                    <div className="gallery-text">
-                                        <p>Constructed a bespoke wooden planter fascia to cover an ugly plastic planter. Built mainly from fencing feather edge strips.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(1).webp`} alt="Wooden Planter Fascia 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(2).webp`} alt="Wooden Planter Fascia 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(3).webp`} alt="Wooden Planter Fascia 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_planter_fascia(4).webp`} alt="Wooden Planter Fascia 4" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="landscaping-job-1">
-                                    <div className="gallery-text">
-                                        <p>Cut into the floor of an existing wooden bike shed, excavated earth underneath, filled with 20KG of concrete, drilled out and then installed a ground anchor.</p>
-                                    </div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(1).webp`} alt="Concrete Base & Bike Anchor 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2).webp`} alt="Concrete Base & Bike Anchor 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(2.5).webp`} alt="Concrete Base & Bike Anchor 2.5" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(3).webp`} alt="Concrete Base & Bike Anchor 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(4).webp`} alt="Concrete Base & Bike Anchor 4" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/gmp/gmp_bike_lock_anchor(5).webp`} alt="Concrete Base & Bike Anchor 5" /></div>
                                         </div>
                                     </div>
                                 </div>
