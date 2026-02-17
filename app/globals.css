@@ -1552,6 +1552,7 @@ margin: 0 auto 20px;
 
 #about p {
     padding: 0 40px;
+    margin-bottom: 12px;
 }
 
 /* Fix Contact page copyright at bottom */

@@ -1845,7 +1845,10 @@ export default function Home() {
                 <section id="about">
                     <h2>About Me</h2>
                     <img src={`${basePath}images/OneManAndAToolBox.webp`} alt="Friendly Handyman" />
-                    <p style={{ textAlign: 'left' }}>I'm your local, reliable handyman dedicated to providing high-quality work with a friendly and professional attitude. With a passion for fixing things and helping people, no job is too small. I pride myself on being tidy, punctual, and ensuring you're happy with the result.</p>
+                    <p>Hello. My name is Adam and I'm your local, reliable handyman dedicated to providing high-quality work.</p>
+                    <p>I guarantee a friendly and professional attitude, and that I will actually return your calls! As you can see from the gallery, I have a lot of experience across a range of trades, and no job is too small.</p>
+                    <p>I will shorten your To-do list and lower domestic stress levels! I pride myself on completing work to a high standard and ensuring you're happy with the result.</p>
+                    <p><strong>Don't DIY, call One Man and a Toolbox.</strong></p>
                 </section>
 
                 <section id="area">
