@@ -1350,6 +1350,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 padding-top: 20px;
+overflow-y: auto;
 }
 
 #about {
@@ -1507,14 +1508,30 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 padding-top: 20px;
+overflow-y: auto;
 }
 .services-grid {
 /* grid-template-columns: repeat(3, 1fr); Removed to keep 2 columns */
 padding: 0 40px;
 /* Set 40px padding for Laptop */
+gap: 10px;
+}
+
+.service h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1px;
+}
+
+.service p {
+    font-size: 0.9rem;
+    line-height: 1.25;
 }
 
 /* Constrain testimonials dropdown width on laptop */
+#services h2 {
+    margin-bottom: 8px;
+}
+
 #testimonies .custom-select {
 max-width: 360px;
 margin: 0 auto;
