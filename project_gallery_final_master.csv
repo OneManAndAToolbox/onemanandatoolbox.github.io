@@ -1,0 +1,91 @@
+work_type,dropdown_title,date,description,first_image_name
+General Repairs & Small Jobs,Coving,Aug-25,Installed and redecorated a piece of fallen coving.,grm_coving(1).webp
+General Repairs & Small Jobs,Day Bed,Sep-25,"I'd love to claim that I designed it, but I just put it together!",grm_daybed(1).webp
+General Repairs & Small Jobs,Bathroom Windows Frosting,Mar-25,Fitted stained glass frosting to upper bathroom windows.,grm_window_frosting(1).webp
+General Repairs & Small Jobs,Ottoman Bed,Nov-24,"Disassembled , transported, and reassembled in a tight space.",grm_ottoman(1).webp
+General Repairs & Small Jobs,Flat Pack Wardrobe Reconstruction,Nov-24,Rebuilt a flat pack wardrobe in a tight space after a house move.,grm_wardrobe_flatpack(1).webp
+General Repairs & Small Jobs,Very Heavy Mirror,Nov-24,"Hanging a mirror where anything other than perfect symmetry was required. As Austin Powers once said, ""I needed a LASER""",grm_mirror_hanging(1).webp
+General Repairs & Small Jobs,Barbeque,Dec-23,Assembled a 4-burner gas barbecue.,grm_bbq.webp
+General Repairs & Small Jobs,Surfboard Ding Repair,May-23,Removed damage resin. Replaced with fresh resin to seal the board. Sanded to shape. Repainted.,grm_surfboard(1).webp
+General Repairs & Small Jobs,Vinyl Flooring,Jan-23,Removed old carpet and grippers. Cut and installed new vinyl. Installed oak door threshold.,grm_toilet_flooring(1).webp
+General Repairs & Small Jobs,Letterbox,Mar-22,Removed the old corroded letterbox and installed both a new external and an internal letterbox.,grm_letterbox(1).webp
+General Repairs & Small Jobs,Back Door Lock,Feb-22,Removed a broken low-security back door lock and installed a new British Standard back door lock.,grm_backdoor_lock(1).webp
+General Repairs & Small Jobs,Roller Blinds,Aug-21,Installed blackout roller blinds.,grm_blinds(1).webp
+General Repairs & Small Jobs,Flat Pack Wardrobe,Mar-21,Assembled a single mirror wardrobe.,grm_wardrobe.webp
+General Repairs & Small Jobs,Footstool Reupholstery,Jul-14,Replaced tired foam and worn through material with custom cut high density foam and new covering.,grm_reupholstery(1).webp
+General Repairs & Small Jobs,Damp Seal and Wall Painting,Oct-24,Damp sealed and repainted the walls up to a loft room after a roofing leak.,pd_staircase_walls.webp
+General Repairs & Small Jobs,Bathroom Partial Redecoration,Aug-23,"Water damage from penetrating damp caused damage to the paintwork. Filled, damp sealed and repainted.",pd_bathroom_paint(1).webp
+General Repairs & Small Jobs,Cubicle Toilet Redecoration,Mar-23,"Full redecoration including staining door, wall paper stripping, filling, sanding, and painting.",pd_toilet_redecoration(1).webp
+General Repairs & Small Jobs,Exterior Window Sills,Jul-19,"Sanded down, filled cracks and repainted.",pd_windowsills.webp
+General Repairs & Small Jobs,Cat Flap,Mar-15,Installed a micro chip activated cat flap in a garden door.,grm_catflap.webp
+General Repairs & Small Jobs,IKEA Kallax Shelving Unit,Jul-15,Assembled shelving unit.,grm_ikea_shelving.webp
+General Repairs & Small Jobs,Baby Cot Refurbishment,Apr-14,Refurbished and reassembled baby cot.,grm_cot.webp
+General Repairs & Small Jobs,Toddler Cot Assembly,Oct-16,Assembled a toddler cot.,grm_toddler_cot(1).webp
+General Repairs & Small Jobs,Dining Chairs,Jan-18,Removed old upholstery. Sourced custom cut high density foam. Reupholstered seats.,grm_reupholstery_dining_chairs(1).webp
+General Repairs & Small Jobs,Midsleeper Bed,Nov-20,Assembled a midsleeper bed.,grm_midsleeper.webp
+General Repairs & Small Jobs,Electric Sander,Oct-24,Repaired an electric sander that was faulty.,e_sander_rewire.webp
+General Repairs & Small Jobs,Doors,Nov-23,Unjamming Doors using an Electric Plane to shave off to a smooth finish.,grm_door_planing.webp
+General Repairs & Small Jobs,Wine Rack,Aug-14,Assembled wine rack and installed on wall.,grm_wine_rack(1).webp
+General Repairs & Small Jobs,Bathroom,Sep-23,Full redecoration of a small bathroom.,pd_bathroom_redec(1).webp
+General Repairs & Small Jobs,Ceiling,Apr-14,Repaired cracks and repainted ceiling ,pd_ceiling_repaint.webp
+General Repairs & Small Jobs,Bedroom,Aug-22,"Sanded down, sealed and repainted bedroom wall after roof leak",pd_partial_bedroom_redec(1).webp
+General Repairs & Small Jobs,Radiator Cover,May-19,Repainted radiator cover.,pd_radiator_cover.webp
+General Repairs & Small Jobs,Sideboard,Jun-19,Full refurbishment of an old sideboard,pd_sideboard_restoration(1).webp
+Plumbing (Minor Works),Dual Flush,Sep-25,Installed a new dual flush system and reconnected all pipes ensuring no leaks.,p_dual_flush(1).webp
+Plumbing (Minor Works),Washing Machine,Jul-25,Plumbed in new waste piping (internal and external) and made a simple platform to repair the damaged floor.,p_washing_machine_waste(1).webp
+Plumbing (Minor Works),Toilet,Jul-23,Installation of a new toilet and all associated plumbing work.,p_toilet_installation(1).webp
+Plumbing (Minor Works),Bathroom Sink,Mar-23,"Replaced old taps and rigid piping with modern mixer tap, soap dispenser and flexible pipes with safety stopvalves.",p_bathroom_sink(1).webp
+Plumbing (Minor Works),Bathroom Tap,Jun-18,Removed and replaced leaky tap and associated plumbing ,p_bathroom_tap(1).webp
+Plumbing (Minor Works),Dual Flush ,May-18,Installed a new dual flush system and reconnected all pipes ensuring no leaks.,"p_dual_flush(0.4).webp, p_dual_flush(0.8).webp, p_installing_dual flush(1).webp"
+Electrical (Minor Works),Ceiling Light,Mar-25,Removed a pendant light and replaced with a spotlight set,e_landing_ceiling_light.webp
+Electrical (Minor Works),Electrical Socket,May-24,Removed a smashed electrical socket and safely replaced it with a new one.,e_socket_installation.webp
+Electrical (Minor Works),Shed Lighting,Mar-24,"Installed 6 Halogen Downlights in a shed, replacing an inadequate pendant light",e_shed_downlights(1).webp
+Electrical (Minor Works),Smart Underfloor Heating Thermostat,Dec-23,Removed a malfunctioning under floor heating thermostat and installed a modern smart one.,"e_smart_underfloor(1).webp, e_smart_underfloor(2).webp"
+Electrical (Minor Works),Lounge Ceiling Lights,Nov-23,Wired in energy-efficient LED bulbs and replaced wall switches with LED-compatible dimmers.,"e_lounge_ceiling_lights(1).webp, e_lounge_ceiling_lights(2).webp, e_lounge_ceiling_lights(3).webp"
+Electrical (Minor Works),Downlight Upgrades,Oct-23,Installed new energy efficient down lights with new bezels.,"e_downlight_upgrades(0.5).webp, e_downlight_upgrades(1).webp, e_downlight_upgrades(1.5).webp, e_downlight_upgrades(2).webp, e_downlight_upgrades(3).webp, e_downlight_upgrades(4).webp"
+Electrical (Minor Works),Ceiling Light,Mar-23,Removed an old ceiling light and installed a new one.,e_ceiling_light(1).webp
+Electrical (Minor Works),Outdoor Socket,Aug-22,Installed a smart waterproof double socket for outdoor lighting.,"e_outdoor_socket(0.4).webp, e_outdoor_socket(0.8).webp, e_outdoor_socket(1).webp, e_outdoor_socket(2).webp, e_outdoor_socket(3).webp"
+Electrical (Minor Works),Smart Heating Controls,Jan-22,Installed a TADO Wireless Smart Thermostat Starter Kit and Radiator Thermostats,"e_smart_heating_controls(1).webp, e_smart_heating_controls(2).webp, e_smart_heating_controls(3).webp"
+Electrical (Minor Works),Dimmer Switch,Feb-21,Removed traditional switch and replaced with LED compatible dimmer.,e_bedroom_dimmer(1).webp
+Electrical (Minor Works),Dangerous Socket Removal,Mar-19,"Removed a dangerous electrical socket, made safe and installed a blanking plate.",e_blanking_plate(1).webp
+Carpentry & Woodwork,Robot Vacuum Cleaner Ramp,Jan-26,Built ramp out of leftover waste materials so a robot vacuum cleaner could get around an Edwardian house.,cw_robovac_ramp(1).webp
+Carpentry & Woodwork,Woodshed,Oct-23,Designed and constructed a waterproof woodshed out of upcycled materials.,cw_woodshed(1).webp
+Carpentry & Woodwork,Outdoor Coffee Table,Sep-23,Refurbished a garden table using decking planks to make a new surface.,cw_outdoor_table_rebuild(1).webp
+Carpentry & Woodwork,Lego Table,Jul-20,Designed and built a LEGO table including a sliding drawer and building surface.,cw_lego_table(1).webp
+Carpentry & Woodwork,Birdbox,May-20,Upcycled wood offcuts to build a rustic birdbox.,cw_birdbox(1).webp
+Carpentry & Woodwork,Custom Desk,Apr-20,Converted a disused chest of drawers into a stylish modern desk.,cw_desk(1).webp
+Carpentry & Woodwork,Coffee Tables,Apr-18,Upcycled the leaves and legs from a dining table into two stylish coffee tables.,cw_stools(1).webp
+Carpentry & Woodwork,Alcove Shelves,Jul-15,Rustic chunky alcove shelves built by carving and staining a modern piece of pine.,cw_rustic_shelves(1).webp
+Carpentry & Woodwork,Bespoke Carving Board,Dec-13,Designed and built a bespoke carving board to match an antique silver cloche.,cw_carving_board(1).webp
+Carpentry & Woodwork,Custom Built Chunky Stools,Nov-13,Designed and built two matching stools out of reclaimed joists.,cw_matching_stools.webp
+Carpentry & Woodwork,Upcycling Blanket Chest,Jul-24,Lined and waterproofed an old blanket chest for outdoor storage.,cw_upcycling_chest(1).webp
+Carpentry & Woodwork,Teak Furniture Restoration,Jul-24,Repaired and restored a vintage teak garden table and chairs.,cw_teak_furniture_restoral(1).webp
+Outdoor & Garden Work,Pergola Sunbathing Platform,Nov-25,Designed and built an 8-foot-tall pergola and waterproofed platform with artificial grass.,gmp_pergola(1).webp
+Outdoor & Garden Work,Concrete Base & Bike Anchor,Oct-25,"Excavated earth, filled with concrete and installed a ground anchor for a bike shed.",gmp_bike_lock_anchor(1).webp
+Outdoor & Garden Work,Decking Maintenance,Mar-25,Jet washed decking area and refreshed life with two coats of decking oil.,gmp_decking_oil(1).webp
+Outdoor & Garden Work,Artificial Grass Patch Repair ,Mar-25,Replaced a patch of real grass that wouldn't grow with high-quality artificial turf.,gmp_artifical_turf(1).webp
+Outdoor & Garden Work,Wooden Planter Fascia,Feb-25,Constructed a bespoke wooden planter fascia to cover an ugly plastic planter.,gmp_planter_fascia(1).webp
+Outdoor & Garden Work,Large Rockery and Water feature,Oct-24,"Built a rockery and installed a waterfall, including all of the pipework.",gmp_rockery_waterfall(1).webp
+Outdoor & Garden Work,Weed Membrane and Slate Chippings,Oct-24,"Cleared area, laid weed-proof membrane and finished with slate chippings.",gmp_slate_chippings(1).webp
+Outdoor & Garden Work,Fence Repairs,Jul-24,Removed rotten posts and installed new ones including waterproof membrane.,gmp_fencing(1).webp
+Outdoor & Garden Work,General Garden Maintenance,Jul-24,Pruning and training creepers as well as refreshing glass of a lean to conservatory.,gmp_outhouse_vines(1).webp
+Outdoor & Garden Work,Returfing a Section of Lawn,Jul-24,Removal of old weed-strewn turf and neat installation of new turf.,gmp_turf(1).webp
+Outdoor & Garden Work,Repaired and Restored a Garden Storage Unit,May-24,"Deconstructed a tired storage unit, repaired boards, and reconstructed.",gmp_storage_shed(1).webp
+Outdoor & Garden Work,Decking Patch Repairs,Apr-24,"Lifted old decking, replaced rotten joists and planks where needed.",gmp_decking_patch_repairs(1).webp
+Outdoor & Garden Work,Garden Pond,Apr-24,"Cleared vegetation, dug area, and installed a pond with fountain and slate surround.",gmp_pond(1).webp
+Outdoor & Garden Work,Decking Step,Sep-23,Installed a large step made of decking to reduce the height change.,gmp_decking_step(1).webp
+Outdoor & Garden Work,Decking Path,Jun-23,"Removed old broken path. Installed joists, weed membrane and new decking path.",gmp_garden_decking_path(1).webp
+Outdoor & Garden Work,Brick Shed Roof,Oct-22,Resealed lead flashing and laid fresh felt to waterproof a shed roof.,gmp_brick_shed_roof(1).webp
+Outdoor & Garden Work,Bike Shed Reroof,Oct-22,Installed a new Onduline roof on a bike shed and painted to preserve.,gmp_bike_shed_reroof(1).webp
+Outdoor & Garden Work,Garden Office,May-22,Co-constructed a foundation and built a garden office from a kit.,gmp_garden_office(1).webp
+Outdoor & Garden Work,Outdoor Furniture,Apr-22,Conversion from a box of bits to a comfortable outdoor sofa.,gmp_outdoor_furnture(1).webp
+Outdoor & Garden Work,Garden Trellis,Mar-22,Removed old fence panels and installed full 6ft trellis panels.,gmp_trellis(1).webp
+Outdoor & Garden Work,General Garden Clearance,Aug-21,Cleared a mountain of climbers and pruned plants to tidy up.,gmp_general_garden_clearance(1).webp
+Outdoor & Garden Work,Dismantling of Brick Wall,Feb-20,Safely removed a wall that was falling down and re-rendered the house wall.,gmp_brickwall_removal(1).webp
+Outdoor & Garden Work,Fencepost Repairs,Feb-16,Dug rusted supports out of concrete and installed new supports and posts.,gmp_fencepost_repairs(1).webp
+Outdoor & Garden Work,Bike Shed and Trellis,Jun-15,Added foundation joists. Constructed a bike shed.  Built and installed customised trellis.,gmp_bike_shed_trellis(0.5).webp
+Outdoor & Garden Work,Grave Maintenance,Oct-14,Specialised grave maintenance and restoration work.,gmp_grave_maintenance.webp
+Outdoor & Garden Work,Garden Shed Upgrade,May-12,Painted a standard garden shed into a beach hut style shed.,gmp_shed_paint(1).webp
+Outdoor & Garden Work,Full Garden Renovation,Dec-09,Sadley only part transformation photos available for this complete renovation.,gmp_full_garden_job(1).webp
+Outdoor & Garden Work,Herb Planters,Aug-24,Designed and built custom herb planters with blackboard labels.,cw_herb_planters(1).webp
+Outdoor & Garden Work,Bespoke Planters,Jun-23,Built custom planters from upcycled decking materials.,cw_planters(1).webp

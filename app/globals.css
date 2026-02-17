@@ -551,12 +551,12 @@ section {
     .service h3 {
         margin: 0 0 2px 0;
         line-height: 1.1;
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 
     .service p {
         line-height: 1.2;
-        font-size: 0.88rem;
+        font-size: 0.82rem;
     }
 
     #services {
@@ -577,6 +577,14 @@ section {
     #contact {
         display: flex;
         flex-direction: column;
+    }
+
+    #contact h2 {
+        margin-bottom: 8px;
+    }
+
+    #contact p {
+        margin-bottom: 4px;
     }
 
     #contact div {
@@ -664,6 +672,7 @@ section {
     overflow-y: auto;
     scrollbar-width: thick;
     scrollbar-color: #333 #f1f1f1;
+    overscroll-behavior: contain;
 }
 
 /* Webkit scrollbar styling for Chrome, Safari, Edge */
@@ -1052,6 +1061,22 @@ section {
     display: inline;
 }
 
+/* CSS fallbacks for when JS might not have run yet or failed */
+@media (hover: none) and (pointer: coarse) {
+    .hint-touch { display: inline; }
+    .hint-click { display: none; }
+}
+@media (hover: hover) {
+    .hint-touch { display: none; }
+    .hint-click { display: inline; }
+}
+
+/* Ensure JS classes take precedence over fallbacks */
+.touch-device .hint-click { display: none !important; }
+.touch-device .hint-touch { display: inline !important; }
+.no-touch-device .hint-touch { display: none !important; }
+.no-touch-device .hint-click { display: inline !important; }
+
 .touch-device .contract-hint {
     display: none;
 }
@@ -1097,10 +1122,9 @@ section {
 
 input#general-radio:checked~.gallery-display .gallery-panel.general,
 input#plumbing-radio:checked~.gallery-display .gallery-panel.plumbing,
-input#decorating-radio:checked~.gallery-display .gallery-panel.decorating,
-input#carpentry-radio:checked~.gallery-display .gallery-panel.carpentry,
 input#electrical-radio:checked~.gallery-display .gallery-panel.electrical,
-input#landscaping-radio:checked~.gallery-display .gallery-panel.landscaping {
+input#carpentry-radio:checked~.gallery-display .gallery-panel.carpentry,
+input#garden-radio:checked~.gallery-display .gallery-panel.garden {
     display: flex;
 }
 
@@ -1384,8 +1408,13 @@ height: 100%;
 object-fit: contain;
 }
 
+#contact {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 #contact div {
-margin-top: auto;
+    margin-top: auto;
 }
 
 #area {
@@ -1504,14 +1533,23 @@ display: block;
 margin: 0 auto 20px;
 }
 
+#about p {
+    padding: 0 40px;
+}
+
 /* Fix Contact page copyright at bottom */
 #contact {
 display: flex;
 flex-direction: column;
 }
 
+#contact {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 #contact div {
-margin-top: auto;
+    margin-top: auto;
 }
 
 /* Fix Gallery text visibility on laptop */

@@ -91,7 +91,7 @@ const OrientationLock = () => {
       <div className="orientation-overlay mobile-landscape">
         <div className="logo-container">
           <img
-            src="/OneManAndAToolbox/images/toolboxlogo.png"
+            src="/images/toolboxlogo.png"
             alt="One Man and a Toolbox"
             className="logo-image"
           />
@@ -105,7 +105,7 @@ const OrientationLock = () => {
       <div className="orientation-overlay tablet-portrait">
         <div className="logo-container">
           <img
-            src="/OneManAndAToolbox/images/toolboxlogo.png"
+            src="/images/toolboxlogo.png"
             alt="One Man and a Toolbox"
             className="logo-image"
           />
