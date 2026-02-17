@@ -315,8 +315,8 @@ h2 {
 }
 
 #about img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 30% center;
@@ -326,8 +326,8 @@ h2 {
 .about-intro {
     margin: 0 !important;
     text-align: left !important;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.35;
     font-size: 0.95rem;
 }
 
@@ -1387,6 +1387,7 @@ overflow-y: auto;
 .about-intro {
     font-size: 1.15rem;
     line-height: 1.4;
+    font-weight: 400;
 }
 
 #about p {
@@ -1587,6 +1588,7 @@ margin: 0 auto;
 .about-intro {
     font-size: 1.2rem;
     line-height: 1.5;
+    font-weight: 400;
 }
 
 #about p {
