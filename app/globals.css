@@ -308,15 +308,15 @@ h2 {
 #about img {
     max-width: 198px;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px;
+    float: left;
+    margin: 0 20px 10px 0;
     object-fit: cover;
     object-position: 30% center;
     aspect-ratio: 1;
 }
 
 #about p {
-    text-align: center;
+    text-align: justify;
 }
 
 #services h2 {
