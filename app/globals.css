@@ -1354,7 +1354,13 @@ overflow-y: auto;
 }
 
 #about {
-padding: 20px 0 0;
+    padding: 20px 0 0;
+    display: block;
+}
+
+#about h2 {
+    text-align: center;
+    width: 100%;
 }
 
 #about img {
@@ -1551,6 +1557,15 @@ margin: 0 auto;
 }
 
 /* Fix About Me image centering on laptop */
+#about {
+    display: block;
+}
+
+#about h2 {
+    text-align: center;
+    width: 100%;
+}
+
 #about img {
     margin-left: 40px;
 }
