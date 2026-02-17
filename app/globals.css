@@ -1354,15 +1354,22 @@ overflow-y: auto;
 }
 
 #about {
-padding-left: 40px;
-padding-right: 40px;
+padding: 20px 0 0;
 }
 
 #about img {
-float: none;
-display: block;
-margin: 0 auto 20px;
-max-width: 238px;
+    max-width: 198px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 20px 10px 40px;
+    object-fit: cover;
+    object-position: 30% center;
+    aspect-ratio: 1;
+}
+
+#about p {
+    padding: 0 40px;
+    margin-bottom: 12px;
 }
 
 .services-grid {
@@ -1544,6 +1551,10 @@ margin: 0 auto;
 }
 
 /* Fix About Me image centering on laptop */
+#about img {
+    margin-left: 40px;
+}
+
 #about p {
     padding: 0 40px;
     margin-bottom: 12px;
