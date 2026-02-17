@@ -303,16 +303,32 @@ h2 {
 
 #about h2 {
     margin-bottom: 15px;
+    text-align: center;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 0 10px;
 }
 
 #about img {
-    max-width: 198px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    float: left;
-    margin: 0 20px 10px 0;
     object-fit: cover;
     object-position: 30% center;
-    aspect-ratio: 1;
+    flex-shrink: 0;
+}
+
+.about-intro {
+    margin: 0 !important;
+    text-align: left !important;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 0.95rem;
 }
 
 #about p {
@@ -1355,22 +1371,22 @@ overflow-y: auto;
 
 #about {
     padding: 20px 0 0;
-    display: block;
 }
 
-#about h2 {
-    text-align: center;
-    width: 100%;
+.about-header {
+    padding: 0 40px;
+    gap: 30px;
+    margin-bottom: 20px;
 }
 
 #about img {
-    max-width: 198px;
-    border-radius: 50%;
-    float: left;
-    margin: 0 20px 10px 40px;
-    object-fit: cover;
-    object-position: 30% center;
-    aspect-ratio: 1;
+    width: 160px;
+    height: 160px;
+}
+
+.about-intro {
+    font-size: 1.15rem;
+    line-height: 1.4;
 }
 
 #about p {
@@ -1557,17 +1573,20 @@ margin: 0 auto;
 }
 
 /* Fix About Me image centering on laptop */
-#about {
-    display: block;
-}
-
-#about h2 {
-    text-align: center;
-    width: 100%;
+.about-header {
+    padding: 0 40px;
+    gap: 30px;
+    margin-bottom: 25px;
 }
 
 #about img {
-    margin-left: 40px;
+    width: 198px;
+    height: 198px;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 #about p {
