@@ -308,15 +308,15 @@ h2 {
 #about img {
     max-width: 198px;
     border-radius: 50%;
-    float: left;
-    margin-right: 20px;
+    display: block;
+    margin: 0 auto 20px;
     object-fit: cover;
     object-position: 30% center;
     aspect-ratio: 1;
 }
 
 #about p {
-    text-align: justify;
+    text-align: center;
 }
 
 #services h2 {
@@ -1544,12 +1544,6 @@ margin: 0 auto;
 }
 
 /* Fix About Me image centering on laptop */
-#about img {
-float: none;
-display: block;
-margin: 0 auto 20px;
-}
-
 #about p {
     padding: 0 40px;
     margin-bottom: 12px;
