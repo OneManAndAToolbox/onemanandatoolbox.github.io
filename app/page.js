@@ -684,7 +684,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="general-job-6">
-                                    <div className="gallery-text"><p>Hanging a mirror where anything other than perfect symmetry was required. As Austin Powers once said, &quot;I needed a LASER&quot;.</p></div>
+                                    <div className="gallery-text"><p>Hanging a mirror where anything other than perfect symmetry would look terrible. As Austin Powers once said, &quot;I needed a LASER&quot;.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/general/grm_mirror_hanging(1).webp`} alt="Very Heavy Mirror 1" /></div>
