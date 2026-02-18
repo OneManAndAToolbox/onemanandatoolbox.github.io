@@ -333,6 +333,7 @@ h2 {
 
 #about p {
     text-align: justify;
+    font-size: 0.95rem;
 }
 
 #services h2 {
@@ -1393,6 +1394,8 @@ overflow-y: auto;
 #about p {
     padding: 0 40px;
     margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .services-grid {
@@ -1594,6 +1597,8 @@ margin: 0 auto;
 #about p {
     padding: 0 40px;
     margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* Fix Contact page copyright at bottom */
