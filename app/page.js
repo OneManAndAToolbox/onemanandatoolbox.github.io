@@ -1461,12 +1461,6 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_artifical_turf(1).webp`} alt="Artificial Grass Patch Repair 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_artifical_turf(2).webp`} alt="Artificial Grass Patch Repair 2" /></div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="job-panel" data-job="garden-job-5">
                                     <div className="gallery-text"><p>Replaced a patch of real grass that wouldn't grow with high-quality artificial turf.</p></div>
                                     <div className="gallery-carousel">
