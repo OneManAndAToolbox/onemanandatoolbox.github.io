@@ -1368,7 +1368,7 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="garden-job-1">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="garden-job-1" role="option">General Garden Maintenance <span className="job-date">(Jul 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="garden-job-1" role="option">General Garden Maintenance <span className="job-date">(July 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-2" role="option">Pergola Sunbathing Platform <span className="job-date">(Nov 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-3" role="option">Concrete Base & Bike Anchor <span className="job-date">(Oct 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-4" role="option">Decking Maintenance <span className="job-date">(Mar 2025)</span></button></li>
