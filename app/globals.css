@@ -310,8 +310,12 @@ h2 {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     padding: 0 10px;
+}
+
+#about p:nth-of-type(2) {
+    margin-top: 0;
 }
 
 #about img {
