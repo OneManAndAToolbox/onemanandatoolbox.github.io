@@ -362,7 +362,16 @@ h2 {
         justify-content: center;
         gap: 8px;
     }
-    #gallery h2 .title-hint {
+    #gallery h2 .search-plus-minus {
+    position: absolute;
+    top: 32%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    font-size: 0.45em;
+    font-weight: 900;
+}
+
+.title-hint {
         font-size: 1.4rem;
         margin-left: 4px;
     }
@@ -1399,6 +1408,10 @@ overflow-y: auto;
     font-weight: inherit;
 }
 
+.search-plus-minus {
+    top: 36%;
+}
+
 #about p {
     padding: 0 40px;
     margin-bottom: 8px;
@@ -1600,6 +1613,10 @@ margin: 0 auto;
     font-size: 0.95rem;
     line-height: 1.5;
     font-weight: inherit;
+}
+
+.search-plus-minus {
+    top: 36%;
 }
 
 #about p {
