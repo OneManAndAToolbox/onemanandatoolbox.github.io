@@ -1369,9 +1369,9 @@ export default function Home() {
                                 <div className="custom-select" data-select-type="job" data-default-value="garden-job-1">
                                     <button type="button" className="custom-select-trigger" aria-expanded="false" aria-label="Select project"></button>
                                     <ul className="custom-select-options" role="listbox">
-                                        <li><button type="button" className="custom-select-option" data-value="garden-job-1" role="option">General Garden Maintenance <span className="job-date">(July 2025)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="garden-job-2" role="option">Pergola Sunbathing Platform <span className="job-date">(Nov 2025)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="garden-job-3" role="option">Concrete Base & Bike Anchor <span className="job-date">(Oct 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="garden-job-1" role="option">Pergola Sunbathing Platform <span className="job-date">(Nov 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="garden-job-2" role="option">Concrete Base & Bike Anchor <span className="job-date">(Oct 2025)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="garden-job-3" role="option">General Garden Maintenance <span className="job-date">(July 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-4" role="option">Decking Maintenance <span className="job-date">(Mar 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-5" role="option">Artificial Grass Patch Repair <span className="job-date">(Mar 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-6" role="option">Wooden Planter Fascia <span className="job-date">(Feb 2025)</span></button></li>
@@ -1403,17 +1403,6 @@ export default function Home() {
                             </div>
                             <div className="job-panels-container">
                                 <div className="job-panel active" data-job="garden-job-1">
-                                    <div className="gallery-text"><p>Pruning and training creepers as well as refreshing glass of a lean to conservatory.</p></div>
-                                    <div className="gallery-carousel">
-                                        <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(1).webp`} alt="General Garden Maintenance 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(2).webp`} alt="General Garden Maintenance 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(3).webp`} alt="General Garden Maintenance 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(4).webp`} alt="General Garden Maintenance 4" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="job-panel" data-job="garden-job-2">
                                     <div className="gallery-text"><p>Designed and built an 8-foot-tall pergola. Added a sturdy platform, waterproofed it, and then added artificial grass.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
@@ -1437,7 +1426,7 @@ export default function Home() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="job-panel" data-job="garden-job-3">
+                                <div className="job-panel" data-job="garden-job-2">
                                     <div className="gallery-text"><p>Drilled and cut through the shed base, excavated the ground beneath, poured concrete, and installed a secure ground anchor for a bike shed.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
@@ -1448,6 +1437,17 @@ export default function Home() {
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_bike_lock_anchor(4).webp`} alt="Concrete Base & Bike Anchor 4" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_bike_lock_anchor(5).webp`} alt="Concrete Base & Bike Anchor 5" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_bike_lock_anchor(6).webp`} alt="Concrete Base & Bike Anchor 6" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="job-panel" data-job="garden-job-3">
+                                    <div className="gallery-text"><p>Pruning and training creepers as well as refreshing glass of a lean to conservatory.</p></div>
+                                    <div className="gallery-carousel">
+                                        <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(1).webp`} alt="General Garden Maintenance 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(2).webp`} alt="General Garden Maintenance 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(3).webp`} alt="General Garden Maintenance 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(4).webp`} alt="General Garden Maintenance 4" /></div>
                                         </div>
                                     </div>
                                 </div>
