@@ -1385,7 +1385,7 @@ overflow-y: auto;
 .about-header {
     padding: 0 40px;
     gap: 30px;
-    margin-bottom: 8px;
+    margin-bottom: 32px;
 }
 
 #about img {
