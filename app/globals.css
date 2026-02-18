@@ -120,7 +120,7 @@ nav a.active {
 }
 
 section {
-    padding: 7.5px 7px 7.5px 7px;
+    padding: 7.5px 7px 15px 7px;
     margin: 0 auto;
     width: min(420px, calc(100% - 14px));
     background: #fff;
@@ -464,7 +464,7 @@ nav a {
 }
 
 section {
-    padding: 7px;
+    padding: 7px 7px 15px;
     margin: 0 auto;
     width: min(360px, calc(100% - var(--section-gap)));
     background: #fff;
@@ -525,7 +525,7 @@ section {
     }
 
     section {
-        padding: 7.5px 7px 7.5px 7px;
+        padding: 7.5px 7px 15px 7px;
         margin: 0 auto;
         width: min(420px, calc(100% - 14px));
         background: #fff;
@@ -1315,7 +1315,7 @@ gap: 15px;
 }
 
 section {
-padding: 7.5px 7px 7.5px 7px;
+padding: 7.5px 7px 15px 7px;
 margin: 0 auto;
 width: min(420px, calc(100% - 14px));
 background: #fff;
