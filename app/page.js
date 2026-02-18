@@ -1869,7 +1869,6 @@ export default function Home() {
                     <h2>Get In Touch</h2>
                     <p>Have a job that needs doing?<br />Please contact me to see if I can help.</p>
                     <p><strong><img src={`${basePath}whatsapp.webp`} alt="WhatsApp" className="contact-icon" /> WhatsApp:</strong> <a href="https://wa.me/447902251152" target="_blank" rel="noopener noreferrer" className="contact-link">Message me</a></p>
-                    <p><strong><img src={`${basePath}whatsapp.webp`} alt="WhatsApp" className="contact-icon" /> WhatsApp Call:</strong> <a href="whatsapp://call?phone=+447902251152" target="_blank" rel="noopener noreferrer" className="contact-link">Call me</a></p>
                     <p><strong>✉️ Email:</strong> <a href="mailto:onemanandatoolboxuk@gmail.com" className="contact-link">onemanandatoolboxuk@gmail.com</a></p>
                     <p><strong>📞 Call:</strong> <a href="tel:07902251152" className="contact-link">07902 251152</a></p>
                     <div style={{ textAlign: 'center', padding: '10px', background: '#2c3e50', color: '#fff', borderRadius: '12px' }}>
