@@ -309,8 +309,8 @@ h2 {
 .about-header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 8px;
     padding: 0 10px;
 }
 
@@ -326,7 +326,7 @@ h2 {
 .about-intro {
     margin: 0 !important;
     text-align: left !important;
-    font-weight: 400;
+    font-weight: inherit;
     line-height: 1.35;
     font-size: 0.95rem;
 }
@@ -1385,9 +1385,9 @@ overflow-y: auto;
 }
 
 .about-intro {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     line-height: 1.4;
-    font-weight: 400;
+    font-weight: inherit;
 }
 
 #about p {
@@ -1586,9 +1586,9 @@ margin: 0 auto;
 }
 
 .about-intro {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: inherit;
 }
 
 #about p {
