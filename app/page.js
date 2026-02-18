@@ -1117,7 +1117,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="electrical-job-6">
-                                    <div className="gallery-text"><p>Installed new energy efficient down lights with new bezels.</p></div>
+                                    <div className="gallery-text"><p>Installed new energy efficient downlights with new bezels.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/electrical/e_downlight_upgrades(0.5).webp`} alt="Downlight Upgrades 0.5" /></div>
