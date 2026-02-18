@@ -548,7 +548,7 @@ export default function Home() {
                 </section>
 
                 <section id="gallery">
-                    <h2>Gallery <span className="title-hint">[<span className="hint-touch">👆</span><span className="hint-click">🖱️</span> to <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'middle', width: '1em', height: '1em' }}><i className="fas fa-search" style={{ position: 'absolute', top: 0, left: 0, fontSize: '1em' }}></i><span className="search-plus-minus">±</span></span>]</span></h2>
+                    <h2>Gallery <span className="title-hint">[<span className="hint-touch">👆</span><span className="hint-click">🖱️</span> to <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'middle', width: '1em', height: '1em' }}><i className="fas fa-search" style={{ position: 'absolute', top: 0, left: 0, fontSize: '1em' }}></i><span style={{ position: 'absolute', top: '32%', left: '41%', transform: 'translate(-50%, -50%)', fontSize: '0.45em', fontWeight: '900' }}>±</span></span>]</span></h2>
                     <input type="radio" id="general-radio" name="gallery" defaultChecked style={{ display: 'none' }} />
                     <input type="radio" id="plumbing-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="electrical-radio" name="gallery" style={{ display: 'none' }} />
