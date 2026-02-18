@@ -525,6 +525,7 @@ export default function Home() {
                         <img src={`${basePath}images/toolboxlogo.png`} alt="One Man and a Toolbox logo" className="hero-logo" />
                         <h2>Your Friendly & Reliable Local Handyman</h2>
                         <p>For all the odd jobs and repairs around your home in parts of W5, W13, W7 & TW8.</p>
+                        <p><strong>Don't DIY, call One Man and a Toolbox.</strong></p>
                     </div>
                 </section>
 
