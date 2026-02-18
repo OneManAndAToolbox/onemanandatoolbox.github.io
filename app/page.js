@@ -1426,7 +1426,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="garden-job-2">
-                                    <div className="gallery-text"><p>Excavated earth, filled with concrete and installed a ground anchor for a bike shed.</p></div>
+                                    <div className="gallery-text"><p>Drilled and cut through the shed base, excavated the ground beneath, poured concrete, and installed a secure ground anchor for a bike shed.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_bike_lock_anchor(0.5).webp`} alt="Concrete Base & Bike Anchor 0.5" /></div>
