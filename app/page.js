@@ -310,6 +310,7 @@ export default function Home() {
 
         let currentLightboxImages = [];
         let currentLightboxIndex = 0;
+        let currentCarouselTrack = null;
 
         const showLightboxImage = (index) => {
             if (index < 0 || index >= currentLightboxImages.length || !lightboxTrack) {
@@ -327,9 +328,10 @@ export default function Home() {
             nextBtn.style.display = index === currentLightboxImages.length - 1 ? 'none' : 'block';
         };
 
-        const openLightbox = (images, startIndex) => {
+        const openLightbox = (images, startIndex, carouselTrack) => {
             currentLightboxImages = images;
             currentLightboxIndex = startIndex;
+            currentCarouselTrack = carouselTrack;
             
             // Create and append the track
             lightboxTrack = document.createElement('div');
@@ -367,6 +369,15 @@ export default function Home() {
         };
 
         const closeLightbox = () => {
+            // Synchronize the underlying carousel to the same image
+            if (currentCarouselTrack && currentCarouselTrack.children[currentLightboxIndex]) {
+                currentCarouselTrack.children[currentLightboxIndex].scrollIntoView({
+                    behavior: 'auto', // Use auto to sync instantly before transition
+                    block: 'nearest',
+                    inline: 'center'
+                });
+            }
+
             lightbox.classList.remove('open');
             lightbox.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
@@ -380,6 +391,7 @@ export default function Home() {
                 }
                 currentLightboxImages = [];
                 currentLightboxIndex = 0;
+                currentCarouselTrack = null;
                 lightboxTrack = null;
             }, 300);
         };
@@ -395,7 +407,7 @@ export default function Home() {
                     const clickedIndex = allImages.findIndex(img => img.src === clickedImg.src);
 
                     if (clickedIndex !== -1) {
-                        openLightbox(imageMetas, clickedIndex);
+                        openLightbox(imageMetas, clickedIndex, carouselTrack);
                     }
                 }
             }
