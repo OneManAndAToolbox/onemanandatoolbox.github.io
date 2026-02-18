@@ -1390,7 +1390,7 @@ export default function Home() {
                             </div>
                             <div className="job-panels-container">
                                 <div className="job-panel active" data-job="garden-job-1">
-                                    <div className="gallery-text"><p>Designed and built an 8-foot-tall pergola and waterproofed platform with artificial grass.</p></div>
+                                    <div className="gallery-text"><p>Designed and built an 8-foot-tall pergola. Added a sturdy platform, waterproofed it, and then added artificial grass.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_pergola(1).webp`} alt="Pergola Sunbathing Platform 1" /></div>
