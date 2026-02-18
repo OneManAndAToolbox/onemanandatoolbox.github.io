@@ -369,6 +369,8 @@ h2 {
     transform: translate(-50%, -50%);
     font-size: 0.45em;
     font-weight: 900;
+    line-height: 1;
+    display: block;
 }
 
 .title-hint {
@@ -1409,7 +1411,7 @@ overflow-y: auto;
 }
 
 .search-plus-minus {
-    top: 36%;
+    top: 34%;
 }
 
 #about p {
@@ -1616,7 +1618,7 @@ margin: 0 auto;
 }
 
 .search-plus-minus {
-    top: 36%;
+    top: 34%;
 }
 
 #about p {
