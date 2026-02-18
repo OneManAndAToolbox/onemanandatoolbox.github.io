@@ -717,7 +717,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="general-job-10">
-                                    <div className="gallery-text"><p>Unjamming Doors using an Electric Plane to shave off to a smooth finish.</p></div>
+                                    <div className="gallery-text"><p>Unjamming doors using an electric plane to shave off to a smooth finish.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/general/grm_door_planing.webp`} alt="Door Planing" /></div>
