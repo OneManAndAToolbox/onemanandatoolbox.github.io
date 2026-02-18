@@ -1098,7 +1098,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="electrical-job-4">
-                                    <div className="gallery-text"><p>Removed a malfunctioning under floor heating thermostat and installed a modern smart one.</p></div>
+                                    <div className="gallery-text"><p>Removed a malfunctioning underfloor heating thermostat and installed a modern smart one.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/electrical/e_smart_underfloor(1).webp`} alt="Smart Underfloor Heating Thermostat 1" /></div>
