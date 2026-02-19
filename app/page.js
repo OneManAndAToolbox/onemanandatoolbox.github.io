@@ -824,7 +824,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="general-job-18">
-                                    <div className="gallery-text"><p>Removed a broken back door lock and installed a new British Standard back. Also installed a high bolt for extra security.</p></div>
+                                    <div className="gallery-text"><p>Removed a broken back door lock. Installed a new British Standard lock. Also installed a bolt for extra security.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/general/grm_backdoor_lock(1).webp`} alt="Back Door Lock 1" /></div>
