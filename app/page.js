@@ -1449,7 +1449,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="garden-job-4">
-                                    <div className="gallery-text"><p>Jet washed decking area and refreshed life with two coats of decking oil.</p></div>
+                                    <div className="gallery-text"><p>Jet washed decking area and extended its life with two coats of decking oil.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_decking_oil(1).webp`} alt="Decking Maintenance 1" /></div>
