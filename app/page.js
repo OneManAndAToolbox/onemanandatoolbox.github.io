@@ -602,7 +602,7 @@ export default function Home() {
                                         <li><button type="button" className="custom-select-option" data-value="general-job-2" role="option">Coving <span className="job-date">(Aug 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-3" role="option">Bathroom Windows Frosting <span className="job-date">(Mar 2025)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-4" role="option">Ottoman Bed <span className="job-date">(Nov 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="general-job-5" role="option">Flat Pack Wardrobe Reconstruction <span className="job-date">(Nov 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="general-job-5" role="option">Wardrobe Reconstruction <span className="job-date">(Nov 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-6" role="option">Very Heavy Mirror <span className="job-date">(Nov 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-7" role="option">Electric Sander Repair <span className="job-date">(Oct 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="general-job-8" role="option">Damp Seal and Wall Painting <span className="job-date">(Oct 2024)</span></button></li>
@@ -690,11 +690,11 @@ export default function Home() {
                                     <div className="gallery-text"><p>Rebuilt a flat pack wardrobe in a tight space after a house move.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(1).webp`} alt="Flat Pack Wardrobe Reconstruction 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(2).webp`} alt="Flat Pack Wardrobe Reconstruction 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(3).webp`} alt="Flat Pack Wardrobe Reconstruction 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(4).webp`} alt="Flat Pack Wardrobe Reconstruction 4" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(5).webp`} alt="Flat Pack Wardrobe Reconstruction 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(1).webp`} alt="Wardrobe Reconstruction 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(2).webp`} alt="Wardrobe Reconstruction 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(3).webp`} alt="Wardrobe Reconstruction 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(4).webp`} alt="Wardrobe Reconstruction 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/general/grm_wardrobe_flatpack(5).webp`} alt="Wardrobe Reconstruction 5" /></div>
                                         </div>
                                     </div>
                                 </div>
