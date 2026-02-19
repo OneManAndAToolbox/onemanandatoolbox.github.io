@@ -1231,7 +1231,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="carpentry-job-2">
-                                    <div className="gallery-text"><p>Lined and waterproofed an old blanket chest for outdoor storage.</p></div>
+                                    <div className="gallery-text"><p>Lined and waterproofed an old blanket chest for use as outdoor cushion storage.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/carpentry/cw_upcycling_chest(1).webp`} alt="Upcycling Blanket Chest 1" /></div>
