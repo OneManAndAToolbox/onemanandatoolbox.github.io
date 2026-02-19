@@ -1287,8 +1287,11 @@ input#garden-radio:checked~.gallery-display .gallery-panel.garden {
         height: 26px;
         font-size: 16px;
     }
+    .lightbox-image-container {
+        padding: 60px 0;
+    }
     .lightbox-image-container img {
-        max-width: 96% !important;
+        max-width: 98% !important;
     }
 }
 
