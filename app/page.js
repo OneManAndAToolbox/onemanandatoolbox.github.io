@@ -369,13 +369,10 @@ export default function Home() {
         };
 
         const closeLightbox = () => {
-            // Synchronize the underlying carousel to the same image
+            // Synchronize the underlying carousel to the same image instantly
             if (currentCarouselTrack && currentCarouselTrack.children[currentLightboxIndex]) {
-                currentCarouselTrack.children[currentLightboxIndex].scrollIntoView({
-                    behavior: 'auto', // Use auto to sync instantly before transition
-                    block: 'nearest',
-                    inline: 'center'
-                });
+                const targetSlide = currentCarouselTrack.children[currentLightboxIndex];
+                currentCarouselTrack.scrollLeft = targetSlide.offsetLeft;
             }
 
             lightbox.classList.remove('open');
