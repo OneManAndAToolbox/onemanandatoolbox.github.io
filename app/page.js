@@ -1544,7 +1544,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="garden-job-12">
-                                    <div className="gallery-text"><p>Deconstructed a tired storage unit, repaired boards, and reconstructed.</p></div>
+                                    <div className="gallery-text"><p>Deconstructed a tired storage unit, replaced boards, painted, and reconstructed.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(1).webp`} alt="Restored and Rebuilt a Garden Storage Unit 1" /></div>
