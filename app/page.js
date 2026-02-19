@@ -1438,7 +1438,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="garden-job-3">
-                                    <div className="gallery-text"><p>Pruning and training creepers as well as refreshing glass of a lean to conservatory.</p></div>
+                                    <div className="gallery-text"><p>Pruning and training creepers as well as refreshing glass of a lean-to conservatory.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_outhouse_vines(1).webp`} alt="General Garden Maintenance 1" /></div>
