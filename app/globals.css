@@ -1281,6 +1281,14 @@ input#garden-radio:checked~.gallery-display .gallery-panel.garden {
 
 
 
+@media (max-width: 600px) {
+    .lightbox-arrow {
+        width: 26px;
+        height: 26px;
+        font-size: 16px;
+    }
+}
+
 /* Add zoom cursor only to expandable images */
 .carousel-slide img.is-expandable {
     cursor: zoom-in;
