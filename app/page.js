@@ -1703,7 +1703,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="garden-job-24">
-                                    <div className="gallery-text"><p>Safely removed a wall that was falling down and re-rendered the house wall.</p></div>
+                                    <div className="gallery-text"><p>Safely removed a wall that was falling down. Re-rendered and re-painted the house wall.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_brickwall_removal(0.5).webp`} alt="Dismantling of Brick Wall 0.5" /></div>
