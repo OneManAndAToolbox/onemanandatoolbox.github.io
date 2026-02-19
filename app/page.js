@@ -1382,7 +1382,7 @@ export default function Home() {
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-9" role="option">Herb Planters <span className="job-date">(Aug 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-10" role="option">Fence Repairs <span className="job-date">(Jul 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-11" role="option">Returfing a Section of Lawn <span className="job-date">(Jul 2024)</span></button></li>
-                                        <li><button type="button" className="custom-select-option" data-value="garden-job-12" role="option">Restored and Rebuilt a Garden Storage Unit <span className="job-date">(May 2024)</span></button></li>
+                                        <li><button type="button" className="custom-select-option" data-value="garden-job-12" role="option">Garden Storage Unit <span className="job-date">(May 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-13" role="option">Decking Patch Repairs <span className="job-date">(Apr 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-14" role="option">Garden Pond <span className="job-date">(Apr 2024)</span></button></li>
                                         <li><button type="button" className="custom-select-option" data-value="garden-job-15" role="option">Decking Step <span className="job-date">(Sep 2023)</span></button></li>
@@ -1552,13 +1552,13 @@ export default function Home() {
                                     <div className="gallery-text"><p>Deconstructed a tired storage unit, replaced boards, painted, and reconstructed.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(1).webp`} alt="Restored and Rebuilt a Garden Storage Unit 1" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(2).webp`} alt="Restored and Rebuilt a Garden Storage Unit 2" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(3).webp`} alt="Restored and Rebuilt a Garden Storage Unit 3" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(4).webp`} alt="Restored and Rebuilt a Garden Storage Unit 4" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(5).webp`} alt="Restored and Rebuilt a Garden Storage Unit 5" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(6).webp`} alt="Restored and Rebuilt a Garden Storage Unit 6" /></div>
-                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(7).webp`} alt="Restored and Rebuilt a Garden Storage Unit 7" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(1).webp`} alt="Garden Storage Unit 1" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(2).webp`} alt="Garden Storage Unit 2" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(3).webp`} alt="Garden Storage Unit 3" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(4).webp`} alt="Garden Storage Unit 4" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(5).webp`} alt="Garden Storage Unit 5" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(6).webp`} alt="Garden Storage Unit 6" /></div>
+                                            <div className="carousel-slide"><img src={`${basePath}images/garden/gmp_storage_shed(7).webp`} alt="Garden Storage Unit 7" /></div>
                                         </div>
                                     </div>
                                 </div>
