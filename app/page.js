@@ -372,7 +372,12 @@ export default function Home() {
             // Synchronize the underlying carousel to the same image instantly
             if (currentCarouselTrack && currentCarouselTrack.children[currentLightboxIndex]) {
                 const targetSlide = currentCarouselTrack.children[currentLightboxIndex];
+                // Temporarily disable smooth scroll for instant sync
+                const prevBehavior = currentCarouselTrack.style.scrollBehavior;
+                currentCarouselTrack.style.scrollBehavior = 'auto';
                 currentCarouselTrack.scrollLeft = targetSlide.offsetLeft;
+                // Restore previous behavior
+                currentCarouselTrack.style.scrollBehavior = prevBehavior;
             }
 
             lightbox.classList.remove('open');
