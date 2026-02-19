@@ -671,7 +671,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="general-job-4">
-                                    <div className="gallery-text"><p style={{ textAlign: 'left', width: '100%', display: 'block' }}>Disassembled, transported, and reassembled in a tight space.</p></div>
+                                    <div className="gallery-text"><p style={{ textAlign: 'center', width: '100%', display: 'block' }}>Disassembled, transported, and reassembled.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/general/grm_ottoman(1).webp`} alt="Ottoman Bed 1" /></div>
