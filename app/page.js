@@ -1339,7 +1339,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="carpentry-job-11">
-                                    <div className="gallery-text"><p>Designed and built a bespoke carving board to match an antique silver cloche.</p></div>
+                                    <div className="gallery-text"><p>Created a bespoke carving board to match an antique silver cloche. I made it out of an old tabletop!</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/carpentry/cw_carving_board(1).webp`} alt="Bespoke Carving Board 1" /></div>
