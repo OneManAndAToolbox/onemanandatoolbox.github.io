@@ -917,7 +917,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <div className="job-panel" data-job="general-job-28">
-                                    <div className="gallery-text"><p>Installed a micro chip activated cat flap in a garden door.</p></div>
+                                    <div className="gallery-text"><p>Installed a microchip activated cat flap in a garden door.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
                                             <div className="carousel-slide"><img src={`${basePath}images/general/grm_catflap.webp`} alt="Cat Flap 1" /></div>
