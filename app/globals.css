@@ -750,27 +750,26 @@ section {
     }
 
     #area {
-        justify-content: space-between !important; 
-        padding: 10px 15px !important; /* Fixed 10px gap at top and bottom */
+        justify-content: flex-start !important;
+        padding: 25px 15px 15px !important; 
     }
 
     #area h2 {
-        margin: 0 0 10px !important; /* 10px gap below title */
+        margin-bottom: 40px !important; /* Fixed gap above tags */
     }
 
-    .postcode-tags {
-        margin: 10px 0 !important; /* 10px gap above and below tags */
+    #area .postcode-tags {
+        margin-bottom: 40px !important; /* Identical fixed gap below tags */
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         flex-grow: 0 !important;
     }
 
-    .map-container {
-        margin: 10px 0 0 !important; /* 10px gap above map */
-        height: calc(80% - 20px) !important;
+    .map-container, #area .map-container {
+        margin: 0 !important;
+        height: 380px !important;
     }
-
     .contact-link {
         font-size: 1.2rem !important;
         margin-top: 4px !important;
@@ -1575,15 +1574,27 @@ overflow-y: auto;
 }
 
 .services-grid {
-grid-template-columns: repeat(2, 1fr);
-gap: 25px;
-margin: auto 0;
-padding: 0 40px;
+    grid-template-columns: 1fr !important; /* Switch to vertical stack */
+    gap: 12px !important;
+    margin: auto 0;
+    padding: 0 40px;
+    flex-grow: 1;
+    display: grid;
+    align-content: center;
 }
 
 .service {
-margin: 0;
-padding: 0;
+    padding: 5px 10px !important;
+}
+
+.service h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 2px !important;
+}
+
+.service p {
+    font-size: 0.95rem !important;
+    line-height: 1.3 !important;
 }
 
 .testimonials-slider {
@@ -1665,7 +1676,21 @@ flex-direction: column;
     }
 
     .services-grid {
-        gap: 25px !important;
+        grid-template-columns: 1fr !important; /* Unified vertical stack */
+        gap: 12px !important;
+        margin-top: -20px !important; /* Nudged up by 20px total */
+    }
+
+    .services-grid .service:nth-child(5) {
+        grid-column: auto !important;
+        justify-self: stretch;
+        max-width: none;
+        text-align: left !important;
+    }
+
+    .services-grid .service:nth-child(5) h3,
+    .services-grid .service:nth-child(5) p {
+        text-align: left !important;
     }
 
     .service h3 {
@@ -1697,17 +1722,35 @@ flex-direction: column;
         font-size: 1.3rem !important;
     }
 
-    /* Shrink carousel to fit descriptions on 4:3 */
+    /* Fix 4:3 gallery: Remove recessed border and restore rounded images */
     .gallery-carousel {
-        height: calc(100dvh - 385px) !important;
-        width: calc((100dvh - 385px) * 1.778) !important;
+        height: calc(100dvh - 410px) !important;
+        width: calc((100dvh - 410px) * 1.778) !important;
         margin: auto auto 0 !important;
+        border-radius: 12px !important; 
+        overflow: visible !important; /* Allow arrows to sit on top */
+        background: transparent !important;
+        border: none !important;
     }
 
     .carousel-slide {
         height: 100% !important;
         width: 100% !important;
         aspect-ratio: unset !important;
+        overflow: visible !important;
+        border: none !important;
+    }
+
+    .carousel-track img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        border-radius: 12px !important; /* Rounded corners on image itself */
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .carousel-arrow {
+        z-index: 10 !important; /* Ensure arrows are always on top */
     }
 
     .copyright-box {
@@ -1727,6 +1770,29 @@ flex-direction: column;
 
 /* Tablet + Short Height (e.g., 1000x600, 5:3 aspect ratio) */
 @media (min-width: 768px) and (max-width: 1279px) and (max-height: 700px) {
+    .services-grid {
+        gap: 12px !important; /* Restored original gap */
+    }
+
+    .service {
+        padding: 5px 10px !important;
+    }
+
+    .service h3 {
+        font-size: 1.0rem !important; /* Reduced font size */
+    }
+
+    .service p {
+        font-size: 0.85rem !important; /* Reduced font size */
+        line-height: 1.25 !important;
+    }
+
+    .services-grid {
+        margin: auto 0 !important; /* Vertically centered */
+        flex-grow: 1 !important;
+        align-content: center !important;
+    }
+
     .copyright-box {
         margin-bottom: 10px !important;
         min-height: 40px !important;
@@ -1752,6 +1818,11 @@ gap: 10px;
     height: calc(100dvh - 350px) !important;
     margin: auto auto 0;
     contain: layout size;
+}
+
+.gallery-text {
+    max-width: calc((100dvh - 350px) * 1.778);
+    margin: 0 auto !important;
 }
 .carousel-slide {
 height: 100% !important;
