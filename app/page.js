@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect } from 'react';
 
@@ -527,7 +527,7 @@ export default function Home() {
                         <img src={`${basePath}images/toolboxlogo.png`} alt="One Man and a Toolbox logo" className="hero-logo" />
                         <h2>Your Friendly & Reliable Local Handyman</h2>
                         <p>For all the odd jobs and repairs around your home in parts of W5, W13, W7 & TW8.</p>
-                        <p><strong>Don't DIY, call One Man and a Toolbox.</strong></p>
+                        <p className="about-tagline"><strong>Don't DIY, call One Man and a Toolbox.</strong></p>
                     </div>
                 </section>
 
@@ -563,7 +563,7 @@ export default function Home() {
                 </section>
 
                 <section id="gallery">
-                    <h2>Gallery <span className="title-hint">[<span className="hint-touch">👆</span><span className="hint-click">🖱️</span> to <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'middle', width: '1em', height: '1em' }}><i className="fas fa-search" style={{ position: 'absolute', top: 0, left: 0, fontSize: '1em' }}></i><span style={{ position: 'absolute', top: '32%', left: '41%', transform: 'translate(-50%, -50%)', fontSize: '0.45em', fontWeight: '900' }}>±</span></span>]</span></h2>
+                    <h2>Gallery <span className="title-hint">[<span className="hint-touch">👆</span><span className="hint-click">🖱️</span> to <i className="fas fa-search-plus"></i>]</span></h2>
                     <input type="radio" id="general-radio" name="gallery" defaultChecked style={{ display: 'none' }} />
                     <input type="radio" id="plumbing-radio" name="gallery" style={{ display: 'none' }} />
                     <input type="radio" id="electrical-radio" name="gallery" style={{ display: 'none' }} />
@@ -1792,67 +1792,67 @@ export default function Home() {
                     <div className="testimonials-slider" id="testimonials-list">
                         <div className="testimonial" data-category="general">
                             <p>"Prompt, polite, and transparent pricing—will definitely book again."</p>
-                            <p><strong>Alexander R.</strong> <span className="testimonial-date">(April 2024)</span></p>
+                            <p><strong>Alexander R.</strong> <span className="testimonial-date">(April 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="general">
                             <p>"He fixed everything on our snag list in one visit and left the place spotless."</p>
-                            <p><strong>Priya N.</strong> <span className="testimonial-date">(January 2024)</span></p>
+                            <p><strong>Priya N.</strong> <span className="testimonial-date">(January 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="general">
                             <p>"Great service! Highly recommend for tricky general repairs."</p>
-                            <p><strong>John Doe</strong> <span className="testimonial-date">(October 2023)</span></p>
+                            <p><strong>John D.</strong> <span className="testimonial-date">(October 2024)</span></p>
                         </div>
 
                         <div className="testimonial" data-category="plumbing">
                             <p>"Diagnosed a pressure issue others missed and solved it the same day."</p>
-                            <p><strong>Tom H.</strong> <span className="testimonial-date">(May 2024)</span></p>
+                            <p><strong>Tom H.</strong> <span className="testimonial-date">(May 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="plumbing">
                             <p>"New kitchen tap and waste fitted perfectly with zero mess."</p>
-                            <p><strong>Kelly W.</strong> <span className="testimonial-date">(February 2024)</span></p>
+                            <p><strong>Kelly W.</strong> <span className="testimonial-date">(February 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="plumbing">
                             <p>"Fast response to a leak and a tidy plumbing fix—life saver!"</p>
-                            <p><strong>Mike Johnson</strong> <span className="testimonial-date">(December 2023)</span></p>
+                            <p><strong>Mike Johnson</strong> <span className="testimonial-date">(December 2024)</span></p>
                         </div>
 
                         <div className="testimonial" data-category="carpentry">
                             <p>"He restored our creaky staircase without replacing everything—brilliant."</p>
-                            <p><strong>Helen D.</strong> <span className="testimonial-date">(July 2024)</span></p>
+                            <p><strong>Helen D.</strong> <span className="testimonial-date">(July 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="carpentry">
                             <p>"Our fitted wardrobe now has smart storage we actually enjoy using."</p>
-                            <p><strong>Omar K.</strong> <span className="testimonial-date">(April 2024)</span></p>
+                            <p><strong>Omar K.</strong> <span className="testimonial-date">(April 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="carpentry">
                             <p>"Impressed with the custom shelving and carpentry craftsmanship."</p>
-                            <p><strong>Sarah Lee</strong> <span className="testimonial-date">(January 2024)</span></p>
+                            <p><strong>Sarah Lee</strong> <span className="testimonial-date">(January 2025)</span></p>
                         </div>
 
                         <div className="testimonial" data-category="electrical">
                             <p>"Smart thermostat installed and configured so we finally understand it."</p>
-                            <p><strong>Sophie T.</strong> <span className="testimonial-date">(June 2024)</span></p>
+                            <p><strong>Sophie T.</strong> <span className="testimonial-date">(June 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="electrical">
                             <p>"New lighting plan transformed our kitchen—neat wiring and no fuss."</p>
-                            <p><strong>Gareth B.</strong> <span className="testimonial-date">(May 2024)</span></p>
+                            <p><strong>Gareth B.</strong> <span className="testimonial-date">(May 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="electrical">
                             <p>"Minor electrical upgrades were done safely and on schedule."</p>
-                            <p><strong>Emily Clark</strong> <span className="testimonial-date">(March 2024)</span></p>
+                            <p><strong>Emily Clark</strong> <span className="testimonial-date">(March 2025)</span></p>
                         </div>
 
                         <div className="testimonial" data-category="garden">
                             <p>"Re-levelled our lawn and added drainage so it finally survives winter."</p>
-                            <p><strong>Martin P.</strong> <span className="testimonial-date">(August 2024)</span></p>
+                            <p><strong>Martin P.</strong> <span className="testimonial-date">(August 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="garden">
                             <p>"Built a cedar planter bench that’s both sturdy and beautiful."</p>
-                            <p><strong>Ana &amp; Chris</strong> <span className="testimonial-date">(April 2024)</span></p>
+                            <p><strong>Ana & Chris</strong> <span className="testimonial-date">(April 2025)</span></p>
                         </div>
                         <div className="testimonial" data-category="garden">
                             <p>"Top-notch garden refresh—our patio and planters look amazing."</p>
-                            <p><strong>David Kim</strong> <span className="testimonial-date">(February 2024)</span></p>
+                            <p><strong>David Kim</strong> <span className="testimonial-date">(February 2025)</span></p>
                         </div>
                     </div>
                 </section>
@@ -1864,7 +1864,7 @@ export default function Home() {
                         <p className="about-intro">Hello. My name is Adam and I'm your local, reliable handyman dedicated to providing high-quality work.</p>
                     </div>
                     <p>I guarantee a friendly and professional attitude, and that I will actually return your calls! As you can see from the gallery, I have a lot of experience across a range of trades, and no job is too small. I will shorten your to-do list and lower the domestic stress level in your home! I pride myself on completing work to a high standard and ensuring you're happy with the result.</p>
-                    <p><strong>Don't DIY, call One Man and a Toolbox.</strong></p>
+                    <p className="about-tagline"><strong>Don't DIY, call One Man and a Toolbox.</strong></p>
                 </section>
 
                 <section id="area">
@@ -1883,11 +1883,11 @@ export default function Home() {
                 <section id="contact">
                     <h2>Get In Touch</h2>
                     <p>Have a job that needs doing?<br />Please contact me to see if I can help.</p>
-                    <p><strong><img src={`${basePath}whatsapp.webp`} alt="WhatsApp" className="contact-icon" /> WhatsApp:</strong> <a href="https://wa.me/447902251152" target="_blank" rel="noopener noreferrer" className="contact-link">Message me</a></p>
-                    <p><strong>✉️ Email:</strong> <a href="mailto:onemanandatoolboxuk@gmail.com" className="contact-link">onemanandatoolboxuk@gmail.com</a></p>
-                    <p><strong>📞 Call:</strong> <a href="tel:07902251152" className="contact-link">07902 251152</a></p>
-                    <div style={{ textAlign: 'center', padding: '10px', background: '#2c3e50', color: '#fff', borderRadius: '12px' }}>
-                        <p style={{ margin: 0 }}>&copy; 2026 One Man and a Toolbox</p>
+                    <p><strong><img src={`${basePath}whatsapp.webp`} alt="WhatsApp" className="contact-icon" /> WhatsApp:</strong><br /><a href="https://wa.me/447902251152" target="_blank" rel="noopener noreferrer" className="contact-link">Message me</a></p>
+                    <p><strong>✉️ Email:</strong><br /><a href="mailto:onemanandatoolboxuk@gmail.com" className="contact-link">onemanandatoolboxuk@gmail.com</a></p>
+                    <p><strong>📞 Call:</strong><br /><a href="tel:07902251152" className="contact-link">07902 251152</a></p>
+                    <div className="copyright-box">
+                        <p>&copy; 2026 One Man and a Toolbox</p>
                     </div>
                 </section>
             </div>
