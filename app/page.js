@@ -985,6 +985,7 @@ export default function Home() {
                                     <div className="gallery-text"><p>Installed a new dual flush system and reconnected all pipes ensuring no leaks.</p></div>
                                     <div className="gallery-carousel">
                                         <div className="carousel-track">
+                                            <div className="carousel-slide"><img src={`${basePath}images/plumbing/p_installing_dual flush(0.5).webp`} alt="Dual Flush 0.5" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/plumbing/p_installing_dual flush(1).webp`} alt="Dual Flush 1" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/plumbing/p_installing_dual flush(2).webp`} alt="Dual Flush 2" /></div>
                                             <div className="carousel-slide"><img src={`${basePath}images/plumbing/p_installing_dual flush(3).webp`} alt="Dual Flush 3" /></div>
